@@ -1,0 +1,90 @@
+00842690 | 83EC 14                  | sub     esp, 0x14
+00842693 | 53                       | push    ebx
+00842694 | 55                       | push    ebp
+00842695 | 56                       | push    esi
+00842696 | 57                       | push    edi
+00842697 | 8BF1                     | mov     esi, ecx
+00842699 | E8 D2242200              | call    tesv.A64B70
+0084269E | 33DB                     | xor     ebx, ebx
+008426A0 | C706 60380E01            | mov     dword ptr ds:[esi], tesv.10E3860
+008426A6 | 895E 1C                  | mov     dword ptr ds:[esi + 0x1C], ebx
+008426A9 | 895E 20                  | mov     dword ptr ds:[esi + 0x20], ebx
+008426AC | 895E 24                  | mov     dword ptr ds:[esi + 0x24], ebx
+008426AF | 895E 28                  | mov     dword ptr ds:[esi + 0x28], ebx
+008426B2 | 895E 2C                  | mov     dword ptr ds:[esi + 0x2C], ebx
+008426B5 | 8D7E 28                  | lea     edi, dword ptr ds:[esi + 0x28]
+008426B8 | 8D6E 4C                  | lea     ebp, dword ptr ds:[esi + 0x4C]
+008426BB | 8BCD                     | mov     ecx, ebp
+008426BD | 895E 38                  | mov     dword ptr ds:[esi + 0x38], ebx
+008426C0 | 895E 3C                  | mov     dword ptr ds:[esi + 0x3C], ebx
+008426C3 | 895E 40                  | mov     dword ptr ds:[esi + 0x40], ebx
+008426C6 | 895E 44                  | mov     dword ptr ds:[esi + 0x44], ebx
+008426C9 | 885E 48                  | mov     byte ptr ds:[esi + 0x48], bl
+008426CC | E8 FF732000              | call    tesv.A49AD0
+008426D1 | 8D4D 08                  | lea     ecx, dword ptr ss:[ebp + 0x8]
+008426D4 | E8 67742000              | call    tesv.A49B40
+008426D9 | 51                       | push    ecx
+008426DA | 891C24                   | mov     dword ptr ss:[esp], ebx
+008426DD | 6A 03                    | push    0x3
+008426DF | 68 50380E01              | push    tesv.10E3850
+008426E4 | 8D6E 08                  | lea     ebp, dword ptr ds:[esi + 0x8]
+008426E7 | 55                       | push    ebp
+008426E8 | 895E 58                  | mov     dword ptr ds:[esi + 0x58], ebx
+008426EB | 895E 5C                  | mov     dword ptr ds:[esi + 0x5C], ebx
+008426EE | 895E 60                  | mov     dword ptr ds:[esi + 0x60], ebx
+008426F1 | 885E 64                  | mov     byte ptr ds:[esi + 0x64], bl
+008426F4 | C746 10 89A40000         | mov     dword ptr ds:[esi + 0x10], 0xA489
+008426FB | 8B0D B0E9B201            | mov     ecx, dword ptr ds:[0x1B2E9B0]
+00842701 | 56                       | push    esi
+00842702 | E8 79E52100              | call    tesv.A60C80
+00842707 | 8B4D 00                  | mov     ecx, dword ptr ss:[ebp]
+0084270A | C746 14 03000000         | mov     dword ptr ds:[esi + 0x14], 0x3
+00842711 | 885E 0C                  | mov     byte ptr ds:[esi + 0xC], bl
+00842714 | 895C24 14                | mov     dword ptr ss:[esp + 0x14], ebx
+00842718 | 895C24 18                | mov     dword ptr ss:[esp + 0x18], ebx
+0084271C | 8B01                     | mov     eax, dword ptr ds:[ecx]
+0084271E | 8B50 44                  | mov     edx, dword ptr ds:[eax + 0x44]
+00842721 | 68 48380E01              | push    tesv.10E3848
+00842726 | 57                       | push    edi
+00842727 | FFD2                     | call    edx
+00842729 | 84C0                     | test    al, al
+0084272B | 74 30                    | je      tesv.84275D
+0084272D | 8B47 04                  | mov     eax, dword ptr ds:[edi + 0x4]
+00842730 | 24 8F                    | and     al, 0x8F
+00842732 | 3C 08                    | cmp     al, 0x8
+00842734 | 0F94C1                   | sete    cl
+00842737 | 884C24 10                | mov     byte ptr ss:[esp + 0x10], cl
+0084273B | 8B5424 10                | mov     edx, dword ptr ss:[esp + 0x10]
+0084273F | 8B4F 08                  | mov     ecx, dword ptr ds:[edi + 0x8]
+00842742 | 52                       | push    edx
+00842743 | 8D4424 18                | lea     eax, dword ptr ss:[esp + 0x18]
+00842747 | 50                       | push    eax
+00842748 | 68 34380E01              | push    tesv.10E3834
+0084274D | 51                       | push    ecx
+0084274E | 8B0F                     | mov     ecx, dword ptr ds:[edi]
+00842750 | E8 0B120E00              | call    tesv.923960
+00842755 | 84C0                     | test    al, al
+00842757 | 74 04                    | je      tesv.84275D
+00842759 | C646 64 01               | mov     byte ptr ds:[esi + 0x64], 0x1
+0084275D | 68 24380E01              | push    tesv.10E3824
+00842762 | E8 F9EC0100              | call    tesv.861460
+00842767 | 8B0D C0E4B201            | mov     ecx, dword ptr ds:[0x1B2E4C0]
+0084276D | 83C4 04                  | add     esp, 0x4
+00842770 | E8 BB490500              | call    tesv.897130
+00842775 | 8B5424 18                | mov     edx, dword ptr ss:[esp + 0x18]
+00842779 | C1EA 06                  | shr     edx, 0x6
+0084277C | F6C2 01                  | test    dl, 0x1
+0084277F | 74 13                    | je      tesv.842794
+00842781 | 8B4424 1C                | mov     eax, dword ptr ss:[esp + 0x1C]
+00842785 | 50                       | push    eax
+00842786 | 8D4C24 18                | lea     ecx, dword ptr ss:[esp + 0x18]
+0084278A | 51                       | push    ecx
+0084278B | 8B4C24 1C                | mov     ecx, dword ptr ss:[esp + 0x1C]          
+0084278F | E8 CCFE0D00              | call    tesv.922660
+00842794 | 5F                       | pop     edi
+00842795 | 8BC6                     | mov     eax, esi
+00842797 | 5E                       | pop     esi
+00842798 | 5D                       | pop     ebp
+00842799 | 5B                       | pop     ebx
+0084279A | 83C4 14                  | add     esp, 0x14
+0084279D | C3                       | ret
