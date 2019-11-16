@@ -4,41 +4,49 @@
 
 class TYPE_INFO
 {
-public:
-	virtual ~TYPE_INFO() throw ();
+	public:
+	virtual ~TYPE_INFO() throw();
 	const char* name(void) const;
 	const char* raw_name(void) const;
-	bool IsSkyrimType() const;
-private:
-	void *_M_data;
-	char _M_d_name[1];
+	bool		IsSkyrimType() const;
+
+	private:
+	void* _M_data;
+	char  _M_d_name[1];
 };
 
-typedef void * (*_Runtime_DynamicCast)(const void * srcObj, UInt32 arg1, const TYPE_INFO& fromType, const TYPE_INFO& toType, UInt32 arg4);
+typedef void* (*_Runtime_DynamicCast)(const void* srcObj, UInt32 arg1, const TYPE_INFO& fromType, const TYPE_INFO& toType, UInt32 arg4);
 extern const _Runtime_DynamicCast Runtime_DynamicCast;
 
-template<typename T> struct RTTI_Info : std::integral_constant<UInt32, 0>
+template<typename T>
+struct RTTI_Info : std::integral_constant<UInt32, 0>
 {
 	// enum { value = ADDR };
 };
 
-template <typename T>
-const TYPE_INFO& RTTI_GetTypeID(void) {
+template<typename T>
+const TYPE_INFO& RTTI_GetTypeID(void)
+{
 	typedef typename std::remove_cv<T>::type type;
-	const TYPE_INFO *info = reinterpret_cast<TYPE_INFO*>(RTTI_Info<type>::value);
+	const TYPE_INFO*						 info = reinterpret_cast<TYPE_INFO*>(RTTI_Info<type>::value);
 	return *info;
 }
 
-#define TYPEID(typeName)	RTTI_GetTypeID<typeName>()
+#define TYPEID(typeName) RTTI_GetTypeID<typeName>()
 
 template<typename TO, typename FROM>
-TO DYNAMIC_CAST(FROM obj) {
+TO DYNAMIC_CAST(FROM obj)
+{
 	typedef typename std::remove_cv<std::remove_pointer<FROM>::type>::type FromType;
-	typedef typename std::remove_cv<std::remove_pointer<TO>::type>::type ToType;
+	typedef typename std::remove_cv<std::remove_pointer<TO>::type>::type   ToType;
 	return (TO)Runtime_DynamicCast(obj, 0, TYPEID(FromType), TYPEID(ToType), 0);
 }
 
-#define DEFINE_TYPE_INFO(className, addr) template<> struct RTTI_Info<className> : std::integral_constant<UInt32, addr> {}
+#define DEFINE_TYPE_INFO(className, addr)                              \
+	template<>                                                         \
+	struct RTTI_Info<className> : std::integral_constant<UInt32, addr> \
+	{                                                                  \
+	}
 
 DEFINE_TYPE_INFO(class BaseFormComponent, 0x0123B030);
 DEFINE_TYPE_INFO(class IFormFactory, 0x0123B050);
@@ -2175,7 +2183,8 @@ DEFINE_TYPE_INFO(class hkRemoteObjectProcess, 0x012E2184);
 DEFINE_TYPE_INFO(class hkProcessFactory, 0x012E21A8);
 DEFINE_TYPE_INFO(class BSMusicManager, 0x012E23DC);
 
-template <class> class BSTEventSink;
+template<class>
+class BSTEventSink;
 DEFINE_TYPE_INFO(class BSTEventSink<struct BGSEventProcessedEvent>, 0x01277478);
 DEFINE_TYPE_INFO(class BSTEventSink<struct TESActivateEvent>, 0x012B86A8);
 DEFINE_TYPE_INFO(class BSTEventSink<struct TESActiveEffectApplyRemoveEvent>, 0x012B86E0);
@@ -2226,11 +2235,14 @@ DEFINE_TYPE_INFO(class BSTEventSink<struct TESSwitchRaceCompleteEvent>, 0x012B8F
 DEFINE_TYPE_INFO(class BSTEventSink<struct TESPlayerBowShotEvent>, 0x012B8F54);
 DEFINE_TYPE_INFO(class BSTEventSink<struct PositionPlayerEvent>, 0x0123E64C);
 
-namespace BSScript { struct StatsEvent; }
+namespace BSScript
+{
+struct StatsEvent;
+}
 DEFINE_TYPE_INFO(class BSTEventSink<struct BSScript::StatsEvent>, 0x012B8F8C);
 DEFINE_TYPE_INFO(class BSTEventSink<class MenuOpenCloseEvent>, 0x01259554);
 DEFINE_TYPE_INFO(class BSTEventSink<class MenuModeChangeEvent>, 0x01271D48);
-DEFINE_TYPE_INFO(class BSTEventSink<class InputEvent *>, 0x01272AC8);
+DEFINE_TYPE_INFO(class BSTEventSink<class InputEvent*>, 0x01272AC8);
 DEFINE_TYPE_INFO(class BSTEventSink<class BSTransformDeltaEvent>, 0x01275D4C);
 DEFINE_TYPE_INFO(class BSTEventSink<class bhkCharacterMoveFinishEvent>, 0x01275D84);
 DEFINE_TYPE_INFO(class BSTEventSink<class UserEventEnabledEvent>, 0x01277D28);
@@ -2282,11 +2294,15 @@ DEFINE_TYPE_INFO(class BSTEventSink<struct AssaultCrime::Event>, 0x01274C44);
 DEFINE_TYPE_INFO(class BSTEventSink<struct MurderCrime::Event>, 0x01274C78);
 */
 
-template <class T> class BSTEventSource;
-namespace SkyrimScript { struct StatsEvent; }
+template<class T>
+class BSTEventSource;
+namespace SkyrimScript
+{
+struct StatsEvent;
+}
 DEFINE_TYPE_INFO(class BSTEventSource<struct SkyrimScript::StatsEvent>, 0x012B968C);
 DEFINE_TYPE_INFO(class BSTEventSource<struct BSMusicEvent>, 0x01271EF4);
-DEFINE_TYPE_INFO(class BSTEventSource<struct CellAttachDetachEvent>,0x0123E748);
+DEFINE_TYPE_INFO(class BSTEventSource<struct CellAttachDetachEvent>, 0x0123E748);
 DEFINE_TYPE_INFO(class BSTEventSource<struct BGSActorCellEvent>, 0x01277F3C);
 DEFINE_TYPE_INFO(class BSTEventSource<struct BGSActorDeathEvent>, 0x01277F70);
 DEFINE_TYPE_INFO(class BSTEventSource<struct PositionPlayerEvent>, 0x01277FA8);

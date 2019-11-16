@@ -4,8 +4,6 @@
 
 class GFxTranslator;
 
-
-
 /*==============================================================================
 class GFxState +0000 (_vtbl=0110E014)
 0000: class GFxState
@@ -17,7 +15,7 @@ class GFxState +0000 (_vtbl=0110E014)
 // 0C
 class GFxState : public GRefCountBase<GFxState>
 {
-public:
+	public:
 	enum StateType
 	{
 		State_None,
@@ -40,7 +38,7 @@ public:
 		State_ParseControl,
 		State_ProgressHandler,
 		State_ImportVisitor,
-		//State_ImageVisitor,
+		// State_ImageVisitor,
 		State_MeshCacheManager,
 		State_FontPackParams,
 		State_FontCacheManager,
@@ -66,16 +64,18 @@ public:
 		State_LocSupport
 	};
 
-protected:
-	StateType       SType;	// 08
+	protected:
+	StateType SType; // 08
 
-public:
-	GFxState(StateType st = State_None) : SType(st) { }
-	virtual ~GFxState() { }
+	public:
+	GFxState(StateType st = State_None) : SType(st) {}
+	virtual ~GFxState() {}
 
-	inline StateType   GetStateType() const { return SType; }
+	inline StateType GetStateType() const
+	{
+		return SType;
+	}
 };
-
 
 class GImageInfoBase;
 
@@ -90,20 +90,15 @@ class GFxImageLoader +0000 (_vtbl=????????)
 ==============================================================================*/
 class GFxImageLoader : public GFxState
 {
-public:
-	GFxImageLoader() : GFxState(State_ImageLoader)
-	{
-	}
+	public:
+	GFxImageLoader() : GFxState(State_ImageLoader) {}
 
-	virtual GImageInfoBase * LoadImage(const char* purl) = 0;
+	virtual GImageInfoBase* LoadImage(const char* purl) = 0;
 };
-
-
 
 class GFxFileConstants
 {
-public:
-
+	public:
 	// All File formats supported and/or used by GFx.
 	enum FileFormatType
 	{
@@ -114,17 +109,17 @@ public:
 		File_SWF,
 		File_GFX,
 
-		// Image formats supported by Flash.        
+		// Image formats supported by Flash.
 		File_JPEG = 10,
-		File_PNG = 11,
-		File_GIF = 12,
+		File_PNG  = 11,
+		File_GIF  = 12,
 		// Other image formats.
-		File_TGA = 13,
-		File_DDS = 14,
-		File_HDR = 15,
-		File_BMP = 16,
-		File_DIB = 17,
-		File_PFM = 18,
+		File_TGA  = 13,
+		File_DDS  = 14,
+		File_HDR  = 15,
+		File_BMP  = 16,
+		File_DIB  = 17,
+		File_PFM  = 18,
 		File_TIFF = 19,
 
 		// Sound formats
@@ -135,25 +130,23 @@ public:
 	};
 };
 
-
-
 class GFxStateBag : public GFxFileConstants
 {
-protected:
-	virtual	GFxStateBag *	GetStateBagImpl(void) const;	// { return 0; }
+	protected:
+	virtual GFxStateBag* GetStateBagImpl(void) const; // { return 0; }
 
-public:
-	virtual	~GFxStateBag();
+	public:
+	virtual ~GFxStateBag();
 
-	virtual void		SetState(GFxState::StateType state, GFxState* pstate);
-	virtual void *		GetStateAddRef(GFxState::StateType state) const;
-	virtual void        GetStatesAddRef(GFxState** pstateList, const GFxState::StateType *pstates, UInt32 count) const;
+	virtual void  SetState(GFxState::StateType state, GFxState* pstate);
+	virtual void* GetStateAddRef(GFxState::StateType state) const;
+	virtual void  GetStatesAddRef(GFxState** pstateList, const GFxState::StateType* pstates, UInt32 count) const;
 
-	inline GFxTranslator *	GetTranslator() const { return (GFxTranslator*)GetStateAddRef(GFxState::State_Translator); }
-
+	inline GFxTranslator* GetTranslator() const
+	{
+		return (GFxTranslator*)GetStateAddRef(GFxState::State_Translator);
+	}
 };
-
-
 
 class GFxLoaderImpl;
 class GFxResourceLib;
@@ -162,23 +155,23 @@ class GFxMovieDef;
 
 class GFxLoader : public GFxStateBag
 {
-	GFxLoaderImpl	* pImpl;				// 04
-	GFxResourceLib	* pStrongResourceLib;	// 08
-	UInt32			DefLoadFlags;			// 0C
+	GFxLoaderImpl*	pImpl;				// 04
+	GFxResourceLib* pStrongResourceLib; // 08
+	UInt32			DefLoadFlags;		// 0C
 
-protected:
+	protected:
 	// @add
 	virtual GFxStateBag* GetStateBagImpl() const override;
-	virtual bool CheckTagLoader(int tagType) const;
+	virtual bool		 CheckTagLoader(int tagType) const;
 
-public:
+	public:
 	enum LoadConstants
 	{
 		LoadAll				= 0x00000000,
 		LoadWaitCompletion	= 0x00000001,
 		LoadWaitFrame1		= 0x00000002,
 		LoadOrdered			= 0x00000010,
-		LoadThreadedBinding	= 0x00000020,
+		LoadThreadedBinding = 0x00000020,
 		LoadOnThread		= 0x00000040,
 		LoadKeepBindData	= 0x00000080,
 		LoadImageFiles		= 0x00010000,
@@ -186,19 +179,22 @@ public:
 		LoadDisableImports	= 0x00100000,
 		LoadQuietOpen		= 0x00200000,
 
-		LoadDebugHeap		= 0x10000000
+		LoadDebugHeap = 0x10000000
 	};
 
 	GFxLoader(const GFxLoader& src);
 
 	virtual ~GFxLoader();
 
-	bool GetMovieInfo(const char* pFileName, GFxMovieInfo *pMovieInfo, bool getTagCount = 0, UInt32 loadConstants = LoadAll);
+	bool		 GetMovieInfo(const char* pFileName, GFxMovieInfo* pMovieInfo, bool getTagCount = 0, UInt32 loadConstants = LoadAll);
 	GFxMovieDef* CreateMovie(const char* pFileName, UInt32 loadConstants = LoadAll, std::size_t memoryArena = 0);
 
 	void UnpinAll();
 	void CancelLoading();
 
-	GFxLoaderImpl * GetLoaderImpl() const { return pImpl; }
+	GFxLoaderImpl* GetLoaderImpl() const
+	{
+		return pImpl;
+	}
 };
 STATIC_ASSERT(sizeof(GFxLoader) == 0x10);

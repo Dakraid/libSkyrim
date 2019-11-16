@@ -1,14 +1,13 @@
 #pragma once
 
+#include "../../BSCore/BSTArray.h"
+#include "../../FormComponents/BGSPerkRankArray.h"
+#include "../../FormComponents/Condition.h"
+#include "../../FormComponents/TESDescription.h"
 #include "../../FormComponents/TESForm.h"
 #include "../../FormComponents/TESFullName.h"
-#include "../../FormComponents/TESDescription.h"
 #include "../../FormComponents/TESIcon.h"
-#include "../../FormComponents/Condition.h"
-#include "../../FormComponents/BGSPerkRankArray.h"
-#include "../../BSCore/BSTArray.h"
 #include "BGSPerkEntry.h"
-
 
 /*==============================================================================
 class BGSPerk +0000 (_vtbl=010A37CC)
@@ -24,13 +23,13 @@ class BGSPerk +0000 (_vtbl=010A37CC)
 0028: |   |   |   class BaseFormComponent
 ==============================================================================*/
 // 4C
-class BGSPerk : public TESForm,
-	public TESFullName,
-	public TESDescription,
-	public TESIcon
+class BGSPerk : public TESForm, public TESFullName, public TESDescription, public TESIcon
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Perk };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Perk
+	};
 
 	/*==============================================================================
 	class BGSPerk::FindPerkInRanksVisitor +0000 (_vtbl=010D1288)
@@ -39,8 +38,8 @@ public:
 	==============================================================================*/
 	class FindPerkInRanksVisitor : public PerkRankVisitor
 	{
-	public:
-		virtual void Visit(void);	// 0054F460
+		public:
+		virtual void Visit(void); // 0054F460
 	};
 
 	/*==============================================================================
@@ -50,8 +49,8 @@ public:
 	==============================================================================*/
 	class ApplyPerksVisitor : public PerkRankVisitor
 	{
-	public:
-		virtual void Visit(void);	// 0054F480
+		public:
+		virtual void Visit(void); // 0054F480
 	};
 
 	/*==============================================================================
@@ -61,31 +60,29 @@ public:
 	==============================================================================*/
 	class AddPerkVisitor : public PerkRankVisitor
 	{
-	public:
-		virtual void Visit(void);	// 0054F640
+		public:
+		virtual void Visit(void); // 0054F640
 	};
 
-
 	// @members
-	//void						** _vtbl;		// 00 - 010A37CC
-	UInt8						unk30;			// 30
-	UInt8						unk31;			// 31
-	UInt8						unk32;			// 32
-	UInt8						unk33;			// 33
-	UInt8						unk34;			// 34
-	UInt8						pad35[3];		// 35
-	Condition					conditions;		// 38
-	BSTArray<BGSPerkEntry *>	perkEntries;	// 3C
-	BGSPerk						* nextPerk;		// 48
+	// void						** _vtbl;		// 00 - 010A37CC
+	UInt8					unk30;		 // 30
+	UInt8					unk31;		 // 31
+	UInt8					unk32;		 // 32
+	UInt8					unk33;		 // 33
+	UInt8					unk34;		 // 34
+	UInt8					pad35[3];	 // 35
+	Condition				conditions;	 // 38
+	BSTArray<BGSPerkEntry*> perkEntries; // 3C
+	BGSPerk*				nextPerk;	 // 48
 
-private:
-	DEFINE_MEMBER_FN(ctor, BGSPerk *, 0x005502B0);
+	private:
+	DEFINE_MEMBER_FN(ctor, BGSPerk*, 0x005502B0);
 };
 STATIC_ASSERT(sizeof(BGSPerk) == 0x4C);
 
-
 class PerkEntryVisitor
 {
-public:
-	virtual UInt32 Visit(BGSPerkEntry *perkEntry) = 0;
+	public:
+	virtual UInt32 Visit(BGSPerkEntry* perkEntry) = 0;
 };

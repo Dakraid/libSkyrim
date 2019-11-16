@@ -1,12 +1,12 @@
 #pragma once
 
 void* NiMalloc(std::size_t size);
-void NiFree(void* p);
+void  NiFree(void* p);
 
-template <class T>
+template<class T>
 class NiTMallocInterface
 {
-public:
+	public:
 	static T* Allocate(unsigned int uiNumElements)
 	{
 		return NiMalloc(sizeof(T) * uiNumElements);
@@ -17,10 +17,10 @@ public:
 	};
 };
 
-template <class T>
+template<class T>
 class NiTNewInterface
 {
-public:
+	public:
 	static T* Allocate(unsigned int uiNumElements)
 	{
 		return new T[uiNumElements];

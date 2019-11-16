@@ -1,26 +1,23 @@
 #pragma once
 
+#include "../BSCore/BSTArray.h"
 #include "../BSCore/BSTEvent.h"
 #include "../BSCore/BSTSingleton.h"
-#include "../BSCore/BSTArray.h"
-
 
 struct BGSFootstepEvent
 {
-	RefHandle	actorHandle;
+	RefHandle actorHandle;
 };
 
-
-class BGSFootstepManager :
-	public BSTEventSource<BGSFootstepEvent>,		// 00
-	public BSTSingletonSDM<BGSFootstepManager>		// 30
+class BGSFootstepManager : public BSTEventSource<BGSFootstepEvent>,	  // 00
+						   public BSTSingletonSDM<BGSFootstepManager> // 30
 {
-public:
+	public:
 	BGSFootstepManager() {}
 
-	BSTArray<UInt32>	unk34;
+	BSTArray<UInt32> unk34;
 
-private:
+	private:
 	friend struct BSTSingletonSDMBase<BSTSDMTraits<BGSFootstepManager>>;
-	BGSFootstepManager * ctor();
+	BGSFootstepManager* ctor();
 };

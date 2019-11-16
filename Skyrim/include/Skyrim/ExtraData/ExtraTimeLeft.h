@@ -9,8 +9,11 @@ class ExtraTimeLeft +0000 (_vtbl=01079218)
 ==============================================================================*/
 class ExtraTimeLeft : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::TimeLeft };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::TimeLeft
+	};
 
 	ExtraTimeLeft();
 	virtual ~ExtraTimeLeft();

@@ -34,13 +34,16 @@ class TESSoulGem +0000 (_vtbl=0108605C)
 // 90
 class TESSoulGem : public TESObjectMISC
 {
-public:
-	enum { kTypeID = (UInt32)FormType::SoulGem };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::SoulGem
+	};
 
 	// @members
-	UInt32	unk88;		// 88
-	UInt8	soulSize;	// 8C
-	UInt8	gemSize;	// 8D
-	UInt8	pad8E[2];	// 8E
+	UInt32 unk88;	 // 88
+	UInt8  soulSize; // 8C
+	UInt8  gemSize;	 // 8D
+	UInt8  pad8E[2]; // 8E
 };
 STATIC_ASSERT(sizeof(TESSoulGem) == 0x90);

@@ -1,13 +1,12 @@
 #pragma once
 
+#include "GFxLoader.h"
+#include "GFxPlayer.h"
 #include "GRefCount.h"
 #include "GString.h"
-#include "GFxPlayer.h"
-#include "GFxLoader.h"
 
 class FxDelegate;
 class FxDelegateArgs;
-
 
 /*==============================================================================
 class FxDelegateHandler +0000 (_vtbl=010E42F4)
@@ -20,7 +19,7 @@ class FxDelegateHandler +0000 (_vtbl=010E42F4)
 // 04
 class FxDelegateHandler : public GRefCountBase<FxDelegateHandler, GStat_Default_Mem>
 {
-public:
+	public:
 	/*==============================================================================
 	class FxDelegateHandler::CallbackProcessor +0000 (_vtbl=0110E7AC)
 	0000: class FxDelegateHandler::CallbackProcessor
@@ -28,18 +27,16 @@ public:
 	// 04
 	class CallbackProcessor
 	{
-	public:
-		typedef void(*Callback)(const FxDelegateArgs& params);
+		public:
+		typedef void (*Callback)(const FxDelegateArgs& params);
 
 		virtual ~CallbackProcessor() {}
 		virtual void Process(const GString& methodName, Callback method) = 0;
 	};
 
-
 	virtual ~FxDelegateHandler() {}
 	virtual void Accept(CallbackProcessor* cbreg) = 0;
 };
-
 
 /*==============================================================================
 class AddCallbackVisitor +0000 (_vtbl=0110E7C4)
@@ -49,29 +46,26 @@ class AddCallbackVisitor +0000 (_vtbl=0110E7C4)
 // ?
 class AddCallbackVisitor : public FxDelegateHandler::CallbackProcessor
 {
-public:
+	public:
 	AddCallbackVisitor();
 	virtual ~AddCallbackVisitor();
 
-	FxDelegateHandler	* parent;
-	void				* callbackHashTable;
+	FxDelegateHandler* parent;
+	void*			   callbackHashTable;
 };
-
 
 class FxDelegateArgs
 {
-public:
+	public:
 	FxDelegateArgs();
 	~FxDelegateArgs();
 
-	GFxValue			responseID;
-	FxDelegateHandler	* pThisMenu;
-	GFxMovieView		* movie;
-	GFxValue			* args;
-	UInt32				numArgs;
+	GFxValue		   responseID;
+	FxDelegateHandler* pThisMenu;
+	GFxMovieView*	   movie;
+	GFxValue*		   args;
+	UInt32			   numArgs;
 };
-
-
 
 /*==============================================================================
 class FxDelegate +0000 (_vtbl=0110E7DC)
@@ -86,10 +80,9 @@ class FxDelegate +0000 (_vtbl=0110E7DC)
 // 10
 class FxDelegate : public GFxExternalInterface
 {
-public:
-
+	public:
 	DEFINE_MEMBER_FN(RegisterHandler, void, 0x00A63C10, FxDelegateHandler* callback);
 
 	// @members
-	UInt32	unk0C;		// 0C - init'd 0 - hash map of callbacks?
+	UInt32 unk0C; // 0C - init'd 0 - hash map of callbacks?
 };

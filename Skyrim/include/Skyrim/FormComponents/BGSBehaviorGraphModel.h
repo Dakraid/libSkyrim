@@ -11,5 +11,5 @@ class BGSBehaviorGraphModel +0000 (_vtbl=010A6190)
 // 14
 class BGSBehaviorGraphModel : public TESModel
 {
-public:
+	public:
 };

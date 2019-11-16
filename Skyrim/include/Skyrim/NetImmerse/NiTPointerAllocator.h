@@ -1,21 +1,23 @@
 #pragma once
 
-template <class Ty>
+template<class Ty>
 class NiTPointerAllocator
 {
-public:
+	public:
 	class AllocNode
 	{
-	public:
-		AllocNode	* next;
-		void		* data;
-		Ty			m_element;
+		public:
+		AllocNode* next;
+		void*	   data;
+		Ty		   m_element;
 	};
 
-	void* Allocate() {
+	void* Allocate()
+	{
 		return NiMalloc(sizeof(AllocNode));
 	}
-	void Deallocate(void* p) {
+	void Deallocate(void* p)
+	{
 		return NiFree(p);
 	}
 };

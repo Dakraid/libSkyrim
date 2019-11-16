@@ -1,8 +1,6 @@
 #include "Skyrim/Events/ScriptEvent.h"
 
-
-
-#define DECLARE_EVENT_SOURCE(eventName, g_name) BSTEventSource<eventName>& g_name = *(static_cast<BSTEventSource<eventName> *>(ScriptEventSourceHolder::GetInstance()));
+#define DECLARE_EVENT_SOURCE(eventName, g_name) BSTEventSource<eventName>& g_name = *(static_cast<BSTEventSource<eventName>*>(ScriptEventSourceHolder::GetInstance()));
 
 DECLARE_EVENT_SOURCE(BGSEventProcessedEvent, g_eventProcessedEventSource);
 DECLARE_EVENT_SOURCE(TESActivateEvent, g_activateEventSource);

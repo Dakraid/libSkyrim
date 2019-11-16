@@ -14,11 +14,11 @@ class ContainerMenu +0000 (_vtbl=010E4098)
 ==============================================================================*/
 class ContainerMenu : public IMenu
 {
-public:
-	virtual ~ContainerMenu();										// 0084A6A0
+	public:
+	virtual ~ContainerMenu(); // 0084A6A0
 
 	// @override
-	virtual void	Accept(CallbackProcessor *processor) override;	// 0084C100
-	virtual UInt32	ProcessMessage(UIMessage *message) override;	// 0084B970
-	virtual void	Render(void) override;							// 00849200
+	virtual void   Accept(CallbackProcessor* processor) override; // 0084C100
+	virtual UInt32 ProcessMessage(UIMessage* message) override;	  // 0084B970
+	virtual void   Render(void) override;						  // 00849200
 };

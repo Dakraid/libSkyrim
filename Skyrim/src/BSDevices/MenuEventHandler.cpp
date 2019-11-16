@@ -1,29 +1,25 @@
 #include "Skyrim/BSDevices/MenuEventHandler.h"
 
-MenuEventHandler::MenuEventHandler() : unk08(0), unk09(0)
-{
-}
+MenuEventHandler::MenuEventHandler() : unk08(0), unk09(0) {}
 
-MenuEventHandler::~MenuEventHandler()
-{
-}
+MenuEventHandler::~MenuEventHandler() {}
 
-bool MenuEventHandler::ProcessKinect(KinectEvent *evn)
+bool MenuEventHandler::ProcessKinect(KinectEvent* evn)
 {
 	return false;
 }
 
-bool MenuEventHandler::ProcessThumbstick(ThumbstickEvent *evn)
+bool MenuEventHandler::ProcessThumbstick(ThumbstickEvent* evn)
 {
 	return false;
 }
 
-bool MenuEventHandler::ProcessMouseMove(MouseMoveEvent *evn)
+bool MenuEventHandler::ProcessMouseMove(MouseMoveEvent* evn)
 {
 	return false;
 }
 
-bool MenuEventHandler::ProcessButton(ButtonEvent *evn)
+bool MenuEventHandler::ProcessButton(ButtonEvent* evn)
 {
 	return false;
 }

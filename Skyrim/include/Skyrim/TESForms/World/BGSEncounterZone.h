@@ -11,11 +11,14 @@ class BGSEncounterZone +0000 (_vtbl=0108631C)
 // 30
 class BGSEncounterZone : public TESForm
 {
-public:
-	enum { kTypeID = (UInt32)FormType::EncounterZone };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::EncounterZone
+	};
 
-	UInt8	unk14[0x0C];	// 14
-	UInt8	unk20[0x10];	// 20
+	UInt8 unk14[0x0C]; // 14
+	UInt8 unk20[0x10]; // 20
 
 	// +14 - TESForm * owner?
 	// +18 - TESForm * location?

@@ -4,8 +4,11 @@
 
 class ExtraSoul : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Soul };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Soul
+	};
 
 	ExtraSoul();
 	virtual ~ExtraSoul();

@@ -8,8 +8,8 @@ class IngredientItem;
 // 10?
 class TESProduceForm : public BaseFormComponent
 {
-public:
-	BGSSoundDescriptorForm	* harvestSound;	// 04
-	IngredientItem			* produce;		// 08
-	UInt8					unk0C[4];		// 0C
+	public:
+	BGSSoundDescriptorForm* harvestSound; // 04
+	IngredientItem*			produce;	  // 08
+	UInt8					unk0C[4];	  // 0C
 };

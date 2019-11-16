@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../FormComponents/BGSPreloadable.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class BGSDebris +0000 (_vtbl=01081294)
@@ -12,19 +12,21 @@ class BGSDebris +0000 (_vtbl=01081294)
 0014: |   |   class BaseFormComponent
 ==============================================================================*/
 // 20
-class BGSDebris : public TESForm,
-	public BGSPreloadable
+class BGSDebris : public TESForm, public BGSPreloadable
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Debris };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Debris
+	};
 
 	struct Data
 	{
-		UInt32	unk0;
-		UInt32	unk4;
+		UInt32 unk0;
+		UInt32 unk4;
 	};
 
 	// @members
-	Data	unk18;	// 18 - linked list
+	Data unk18; // 18 - linked list
 };
 STATIC_ASSERT(sizeof(BGSDebris) == 0x20);

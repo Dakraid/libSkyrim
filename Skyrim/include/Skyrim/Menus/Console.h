@@ -18,7 +18,7 @@ class Console +0000 (_vtbl=010E3CB4)
 // 34
 class Console : public IMenu
 {
-public:
+	public:
 	// unk0C - 0x0C
 	// Flags - 0x807
 	// unk14 - 2
@@ -28,54 +28,53 @@ public:
 	{
 		struct Unk0
 		{
-			UInt32	unk0;
-			UInt32	unk4;
+			UInt32 unk0;
+			UInt32 unk4;
 		};
 
 		struct Unk8
 		{
-			UInt32	unk0;
+			UInt32 unk0;
 		};
 
-		Unk0	unk0;	// 0
-		Unk8	unk8;	// 8
+		Unk0 unk0; // 0
+		Unk8 unk8; // 8
 	};
 
-	virtual ~Console();		// 008472E0
+	virtual ~Console(); // 008472E0
 
 	// @override
-	virtual void	Accept(CallbackProcessor * processor) override;
+	virtual void Accept(CallbackProcessor* processor) override;
 
 	static RefHandle GetPickedRefHandle();
 
-	static TESObjectREFR * GetPickedReference();
+	static TESObjectREFR* GetPickedReference();
 
 	// @members
-	//void	** _vtbl;		// 00 - 010E3CB4
-	void	* opcodeInfo;	// 1C - constructor checks that opcodes match
-	Unk20	unk20;			// 20 - init'd to 0, probably history linked list?
-	UInt32	unk2C;			// 2C - init'd to 0
-	UInt8	unk30;			// 30 - init'd to 0
+	// void	** _vtbl;		// 00 - 010E3CB4
+	void*  opcodeInfo; // 1C - constructor checks that opcodes match
+	Unk20  unk20;	   // 20 - init'd to 0, probably history linked list?
+	UInt32 unk2C;	   // 2C - init'd to 0
+	UInt8  unk30;	   // 30 - init'd to 0
 
-protected:
-	static RefHandle & pickedRefHandle;
+	protected:
+	static RefHandle& pickedRefHandle;
 };
-
 
 class ConsoleManager
 {
-public:
+	public:
 	ConsoleManager();
 	~ConsoleManager();
 
-	static ConsoleManager * GetSingleton()
+	static ConsoleManager* GetSingleton()
 	{
-		return *((ConsoleManager **)0x01B10B58);
+		return *((ConsoleManager**)0x01B10B58);
 	}
 
-	void Print(const char * fmt, ...)
+	void Print(const char* fmt, ...)
 	{
-		va_list	args;
+		va_list args;
 		va_start(args, fmt);
 		VPrint(fmt, args);
 		va_end(args);
@@ -83,7 +82,7 @@ public:
 
 	static bool IsConsoleMode();
 
-	DEFINE_MEMBER_FN(VPrint, void, 0x008486F0, const char *fmt, va_list args);
+	DEFINE_MEMBER_FN(VPrint, void, 0x008486F0, const char* fmt, va_list args);
 
-	void	* scriptContext;	// 00
+	void* scriptContext; // 00
 };

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "TESObjectACTI.h"
 #include "../../FormComponents/TESProduceForm.h"
+#include "TESObjectACTI.h"
 
 /*==============================================================================
 class TESFlora +0000 (_vtbl=01082A34)
@@ -28,9 +28,12 @@ class TESFlora +0000 (_vtbl=01082A34)
 ==============================================================================*/
 // 7C
 class TESFlora : public TESObjectACTI,
-	public TESProduceForm		// 6C
+				 public TESProduceForm // 6C
 {
-public:
-	enum { kTypeID = (UInt32)FormType:: Flora };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Flora
+	};
 };
 STATIC_ASSERT(sizeof(TESFlora) == 0x7C);

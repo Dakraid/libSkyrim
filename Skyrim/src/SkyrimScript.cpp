@@ -1,2 +1,2 @@
-#include "Skyrim.h"
 #include "Skyrim/SkyrimScript.h"
+#include "Skyrim.h"

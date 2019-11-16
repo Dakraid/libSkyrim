@@ -1,15 +1,15 @@
 #pragma once
 
-#include "TESBoundObject.h"
-#include "../../FormComponents/TESFullName.h"
-#include "../../FormComponents/TESModelTextureSwap.h"
-#include "../../FormComponents/TESIcon.h"
-#include "../../FormComponents/TESValueForm.h"
-#include "../../FormComponents/TESWeightForm.h"
 #include "../../FormComponents/BGSDestructibleObjectForm.h"
+#include "../../FormComponents/BGSKeywordForm.h"
 #include "../../FormComponents/BGSMessageIcon.h"
 #include "../../FormComponents/BGSPickupPutdownSounds.h"
-#include "../../FormComponents/BGSKeywordForm.h"
+#include "../../FormComponents/TESFullName.h"
+#include "../../FormComponents/TESIcon.h"
+#include "../../FormComponents/TESModelTextureSwap.h"
+#include "../../FormComponents/TESValueForm.h"
+#include "../../FormComponents/TESWeightForm.h"
+#include "TESBoundObject.h"
 
 /*==============================================================================
 class TESObjectMISC +0000 (_vtbl=010853EC)
@@ -41,21 +41,24 @@ class TESObjectMISC +0000 (_vtbl=010853EC)
 ==============================================================================*/
 // 88
 class TESObjectMISC : public TESBoundObject,
-	public TESFullName,						// 20
-	public TESModelTextureSwap,				// 28
-	public TESIcon,							// 44
-	public TESValueForm,					// 4C
-	public TESWeightForm,					// 54
-	public BGSDestructibleObjectForm,		// 5C
-	public BGSMessageIcon,					// 64
-	public BGSPickupPutdownSounds,			// 70
-	public BGSKeywordForm					// 7C
+					  public TESFullName,				// 20
+					  public TESModelTextureSwap,		// 28
+					  public TESIcon,					// 44
+					  public TESValueForm,				// 4C
+					  public TESWeightForm,				// 54
+					  public BGSDestructibleObjectForm, // 5C
+					  public BGSMessageIcon,			// 64
+					  public BGSPickupPutdownSounds,	// 70
+					  public BGSKeywordForm				// 7C
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Misc };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Misc
+	};
 
-	virtual void	Unk_54(void);
-	virtual void	Unk_55(UInt32 arg0, UInt32 arg1);
-	virtual void	Unk_56(void);
+	virtual void Unk_54(void);
+	virtual void Unk_55(UInt32 arg0, UInt32 arg1);
+	virtual void Unk_56(void);
 };
 STATIC_ASSERT(sizeof(TESObjectMISC) == 0x88);

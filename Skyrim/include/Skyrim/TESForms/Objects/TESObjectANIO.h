@@ -1,8 +1,8 @@
 #pragma once
 
+#include "../../BSCore/BSFixedString.h"
 #include "../../FormComponents/TESForm.h"
 #include "../../FormComponents/TESModelTextureSwap.h"
-#include "../../BSCore/BSFixedString.h"
 
 /*==============================================================================
 class TESObjectANIO +0000 (_vtbl=01084384)
@@ -15,13 +15,16 @@ class TESObjectANIO +0000 (_vtbl=01084384)
 ==============================================================================*/
 // 38
 class TESObjectANIO : public TESForm,
-	public TESModelTextureSwap			// 14
+					  public TESModelTextureSwap // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::ANIO };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::ANIO
+	};
 
 	// @members
-	BSFixedString	unk30;				// 30
-	BSFixedString	unk34;				// 34
+	BSFixedString unk30; // 30
+	BSFixedString unk34; // 34
 };
 STATIC_ASSERT(sizeof(TESObjectANIO) == 0x38);

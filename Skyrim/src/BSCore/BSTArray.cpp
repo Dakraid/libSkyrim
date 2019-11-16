@@ -1,7 +1,7 @@
 #include "Skyrim.h"
 
-#include "Skyrim/Memory.h"
 #include "Skyrim/BSCore/BSTArray.h"
+#include "Skyrim/Memory.h"
 
 /*
 

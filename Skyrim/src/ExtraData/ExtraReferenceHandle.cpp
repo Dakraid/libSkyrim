@@ -1,5 +1,5 @@
-#include "Skyrim.h"
 #include "Skyrim/ExtraData/ExtraReferenceHandle.h"
+#include "Skyrim.h"
 #include "Skyrim/TESForms/World/TESObjectREFR.h"
 
 static const UInt32 s_ExtraReferenceHandleVtbl = 0x01079740;
@@ -10,12 +10,10 @@ ExtraReferenceHandle* ExtraReferenceHandle::Create()
 	return xReference;
 }
 
-
-TESObjectREFR * ExtraReferenceHandle::GetReference()
+TESObjectREFR* ExtraReferenceHandle::GetReference()
 {
-	TESObjectREFR * reference = nullptr;
-	if (handle == g_invalidRefHandle || handle == 0)
-		return nullptr;
+	TESObjectREFR* reference = nullptr;
+	if(handle == g_invalidRefHandle || handle == 0) return nullptr;
 
 	LookupREFRByHandle(handle, reference);
 	return reference;

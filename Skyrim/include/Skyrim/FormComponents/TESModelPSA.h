@@ -12,5 +12,5 @@ class TESModelPSA +0000 (_vtbl=010A1DEC)
 // 14
 class TESModelPSA : public TESModel
 {
-public:
+	public:
 };

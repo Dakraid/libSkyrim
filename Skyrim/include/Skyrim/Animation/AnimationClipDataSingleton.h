@@ -1,11 +1,10 @@
 #pragma once
 
-#include "../BSCore/BSTSingleton.h"
 #include "../BSCore/BSFixedString.h"
-#include "../BSCore/BSTHashMap.h"
 #include "../BSCore/BSTArray.h"
+#include "../BSCore/BSTHashMap.h"
+#include "../BSCore/BSTSingleton.h"
 #include "../BSSystem/BSTSmartPointer.h"
-
 
 /*==============================================================================
 class AnimationClipDataSingleton +0000 (_vtbl=010C8240)
@@ -17,26 +16,26 @@ class AnimationClipDataSingleton +0000 (_vtbl=010C8240)
 ==============================================================================*/
 class AnimationClipDataSingleton : public BSTSingletonSDM<AnimationClipDataSingleton>
 {
-public:
+	public:
 	virtual ~AnimationClipDataSingleton();
 
 	// 8
 	struct ClipTriggerData
 	{
-		BSFixedString	name;		// 00
-		float			time;		// 04
+		BSFixedString name; // 00
+		float		  time; // 04
 	};
 
 	// 8 + (numTriggers * 8)
 	struct EventData
 	{
-		float		motionSpeed;	// 00
-		UInt16		elementID;		// 04
-		UInt16		numTriggers;	// 06
+		float  motionSpeed; // 00
+		UInt16 elementID;	// 04
+		UInt16 numTriggers; // 06
 
-		ClipTriggerData * GetAt(std::size_t idx) const
+		ClipTriggerData* GetAt(std::size_t idx) const
 		{
-			ClipTriggerData *triggers = (ClipTriggerData *)(this + 1);
+			ClipTriggerData* triggers = (ClipTriggerData*)(this + 1);
 			return &triggers[idx];
 		}
 	};
@@ -44,31 +43,30 @@ public:
 	// 14
 	struct MovementData
 	{
-		UInt32		unk00;				// 00 -float ?
-		UInt32		numFlames;			// 04
-		float		unk08;				// 08
-		UInt32		numQuaternions;		// 0C
-		float		motionDuration;		// 10
+		UInt32 unk00;		   // 00 -float ?
+		UInt32 numFlames;	   // 04
+		float  unk08;		   // 08
+		UInt32 numQuaternions; // 0C
+		float  motionDuration; // 10
 	};
 
 	// 3C
 	struct AnimationData : public BSIntrusiveRefCounted
 	{
-		BSTHashMap<BSFixedString, EventData*>	events;			// 04 - event data
-		BSTArray<MovementData>					movements;		// 24 - movement data
-		BSTArray<BSFixedString>					hkxFiles;		// 30 - hkx files
+		BSTHashMap<BSFixedString, EventData*> events;	 // 04 - event data
+		BSTArray<MovementData>				  movements; // 24 - movement data
+		BSTArray<BSFixedString>				  hkxFiles;	 // 30 - hkx files
 	};
 
-	typedef BSTHashMap<BSFixedString, AnimationData*>	AnimationDataMap;
-
+	typedef BSTHashMap<BSFixedString, AnimationData*> AnimationDataMap;
 
 	// @members
-	//void						** _vtbl;		// 00 - 010C8240
-	//BSTSingletonSDM							// 04
-	AnimationDataMap			animMap;		// 08
-	BSTArray<UInt32>			unk28;			// 28
+	// void						** _vtbl;		// 00 - 010C8240
+	// BSTSingletonSDM							// 04
+	AnimationDataMap animMap; // 08
+	BSTArray<UInt32> unk28;	  // 28
 
-private:
+	private:
 	friend struct BSTSingletonSDMBase<BSTSDMTraits<AnimationClipDataSingleton>>;
 	DEFINE_MEMBER_FN(ctor, AnimationClipDataSingleton*, 0x00644E50);
 };

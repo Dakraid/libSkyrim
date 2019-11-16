@@ -10,18 +10,21 @@ class ExtraHavok +0000 (_vtbl=01078FC4)
 // 10
 class ExtraHavok : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Havok };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Havok
+	};
 
-	virtual ~ExtraHavok();							// 0040A3A0
+	virtual ~ExtraHavok(); // 0040A3A0
 
 	// @override
-	virtual UInt32	GetType(void) const override;	// 00CAC8A0 { return 0x00000001; }
+	virtual UInt32 GetType(void) const override; // 00CAC8A0 { return 0x00000001; }
 
-private:
+	private:
 	// @members
-	void	* unk08;	// init'd arg1
-	UInt32	unk0C;		// init'd 0
+	void*  unk08; // init'd arg1
+	UInt32 unk0C; // init'd 0
 
 	DEFINE_MEMBER_FN(ctor, ExtraHavok*, 0x0040A360, void* arg1);
 };

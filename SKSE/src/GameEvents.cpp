@@ -1,33 +1,29 @@
 #include "SKSE/GameEvents.h"
 #include <Skyrim/BSDevices/InputManager.h>
-#include <Skyrim/Menus/MenuManager.h>
 #include <Skyrim/Events/DefaultObjectsReadyEvent.h>
+#include <Skyrim/Menus/MenuManager.h>
 
-
-template <>
-BSTEventSource<InputEvent *>* SKSEEvent2<InputEvent *>::GetEventSource()
+template<>
+BSTEventSource<InputEvent*>* SKSEEvent2<InputEvent*>::GetEventSource()
 {
 	return InputManager::GetSingleton();
 }
 
-
-template <>
+template<>
 BSTEventSource<MenuOpenCloseEvent>* SKSEEvent2<MenuOpenCloseEvent>::GetEventSource()
 {
-	MenuManager *mm = MenuManager::GetSingleton();
+	MenuManager* mm = MenuManager::GetSingleton();
 	return (mm) ? mm->GetMenuOpenCloseEventSource() : nullptr;
 }
 
-
-template <>
+template<>
 BSTEventSource<MenuModeChangeEvent>* SKSEEvent2<MenuModeChangeEvent>::GetEventSource()
 {
-	MenuManager *mm = MenuManager::GetSingleton();
+	MenuManager* mm = MenuManager::GetSingleton();
 	return (mm) ? mm->GetMenuModeChangeEventSource() : nullptr;
 }
 
-
-template <>
+template<>
 BSTEventSource<DefaultObjectsReadyEvent::Event>* SKSEEvent2<DefaultObjectsReadyEvent::Event>::GetEventSource()
 {
 	return DefaultObjectsReadyEvent::GetEventSource();

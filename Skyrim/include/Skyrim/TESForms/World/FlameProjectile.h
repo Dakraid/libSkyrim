@@ -17,11 +17,14 @@ class FlameProjectile +0000 (_vtbl=010D82CC)
 // 148
 class FlameProjectile : public Projectile
 {
-public:
-	enum { kTypeID = (UInt32)FormType::FlameProj };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::FlameProj
+	};
 
 	// @members
-	UInt32	unk140;
-	UInt32	unk144;
+	UInt32 unk140;
+	UInt32 unk144;
 };
 STATIC_ASSERT(sizeof(FlameProjectile) == 0x148);

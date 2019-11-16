@@ -5,10 +5,7 @@ using std::endl;
 
 DebugLog gLog;
 
-DebugLog::DebugLog() : std::ofstream()
-{
-}
-
+DebugLog::DebugLog() : std::ofstream() {}
 
 void DebugLog::operator()(const char* message)
 {

@@ -7,9 +7,9 @@ class TESRegionGrassObject;
 // 14
 class TESRegionGrassObjectList : public BSSimpleList<TESRegionGrassObject*>
 {
-public:
+	public:
 	virtual ~TESRegionGrassObjectList();
 
-	UInt32	unk0C;	// 0C
-	UInt32	unk10;	// 10
+	UInt32 unk0C; // 0C
+	UInt32 unk10; // 10
 };

@@ -1,10 +1,10 @@
-#include "Skyrim.h"
 #include "Skyrim/BSScript/BSScriptIFunctionArguments.h"
+#include "Skyrim.h"
 
 namespace BSScript
 {
-	//BSScriptVariable* IFunctionArguments::Output::Get(UInt32 idx)
-	//{
-	//	return (idx < m_size) ? &m_data[idx] : nullptr;
-	//}
+// BSScriptVariable* IFunctionArguments::Output::Get(UInt32 idx)
+//{
+//	return (idx < m_size) ? &m_data[idx] : nullptr;
+//}
 }

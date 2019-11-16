@@ -13,12 +13,15 @@ class BGSAcousticSpace +0000 (_vtbl=0108A08C)
 // 2C
 class BGSAcousticSpace : public TESBoundObject
 {
-public:
-	enum { kTypeID = (UInt32)FormType::AcousticSpace };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::AcousticSpace
+	};
 
 	// @members
-	TESForm	* loopingSound;	// 20
-	TESForm	* soundRegion;	// 24
-	TESForm	* reverbType;	// 28
+	TESForm* loopingSound; // 20
+	TESForm* soundRegion;  // 24
+	TESForm* reverbType;   // 28
 };
 STATIC_ASSERT(sizeof(BGSAcousticSpace) == 0x2C);

@@ -159,7 +159,6 @@ struct ChestsLooted
 	static BSTEventSource<Event>* GetEventSource();
 };
 
-
 struct LevelIncrease
 {
 	struct Event

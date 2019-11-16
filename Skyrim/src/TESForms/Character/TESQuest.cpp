@@ -1,17 +1,17 @@
-#include "Skyrim.h"
 #include "Skyrim/TESForms/Character/TESQuest.h"
+#include "Skyrim.h"
 #include "Skyrim/TESForms/Character/BGSBaseAlias.h"
 
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
-BSSpinLock & TESQuest::ms_lock = *(BSSpinLock*)0x012E5BE8;
+BSSpinLock& TESQuest::ms_lock = *(BSSpinLock*)0x012E5BE8;
 
-bool TESQuest::IsActive(void) const {
-	//return ((data.flags & Data07C::kQuestFlag_Active) != 0);
+bool TESQuest::IsActive(void) const
+{
+	// return ((data.flags & Data07C::kQuestFlag_Active) != 0);
 	return data.flags.active;
 }
-
 
 /*
 009152F0  /.  8B4424 0C         MOV EAX,DWORD PTR SS:[ARG.3]
@@ -22,7 +22,7 @@ bool TESQuest::IsActive(void) const {
 */
 bool TESQuest::IsCompleted() const
 {
-	//return (data.flags & Data07C::kQuestFlag_Completed) != 0;
+	// return (data.flags & Data07C::kQuestFlag_Completed) != 0;
 	return data.flags.completed;
 }
 
@@ -43,10 +43,9 @@ bool TESQuest::IsCompleted() const
 */
 bool TESQuest::IsRunning() const
 {
-	//return ((data.flags & Data07C::kQuestFlag_Running) != 0 && (data.flags & Data07C::kQuestFlag_Stopping) == 0 && unk148 == 0);
+	// return ((data.flags & Data07C::kQuestFlag_Running) != 0 && (data.flags & Data07C::kQuestFlag_Stopping) == 0 && unk148 == 0);
 	return data.flags.running && !data.flags.stopping && unk148 == 0;
 }
-
 
 /*
 00915960  /.  8B4424 0C         MOV EAX,DWORD PTR SS:[ARG.3]
@@ -65,10 +64,9 @@ bool TESQuest::IsRunning() const
 */
 bool TESQuest::IsStarting() const
 {
-	//return ((data.flags & Data07C::kQuestFlag_Running) != 0 && (data.flags & Data07C::kQuestFlag_Stopping) == 0 && unk148 != 0);
+	// return ((data.flags & Data07C::kQuestFlag_Running) != 0 && (data.flags & Data07C::kQuestFlag_Stopping) == 0 && unk148 != 0);
 	return data.flags.running && !data.flags.stopping && unk148 != 0;
 }
-
 
 /*
 00915990  /.  8B4424 0C         MOV EAX,DWORD PTR SS:[ARG.3]
@@ -85,7 +83,7 @@ bool TESQuest::IsStarting() const
 */
 bool TESQuest::IsStopping() const
 {
-	//return ((data.flags & Data07C::kQuestFlag_Running) == 0 && (data.flags & Data07C::kQuestFlag_Stopping) != 0);
+	// return ((data.flags & Data07C::kQuestFlag_Running) == 0 && (data.flags & Data07C::kQuestFlag_Stopping) != 0);
 	return !data.flags.running && data.flags.stopping;
 }
 
@@ -106,19 +104,16 @@ Address   Hex dump              Command                                  Comment
 */
 bool TESQuest::IsStopped() const
 {
-	//return ((data.flags & Data07C::kQuestFlag_Running) == 0 && (data.flags & Data07C::kQuestFlag_Stopping) == 0);
+	// return ((data.flags & Data07C::kQuestFlag_Running) == 0 && (data.flags & Data07C::kQuestFlag_Stopping) == 0);
 	return !data.flags.running && !data.flags.stopping;
 }
 
-
-BGSBaseAlias* TESQuest::GetAlias(UInt32 aliasID) const	// 0056B6F0
+BGSBaseAlias* TESQuest::GetAlias(UInt32 aliasID) const // 0056B6F0
 {
-	BGSBaseAlias *alias = nullptr;
+	BGSBaseAlias* alias = nullptr;
 
-	for (BGSBaseAlias *p : aliases)
-	{
-		if (p && p->aliasId == aliasID)
-		{
+	for(BGSBaseAlias* p : aliases) {
+		if(p && p->aliasId == aliasID) {
 			alias = p;
 			break;
 		}

@@ -2,7 +2,6 @@
 
 #include "BGSKeyword.h"
 
-
 /*==============================================================================
 class BGSAction +0000 (_vtbl=010A1B24)
 0000: class BGSAction
@@ -13,10 +12,13 @@ class BGSAction +0000 (_vtbl=010A1B24)
 // 20
 class BGSAction : public BGSKeyword
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Action };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Action
+	};
 
 	// @members
-	UInt32	idx;	// 1C - ctor sets to a unique value
+	UInt32 idx; // 1C - ctor sets to a unique value
 };
 STATIC_ASSERT(sizeof(BGSAction) == 0x20);

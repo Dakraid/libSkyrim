@@ -28,11 +28,14 @@ class BGSTalkingActivator +0000 (_vtbl=01082024)
 // 74
 class BGSTalkingActivator : public TESObjectACTI
 {
-public:
-	enum { kTypeID = (UInt32)FormType::TalkingActivator };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::TalkingActivator
+	};
 
 	// @members
-	void			* unk6C;	// 6C
-	BGSVoiceType	* unk70;	// 70
+	void*		  unk6C; // 6C
+	BGSVoiceType* unk70; // 70
 };
 STATIC_ASSERT(sizeof(BGSTalkingActivator) == 0x74);

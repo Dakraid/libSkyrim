@@ -14,13 +14,12 @@ struct BSAttachTechniques
 	// ?
 	class BSAttachTechnique
 	{
-	public:
-	    virtual ~BSAttachTechnique();			// 00458F00
+		public:
+		virtual ~BSAttachTechnique(); // 00458F00
 
-	    virtual void	Unk_001(void) = 0;		// 00F51EE8 (pure)
-	    virtual bool	Unk_002(UInt32 arg);	// 00B06950 { return true; }
-	    virtual void	Unk_003(void);			// 00B06960 { return; }
-
+		virtual void Unk_001(void) = 0;	  // 00F51EE8 (pure)
+		virtual bool Unk_002(UInt32 arg); // 00B06950 { return true; }
+		virtual void Unk_003(void);		  // 00B06960 { return; }
 	};
 
 	/*==============================================================================
@@ -30,19 +29,18 @@ struct BSAttachTechniques
 	// 10
 	class AttachTechniqueInput
 	{
-	public:
-		virtual ~AttachTechniqueInput();	// 006573C0
+		public:
+		virtual ~AttachTechniqueInput(); // 006573C0
 
-		virtual void Release(void);			// 00B069C0
+		virtual void Release(void); // 00B069C0
 
 		// @members
 		// void		** _vtbl;	// 00 - 010C8C34
-		NiNode	* unk04;		// 04
-		void	* unk08;		// 08
-		UInt32	unk0C;			// 0C - 0 or 1
+		NiNode* unk04; // 04
+		void*	unk08; // 08
+		UInt32	unk0C; // 0C - 0 or 1
 	};
 };
-
 
 /*==============================================================================
 class BGSParticleArrayAttach +0000 (_vtbl=0107D174)
@@ -65,8 +63,6 @@ class BGSMultiTechniqueAttach +0000 (_vtbl=0107D278)
 0000: |   class BSAttachTechniques::BSAttachTechnique
 ==============================================================================*/
 
-
-
 /*==============================================================================
 struct RefAttachTechniqueInput +0000 (_vtbl=010C8C40)
 0000: struct RefAttachTechniqueInput
@@ -75,17 +71,17 @@ struct RefAttachTechniqueInput +0000 (_vtbl=010C8C40)
 // 24
 class RefAttachTechniqueInput : public BSAttachTechniques::AttachTechniqueInput
 {
-public:
-	virtual ~RefAttachTechniqueInput();		// 006573F0
+	public:
+	virtual ~RefAttachTechniqueInput(); // 006573F0
 
 	// @override
-	virtual void Release(void) override;	// 00657C20
+	virtual void Release(void) override; // 00657C20
 
 	// @members
 	// void		** _vtbl;		// 00 - 010C8C40
-	UInt32			unk10;
-	TESRace			* race;
-	UInt32			unk18;
-	UInt32			unk1C;
-	BSFixedString	unk20;
+	UInt32		  unk10;
+	TESRace*	  race;
+	UInt32		  unk18;
+	UInt32		  unk1C;
+	BSFixedString unk20;
 };

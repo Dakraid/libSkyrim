@@ -34,7 +34,9 @@ class TESKey +0000 (_vtbl=01083134)
 // 88
 class TESKey : public TESObjectMISC
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Key };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Key
+	};
 };
-

@@ -5,5 +5,4 @@
 // 08
 class TESTexture1024 : public TESTexture
 {
-
 };

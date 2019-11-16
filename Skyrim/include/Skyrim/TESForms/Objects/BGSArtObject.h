@@ -1,7 +1,7 @@
 #pragma once
 
-#include "TESBoundObject.h"
 #include "../../FormComponents/TESModelTextureSwap.h"
+#include "TESBoundObject.h"
 
 /*==============================================================================
 class BGSArtObject +0000 (_vtbl=01080E7C)
@@ -16,12 +16,15 @@ class BGSArtObject +0000 (_vtbl=01080E7C)
 ==============================================================================*/
 // 40
 class BGSArtObject : public TESBoundObject,
-	public TESModelTextureSwap		// 20
+					 public TESModelTextureSwap // 20
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Art };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Art
+	};
 
 	// @members
-	UInt32	unk3C;	// 3C
+	UInt32 unk3C; // 3C
 };
 STATIC_ASSERT(sizeof(BGSArtObject) == 0x40);

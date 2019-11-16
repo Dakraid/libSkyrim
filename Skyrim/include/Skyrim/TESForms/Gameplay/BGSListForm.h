@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSCore/BSTArray.h"
+#include "../../FormComponents/TESForm.h"
 
 #include <functional>
 
@@ -14,20 +14,23 @@ class BGSListForm +0000 (_vtbl=0108D12C)
 // 28
 class BGSListForm : public TESForm
 {
-public:
-	enum { kTypeID = (UInt32)FormType::List };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::List
+	};
 
 	UInt32 GetSize() const;
-	
-	TESForm * Find(std::function<bool(TESForm *)> fn) const;
 
-	DEFINE_MEMBER_FN(AddForm, void, 0x004FB380, TESForm * form);
+	TESForm* Find(std::function<bool(TESForm*)> fn) const;
 
-public:
+	DEFINE_MEMBER_FN(AddForm, void, 0x004FB380, TESForm* form);
+
+	public:
 	// @members
-	//void **			_vtbl;		// 00 - 0108D12C
-	BSTArray<TESForm*>	forms;		// 14
-	BSTArray<UInt32> *	addedForms;	// 20
-	UInt32				unk24;		// 24
+	// void **			_vtbl;		// 00 - 0108D12C
+	BSTArray<TESForm*> forms;	   // 14
+	BSTArray<UInt32>*  addedForms; // 20
+	UInt32			   unk24;	   // 24
 };
 STATIC_ASSERT(sizeof(BGSListForm) == 0x28);

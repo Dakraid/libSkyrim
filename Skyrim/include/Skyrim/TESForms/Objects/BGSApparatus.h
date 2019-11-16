@@ -1,8 +1,8 @@
 #pragma once
 
-#include "TESObjectMISC.h"
-#include "../../FormComponents/TESQualityForm.h"
 #include "../../FormComponents/TESDescription.h"
+#include "../../FormComponents/TESQualityForm.h"
+#include "TESObjectMISC.h"
 
 /*==============================================================================
 class BGSApparatus +0000 (_vtbl=01080CAC)
@@ -39,11 +39,14 @@ class BGSApparatus +0000 (_vtbl=01080CAC)
 ==============================================================================*/
 // 9C
 class BGSApparatus : public TESObjectMISC,
-	public TESQualityForm,			// 88
-	public TESDescription			// 90
+					 public TESQualityForm, // 88
+					 public TESDescription	// 90
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Apparatus };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Apparatus
+	};
 
 	// parents
 };

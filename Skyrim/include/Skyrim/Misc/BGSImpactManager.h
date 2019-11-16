@@ -2,9 +2,9 @@
 
 #include "../BSCore/BSTEvent.h"
 #include "../BSCore/BSTSingleton.h"
-#include "BGSFootstepManager.h"
-#include "BGSCombatImpactManager.h"
 #include "BGSCollisionSoundManager.h"
+#include "BGSCombatImpactManager.h"
+#include "BGSFootstepManager.h"
 
 /*==============================================================================
 class BGSImpactManager +0000 (_vtbl=010CE110)
@@ -17,12 +17,11 @@ class BGSImpactManager +0000 (_vtbl=010CE110)
 000C: |   |   |   struct BSTSDMTraits<class BGSImpactManager,struct BSTSingletonSDMOpStaticBuffer<class BGSImpactManager> >
 000D: |   |   |   struct BSTSingletonSDMOpStaticBuffer<class BGSImpactManager>
 ==============================================================================*/
-class BGSImpactManager :
-	public BSTEventSink<BGSFootstepEvent>,			// 00
-	public BSTEventSink<BGSCombatImpactEvent>,		// 04
-	public BSTEventSink<BGSCollisionSoundEvent>,	// 08
-	public BSTSingletonSDM<BGSImpactManager>		// 0C
+class BGSImpactManager : public BSTEventSink<BGSFootstepEvent>,		  // 00
+						 public BSTEventSink<BGSCombatImpactEvent>,	  // 04
+						 public BSTEventSink<BGSCollisionSoundEvent>, // 08
+						 public BSTSingletonSDM<BGSImpactManager>	  // 0C
 {
-private:
+	private:
 	DEFINE_MEMBER_FN(ctor, BGSImpactManager*, 0x00698560);
 };

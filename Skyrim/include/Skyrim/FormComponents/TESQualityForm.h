@@ -5,6 +5,6 @@
 // 08
 class TESQualityForm : public BaseFormComponent
 {
-public:
-	UInt32	unk04;		// 04
+	public:
+	UInt32 unk04; // 04
 };

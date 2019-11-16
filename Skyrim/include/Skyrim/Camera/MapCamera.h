@@ -10,10 +10,10 @@ class MapCamera +0000 (_vtbl=010E92F4)
 // 60
 class MapCamera : public TESCamera
 {
-public:
+	public:
 	MapCamera();
 	virtual ~MapCamera();
 
-private:
-	DEFINE_MEMBER_FN(ctor, MapCamera *, 0x0089CA50);
+	private:
+	DEFINE_MEMBER_FN(ctor, MapCamera*, 0x0089CA50);
 };

@@ -1,6 +1,5 @@
-#include "Skyrim.h"
 #include "Skyrim/ExtraData/ExtraCannotWear.h"
-
+#include "Skyrim.h"
 
 ExtraCannotWear* ExtraCannotWear::Create()
 {

@@ -4,7 +4,6 @@
 
 class TESObjectARMO;
 
-
 /*==============================================================================
 class BGSSkinForm +0000 (_vtbl=0107C48C)
 0000: class BGSSkinForm
@@ -13,7 +12,7 @@ class BGSSkinForm +0000 (_vtbl=0107C48C)
 // 08
 class BGSSkinForm : public BaseFormComponent
 {
-public:
+	public:
 	// @members
-	TESObjectARMO	* skin;	// 04
+	TESObjectARMO* skin; // 04
 };

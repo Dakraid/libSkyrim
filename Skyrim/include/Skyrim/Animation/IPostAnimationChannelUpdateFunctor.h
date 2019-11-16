@@ -7,8 +7,8 @@ class IPostAnimationChannelUpdateFunctor +0000 (_vtbl=010CF780)
 // 128
 class IPostAnimationChannelUpdateFunctor
 {
-public:
-	virtual ~IPostAnimationChannelUpdateFunctor();	// 006A6A10
+	public:
+	virtual ~IPostAnimationChannelUpdateFunctor(); // 006A6A10
 
 	virtual void IPostAnimationChannelUpdateFunctor_Unk_01(void) = 0;
 

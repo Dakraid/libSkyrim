@@ -1,16 +1,15 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSCore/BSString.h"
+#include "../../BSCore/BSTArray.h"
+#include "../../BSCore/BSTHashMap.h"
+#include "../../FormComponents/TESForm.h"
 #include "../../FormComponents/TESFullName.h"
 #include "../../FormComponents/TESModel.h"
 #include "../../FormComponents/TESTexture.h"
 #include "../../NetImmerse/NiTypes.h"
-#include "../../BSCore/BSTArray.h"
-#include "../../BSCore/BSTHashMap.h"
 
 class TESFile;
-
 
 /*==============================================================================
 class TESWorldSpace +0000 (_vtbl=01089EFC)
@@ -24,31 +23,36 @@ class TESWorldSpace +0000 (_vtbl=01089EFC)
 ==============================================================================*/
 // 1D8
 class TESWorldSpace : public TESForm,
-	public TESFullName,			// 14
-	public TESModel				// 1C
+					  public TESFullName, // 14
+					  public TESModel	  // 1C
 {
-public:
-	enum { kTypeID = (UInt32)FormType::WorldSpace };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::WorldSpace
+	};
 
-	virtual ~TESWorldSpace();		// 004F5E00
+	virtual ~TESWorldSpace(); // 004F5E00
 
 	// @members
 
 	// 4
 	struct Data038
 	{
-		UInt16	unk0;
-		UInt16	unk2;
+		UInt16 unk0;
+		UInt16 unk2;
 	};
 
 	// 020
 	struct Data03C
 	{
-		UInt8	unk0[0x20];
+		UInt8 unk0[0x20];
 	};
 
 	// ?
-	struct OFFSET_DATA { };
+	struct OFFSET_DATA
+	{
+	};
 
 	// 40
 	struct Data12C
@@ -56,29 +60,28 @@ public:
 		// this struct keeps showing up everywhere
 		struct Entry
 		{
-			UInt8	pad00[8];	// 00
-			UInt32	unk08;		// 08
-			UInt32	unk0C;		// 0C
-			UInt32	unk10;		// 10
-			void	* unk14;	// 14
-			UInt8	pad18[4];	// 18
-			UInt32	unk1C;		// 1C
+			UInt8  pad00[8]; // 00
+			UInt32 unk08;	 // 08
+			UInt32 unk0C;	 // 0C
+			UInt32 unk10;	 // 10
+			void*  unk14;	 // 14
+			UInt8  pad18[4]; // 18
+			UInt32 unk1C;	 // 1C
 		};
 
-		Entry	unk00;
-		Entry	unk20;
+		Entry unk00;
+		Entry unk20;
 	};
 
-	
 	// âêÕíÜ
-	//BSTHashMap<UInt32, void*>	unk05C;	// 064
+	// BSTHashMap<UInt32, void*>	unk05C;	// 064
 	//									// 078 - hash sentinel
-	//UInt32					unk07C;	// 084;
+	// UInt32					unk07C;	// 084;
 
-	//BSTHashMap<Uint32, void*>	unk098;	// 098
+	// BSTHashMap<Uint32, void*>	unk098;	// 098
 	//									// 0AC - hash sentinel
 
-	//BSTHashMap<UInt32, void*>	unk124;	// 124
+	// BSTHashMap<UInt32, void*>	unk124;	// 124
 	//									// 138 - hash sentinel
 
 	/* à»â∫ÅAä‘à·Ç¢ÇæÇÁÇØÇ≈éQçlÇ…Ç»ÇÁÇ»Ç¢
@@ -132,8 +135,8 @@ public:
 	UInt32		unk16C;	// 16C
 	UInt32		unk170;	// 170
 	*/
-private:
+	private:
 	DEFINE_MEMBER_FN(ctor, void, 0x004F5630);
 	DEFINE_MEMBER_FN(dtor, void, 0x004F5C00);
 };
-//STATIC_ASSERT(sizeof(TESWorldSpace) == 0x1D8);
+// STATIC_ASSERT(sizeof(TESWorldSpace) == 0x1D8);

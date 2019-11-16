@@ -9,13 +9,17 @@ class ExtraHealth +0000 (_vtbl=010791F8)
 ==============================================================================*/
 class ExtraHealth : public BSExtraData // Tempered
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Health };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Health
+	};
 
 	ExtraHealth();
 	virtual ~ExtraHealth();
 
-	enum { // Multiplier
+	enum
+	{ // Multiplier
 		kHealthBase = 1
 	};
 

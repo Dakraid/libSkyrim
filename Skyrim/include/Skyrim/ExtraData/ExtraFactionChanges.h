@@ -1,14 +1,17 @@
 #pragma once
 
-#include "BSExtraData.h"
 #include "../BSCore/BSTArray.h"
+#include "BSExtraData.h"
 
 class TESFaction;
 
 class ExtraFactionChanges : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::FactionChanges };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::FactionChanges
+	};
 
 	ExtraFactionChanges();
 	virtual ~ExtraFactionChanges();
@@ -16,9 +19,9 @@ public:
 	struct FactionInfo
 	{
 		TESFaction* faction;
-		UInt32 rank;
+		UInt32		rank;
 	};
 
-	UInt32	unk08;
+	UInt32				  unk08;
 	BSTArray<FactionInfo> factions;
 };

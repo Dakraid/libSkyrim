@@ -64,7 +64,6 @@
 00A48A80  PUSH OFFSET 0110D0EC    ASCII "Not enough memory to run application."
 */
 
-
 namespace BSResource
 {
 }

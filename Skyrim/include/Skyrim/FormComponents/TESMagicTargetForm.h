@@ -3,5 +3,5 @@
 // 00
 class TESMagicTargetForm
 {
-public:
+	public:
 };

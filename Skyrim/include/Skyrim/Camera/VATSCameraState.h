@@ -2,7 +2,6 @@
 
 #include "TESCameraState.h"
 
-
 /*==============================================================================
 class VATSCameraState +0000 (_vtbl=010E3744)
 0000: class VATSCameraState
@@ -11,9 +10,9 @@ class VATSCameraState +0000 (_vtbl=010E3744)
 ==============================================================================*/
 class VATSCameraState : public TESCameraState
 {
-public:
+	public:
 	VATSCameraState();
 	virtual ~VATSCameraState();
 
-	UInt32	unk10[0x03];	// 10
+	UInt32 unk10[0x03]; // 10
 };

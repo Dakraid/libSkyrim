@@ -16,10 +16,13 @@ class Hazard +0000 (_vtbl=010D89CC)
 // 88
 class Hazard : public TESObjectREFR
 {
-	enum { kTypeID = (UInt32)FormType::Hazard };
+	enum
+	{
+		kTypeID = (UInt32)FormType::Hazard
+	};
 
 	// @add
-	virtual void Unk_0A2(void);		// 00795AB0
-	virtual void Unk_0A3(void);		// 006C50E0 (void) { return; }
-	virtual void Unk_0A4(void);		// 0079E450
+	virtual void Unk_0A2(void); // 00795AB0
+	virtual void Unk_0A3(void); // 006C50E0 (void) { return; }
+	virtual void Unk_0A4(void); // 0079E450
 };

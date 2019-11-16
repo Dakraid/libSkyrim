@@ -2,7 +2,6 @@
 
 #include <Skyrim.h>
 
-#include <Skyrim/FormComponents/BaseFormComponent.h>
 #include <Skyrim/FormComponents/ActorValueOwner.h>
 #include <Skyrim/FormComponents/BGSAttackDataForm.h>
 #include <Skyrim/FormComponents/BGSBipedObjectForm.h>
@@ -20,8 +19,9 @@
 #include <Skyrim/FormComponents/BGSPreloadable.h>
 #include <Skyrim/FormComponents/BGSSkillPerkTreeNode.h>
 #include <Skyrim/FormComponents/BGSSkinForm.h>
-#include <Skyrim/FormComponents/TESActorBaseData.h>
+#include <Skyrim/FormComponents/BaseFormComponent.h>
 #include <Skyrim/FormComponents/TESAIForm.h>
+#include <Skyrim/FormComponents/TESActorBaseData.h>
 #include <Skyrim/FormComponents/TESAttackDamageForm.h>
 #include <Skyrim/FormComponents/TESBipedModelForm.h>
 #include <Skyrim/FormComponents/TESContainer.h>
@@ -39,14 +39,14 @@
 #include <Skyrim/FormComponents/TESWeightForm.h>
 
 /// TESTexture
-#include <Skyrim/FormComponents/TESTexture.h>
 #include <Skyrim/FormComponents/TESIcon.h>
+#include <Skyrim/FormComponents/TESTexture.h>
 #include <Skyrim/FormComponents/TESTexture1024.h>
 
 /// TESModel
-#include <Skyrim/FormComponents/TESModel.h>
 #include <Skyrim/FormComponents/BGSBehaviorGraphModel.h>
 #include <Skyrim/FormComponents/BGSTextureModel.h>
+#include <Skyrim/FormComponents/TESModel.h>
 #include <Skyrim/FormComponents/TESModelPSA.h>
 #include <Skyrim/FormComponents/TESModelRDT.h>
 #include <Skyrim/FormComponents/TESModelTextureSwap.h>

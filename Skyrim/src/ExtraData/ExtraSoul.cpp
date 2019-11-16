@@ -1,5 +1,5 @@
-#include "Skyrim.h"
 #include "Skyrim/ExtraData/ExtraSoul.h"
+#include "Skyrim.h"
 
 static const UInt32 s_ExtraSoulVtbl = 0x01079D6C;
 

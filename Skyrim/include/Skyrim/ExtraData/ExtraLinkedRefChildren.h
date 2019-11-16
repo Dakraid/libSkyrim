@@ -10,8 +10,11 @@ class ExtraLinkedRefChildren +0000 (_vtbl=01079B08)
 // 18
 class ExtraLinkedRefChildren : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::LinkedRefChildren };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::LinkedRefChildren
+	};
 
 	ExtraLinkedRefChildren();
 	virtual ~ExtraLinkedRefChildren();

@@ -13,10 +13,13 @@ class BGSColorForm +0000 (_vtbl=0108A76C)
 ==============================================================================*/
 // 24
 class BGSColorForm : public TESForm,
-	public TESFullName					// 14
+					 public TESFullName // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::ColorForm };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::ColorForm
+	};
 
 	struct Color
 	{
@@ -25,14 +28,14 @@ public:
 		UInt8 blue;
 		UInt8 alpha; // The alpha isn't actually used here so its usually zero
 	};
-	
+
 	// @override
-	virtual void	Unk_04(void) override;				// 004F8C90 { abgr = 0; unk20 = 0; }
-	virtual void	Unk_05(void) override;				// 004F8C90 { abgr = 0; unk20 = 0; }
-	virtual bool	LoadForm(TESFile *arg) override;	// 004F8DA0
+	virtual void Unk_04(void) override;			  // 004F8C90 { abgr = 0; unk20 = 0; }
+	virtual void Unk_05(void) override;			  // 004F8C90 { abgr = 0; unk20 = 0; }
+	virtual bool LoadForm(TESFile* arg) override; // 004F8DA0
 
 	// @members
-	Color	color;	// 1C
-	UInt32  unk20;  // 20
+	Color  color; // 1C
+	UInt32 unk20; // 20
 };
 STATIC_ASSERT(sizeof(BGSColorForm) == 0x24);

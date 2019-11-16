@@ -16,9 +16,12 @@ class TESSound +0000 (_vtbl=010A1834)
 // 2C
 class TESSound : public TESBoundAnimObject
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Sound };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Sound
+	};
 
 	// @members
-	BGSSoundDescriptorForm	* descriptor;	// 20
+	BGSSoundDescriptorForm* descriptor; // 20
 };

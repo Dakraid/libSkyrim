@@ -1,31 +1,28 @@
 #pragma once
 
-
 class GString
 {
-public:
+	public:
 	enum HeapType
 	{
-		kHeapInfoGlobal = 0,
-		kHeapInfoLocal = 1,
+		kHeapInfoGlobal	 = 0,
+		kHeapInfoLocal	 = 1,
 		kHeapInfoDynamic = 2,
-		kHeapInfoMask = 3
+		kHeapInfoMask	 = 3
 	};
 
 	struct Data
 	{
-		UInt32			len;
-		volatile long	refCount;
-		char			data[1];
+		UInt32		  len;
+		volatile long refCount;
+		char		  data[1];
 
 		void AddRef(void);
 		void Release(void);
 	};
 
-	GString()
-	{
-	}
-	GString(const char * string)
+	GString() {}
+	GString(const char* string)
 	{
 		ctor(string);
 	}
@@ -35,21 +32,21 @@ public:
 		GetData()->Release();
 	}
 
-	operator const char *() const
+	operator const char*() const
 	{
 		return GetData()->data;
 	}
 
-	const char * c_str() const
+	const char* c_str() const
 	{
 		return GetData()->data;
 	}
 
-protected:
-	Data *	GetData(void) const
+	protected:
+	Data* GetData(void) const
 	{
 		UInt32 heapInfo = (data.heapInfo & ~(UInt32)kHeapInfoMask);
-		return (Data *)heapInfo;
+		return (Data*)heapInfo;
 	}
 
 	HeapType GetHeapInfo(void)
@@ -57,14 +54,14 @@ protected:
 		return (HeapType)(data.heapInfo & kHeapInfoMask);
 	}
 
-private:
+	private:
 	// @members
 	union
 	{
-		Data	* ptr;		// do not use directly, clear lower 3 bits first
-		UInt32	heapInfo;
+		Data*  ptr; // do not use directly, clear lower 3 bits first
+		UInt32 heapInfo;
 	} data;
 
-private:
-	DEFINE_MEMBER_FN(ctor, GString *, 0x009259D0, const char * string);
+	private:
+	DEFINE_MEMBER_FN(ctor, GString*, 0x009259D0, const char* string);
 };

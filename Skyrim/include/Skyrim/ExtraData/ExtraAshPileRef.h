@@ -10,9 +10,12 @@ class ExtraAshPileRef +0000 (_vtbl=01079948)
 // 0C
 class ExtraAshPileRef : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::AshPileRef };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::AshPileRef
+	};
 
 	// @members
-	RefHandle	refHandle;	// 08
+	RefHandle refHandle; // 08
 };

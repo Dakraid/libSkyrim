@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
-#include "../../BSPathFinding/BSNavmeshInfo.h"
-#include "PrecomputedNavmeshInfoPathMap.h"
 #include "../../BSCore/BSTHashMap.h"
-
+#include "../../BSPathFinding/BSNavmeshInfo.h"
+#include "../../FormComponents/TESForm.h"
+#include "PrecomputedNavmeshInfoPathMap.h"
 
 /*==============================================================================
 class NavMeshInfoMap +0000 (_vtbl=010C59DC)
@@ -19,37 +18,40 @@ class NavMeshInfoMap +0000 (_vtbl=010C59DC)
 ==============================================================================*/
 // 98
 class NavMeshInfoMap : public TESForm,
-	public BSNavmeshInfoMap,				// 14
-	public PrecomputedNavmeshInfoPathMap	// 1C
+					   public BSNavmeshInfoMap,				// 14
+					   public PrecomputedNavmeshInfoPathMap // 1C
 {
-public:
-	enum { kTypeID = (UInt32)FormType::NAVI };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::NAVI
+	};
 
 	// @override class BSNavmeshInfoMap : (vtbl=010C59BC)
-	virtual void	BSNavmeshInfoMap_Unk_01(void) override;		// 005FAB40
-	virtual void	BSNavmeshInfoMap_Unk_02(void) override;		// 005FABD0
-	virtual void	BSNavmeshInfoMap_Unk_03(void) override;		// 005FA920
-	virtual void	BSNavmeshInfoMap_Unk_04(void) override;		// 005FAD40
-	virtual void	BSNavmeshInfoMap_Unk_05(void) override;		// 005FAA20
+	virtual void BSNavmeshInfoMap_Unk_01(void) override; // 005FAB40
+	virtual void BSNavmeshInfoMap_Unk_02(void) override; // 005FABD0
+	virtual void BSNavmeshInfoMap_Unk_03(void) override; // 005FA920
+	virtual void BSNavmeshInfoMap_Unk_04(void) override; // 005FAD40
+	virtual void BSNavmeshInfoMap_Unk_05(void) override; // 005FAA20
 
 	// 8
 	struct Data8C
 	{
-		UInt32	unk0;
-		UInt32	unk4;
+		UInt32 unk0;
+		UInt32 unk4;
 	};
 
 	// @members
-	//void						** _vtbl;	// 00 - 010C59DC
-	UInt8						unk48;		// 48
-	UInt8						pad49[3];	// 49
-	BSTHashMap<UInt32, void*>	unk4C;		// 4C
-	BSTHashMap<UInt32, void*>	unk6C;		// 6C
-	Data8C						unk8C;		// 8C
-	UInt8						unk94;		// 94 - init'd 0
-	UInt8						pad95[3];	// 95
+	// void						** _vtbl;	// 00 - 010C59DC
+	UInt8					  unk48;	// 48
+	UInt8					  pad49[3]; // 49
+	BSTHashMap<UInt32, void*> unk4C;	// 4C
+	BSTHashMap<UInt32, void*> unk6C;	// 6C
+	Data8C					  unk8C;	// 8C
+	UInt8					  unk94;	// 94 - init'd 0
+	UInt8					  pad95[3]; // 95
 
-private:
+	private:
 	DEFINE_MEMBER_FN(ctor, NavMeshInfoMap*, 0x005FC5B0)
 };
 STATIC_ASSERT(offsetof(NavMeshInfoMap, unk00) == 0x1C);

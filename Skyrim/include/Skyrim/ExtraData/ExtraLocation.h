@@ -6,8 +6,11 @@ class BGSLocation;
 
 class ExtraLocation : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Location };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Location
+	};
 
 	ExtraLocation(); // Related to protected/essential
 	~ExtraLocation();

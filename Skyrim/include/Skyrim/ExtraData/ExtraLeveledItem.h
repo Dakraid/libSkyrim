@@ -9,9 +9,12 @@ class ExtraLeveledItem +0000 (_vtbl=01079288)
 ==============================================================================*/
 class ExtraLeveledItem : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::LeveledItem };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::LeveledItem
+	};
 
 	// @members
-	UInt32		index;
+	UInt32 index;
 };

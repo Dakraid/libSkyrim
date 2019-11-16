@@ -4,20 +4,24 @@ class TESTexture;
 
 class TintMask
 {
-public:
+	public:
 	TintMask()
 	{
-		alpha = 0.0;
+		alpha	 = 0.0;
 		tintType = 0;
-		texture = nullptr;
+		texture	 = nullptr;
 	};
-	~TintMask() { };
+	~TintMask(){};
 
 #ifdef PAPYRUS_CUSTOM_CLASS
-	enum { kTypeID = 300 };
+	enum
+	{
+		kTypeID = 300
+	};
 #endif
 
-	enum {
+	enum
+	{
 		kMaskType_Frekles = 0,
 		kMaskType_Lips,
 		kMaskType_Cheeks,
@@ -34,18 +38,18 @@ public:
 		kMaskType_Forehead,
 		kMaskType_Dirt
 	};
-	TESTexture	* texture;
+	TESTexture* texture;
 
-	struct Color {
+	struct Color
+	{
 		UInt8 red;
 		UInt8 green;
 		UInt8 blue;
 		UInt8 alpha; // The alpha isn't actually used here so its usually zero
 	} color;
 
-	float		alpha;
-	UInt32		tintType;
+	float  alpha;
+	UInt32 tintType;
 
 	UInt32 ToARGB();
 };
-

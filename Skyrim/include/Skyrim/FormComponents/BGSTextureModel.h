@@ -11,5 +11,5 @@ class BGSTextureModel +0000 (_vtbl=010A6170)
 // 14
 class BGSTextureModel : public TESModel
 {
-public:
+	public:
 };

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Skyrim.h>
-#include <Skyrim/ExtraData/ExtraDataTypes.h>
 #include <Skyrim/ExtraData/BSExtraData.h>
 #include <Skyrim/ExtraData/ExtraActivateRefChildren.h>
 #include <Skyrim/ExtraData/ExtraAliasInstanceArray.h>
@@ -15,6 +14,7 @@
 #include <Skyrim/ExtraData/ExtraCollisionData.h>
 #include <Skyrim/ExtraData/ExtraContainerChanges.h>
 #include <Skyrim/ExtraData/ExtraCount.h>
+#include <Skyrim/ExtraData/ExtraDataTypes.h>
 #include <Skyrim/ExtraData/ExtraDetachTime.h>
 #include <Skyrim/ExtraData/ExtraDroppedItemList.h>
 #include <Skyrim/ExtraData/ExtraEditorID.h>

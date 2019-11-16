@@ -1,17 +1,15 @@
 #include "Skyrim/AI/BGSAttackDataMap.h"
 
-
-BGSAttackData * BGSAttackDataMap::Get(const BSFixedString & eventName)
+BGSAttackData* BGSAttackDataMap::Get(const BSFixedString& eventName)
 {
 	auto iter = map.find(eventName);
 	return (iter != map.end()) ? iter->value : nullptr;
 }
 
-BGSAttackData * BGSAttackDataMap::Add(const BSFixedString & eventName)
+BGSAttackData* BGSAttackDataMap::Add(const BSFixedString& eventName)
 {
 	BGSAttackDataPtr ptr = BGSAttackData::Create();
-	if (ptr)
-	{
+	if(ptr) {
 		ptr->eventName = eventName;
 		map.insert(eventName, ptr);
 	}
@@ -19,10 +17,9 @@ BGSAttackData * BGSAttackDataMap::Add(const BSFixedString & eventName)
 	return ptr;
 }
 
-BGSAttackData * BGSAttackDataMap::Add(BGSAttackData *attackData)
+BGSAttackData* BGSAttackDataMap::Add(BGSAttackData* attackData)
 {
-	if (attackData)
-	{
+	if(attackData) {
 		BGSAttackDataPtr ptr = attackData;
 
 		map.insert(attackData->eventName, ptr);
@@ -31,11 +28,8 @@ BGSAttackData * BGSAttackDataMap::Add(BGSAttackData *attackData)
 	return attackData;
 }
 
-void BGSAttackDataMap::Remove(const BSFixedString & eventName)
+void BGSAttackDataMap::Remove(const BSFixedString& eventName)
 {
 	auto iter = map.find(eventName);
-	if (iter != map.end())
-	{
-		map.erase(eventName);
-	}
+	if(iter != map.end()) { map.erase(eventName); }
 }

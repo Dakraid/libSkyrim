@@ -1,7 +1,7 @@
 #pragma once
 
-#include "BSExtraData.h"
 #include "../BSCore/BSTArray.h"
+#include "BSExtraData.h"
 
 class BGSKeyword;
 
@@ -12,8 +12,11 @@ class ExtraLinkedRef +0000 (_vtbl=01079AF8)
 ==============================================================================*/
 class ExtraLinkedRef : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::LinkedRef };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::LinkedRef
+	};
 
 	ExtraLinkedRef();
 	virtual ~ExtraLinkedRef();
@@ -22,8 +25,8 @@ public:
 
 	struct Pair
 	{
-		BGSKeyword	* keyword;
-		UInt32		  unk04;
+		BGSKeyword* keyword;
+		UInt32		unk04;
 	};
 
 	// @members

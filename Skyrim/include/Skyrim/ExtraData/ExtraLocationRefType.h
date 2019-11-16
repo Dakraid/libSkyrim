@@ -14,8 +14,11 @@ class ExtraLocationRefType : public BSExtraData
 {
 	CLASS_SIZE_ASSERT(0x0C)
 
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::LocationRefType };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::LocationRefType
+	};
 
-	BGSLocationRefType * refType;
+	BGSLocationRefType* refType;
 };

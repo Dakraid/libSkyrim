@@ -1,6 +1,6 @@
 #include "SKSE/GameEvents.h"
 
-template <>
+template<>
 BSTEventSource<BGSFootstepEvent>* SKSEEvent2<BGSFootstepEvent>::GetEventSource()
 {
 	return BGSFootstepManager::GetSingleton();

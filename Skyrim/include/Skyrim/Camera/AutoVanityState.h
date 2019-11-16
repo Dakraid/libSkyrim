@@ -10,7 +10,7 @@ class AutoVanityState +0000 (_vtbl=010E30F0)
 ==============================================================================*/
 class AutoVanityState : public TESCameraState
 {
-public:
+	public:
 	AutoVanityState();
 	virtual ~AutoVanityState();
 };

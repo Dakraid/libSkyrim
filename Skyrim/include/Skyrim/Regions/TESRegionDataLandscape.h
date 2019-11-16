@@ -5,8 +5,8 @@
 // 0C
 class TESRegionDataLandscape : public TESRegionData
 {
-public:
+	public:
 	virtual ~TESRegionDataLandscape();
 
-	UInt32	unk08;	// 08
+	UInt32 unk08; // 08
 };

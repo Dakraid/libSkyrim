@@ -3,14 +3,20 @@
 #include <fstream>
 
 #if _DEBUG
-#define DEBUG_MESSAGE(str) do { gLog << str << std::endl; gLog.flush(); } while (false)
+#define DEBUG_MESSAGE(str)        \
+	do {                          \
+		gLog << str << std::endl; \
+		gLog.flush();             \
+	} while(false)
 #else
-#define DEBUG_MESSAGE(str) do { } while (false)
+#define DEBUG_MESSAGE(str) \
+	do {                   \
+	} while(false)
 #endif
 
 class DebugLog : public std::ofstream
 {
-public:
+	public:
 	DebugLog();
 
 	void operator()(const char* message);

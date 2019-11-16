@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSCore/BSTArray.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class BGSFootstepSet +0000 (_vtbl=0108CCAC)
@@ -12,10 +12,13 @@ class BGSFootstepSet +0000 (_vtbl=0108CCAC)
 // 50
 class BGSFootstepSet : public TESForm
 {
-public:
-	enum { kTypeID = (UInt32)FormType::FootstepSet };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::FootstepSet
+	};
 
 	// @members
-	BSTArray<void *>	unk14[5];	// 14
+	BSTArray<void*> unk14[5]; // 14
 };
 STATIC_ASSERT(sizeof(BGSFootstepSet) == 0x50);

@@ -13,15 +13,17 @@ class NiSingleInterpController +0000 (_vtbl=011102C4)
 // 040
 class NiSingleInterpController : public NiInterpController
 {
-public:
-	enum { kRTTI = 0x01B90C5C };
+	public:
+	enum
+	{
+		kRTTI = 0x01B90C5C
+	};
 
 	NiSingleInterpController();
 	~NiSingleInterpController();
 
 	// @add
-	virtual bool	Unk_38(void * arg) = 0;
+	virtual bool Unk_38(void* arg) = 0;
 
-	NiInterpolator	* interpolator;	// 03C
+	NiInterpolator* interpolator; // 03C
 };
-

@@ -13,9 +13,12 @@ class NiAlphaAccumulator +0000 (_vtbl=0111CFCC)
 // 30
 class NiAlphaAccumulator : public NiBackToFrontAccumulator
 {
-public:
-	enum { kRTTI = 0x01B92B08 };
+	public:
+	enum
+	{
+		kRTTI = 0x01B92B08
+	};
 
 	// @members
-	UInt32	unk2C;
+	UInt32 unk2C;
 };

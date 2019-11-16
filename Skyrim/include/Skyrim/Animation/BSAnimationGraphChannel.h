@@ -10,15 +10,15 @@ class BSAnimationGraphChannel +0000 (_vtbl=0107E5EC)
 // 10
 class BSAnimationGraphChannel : public BSIntrusiveRefCounted
 {
-public:
+	public:
 	virtual ~BSAnimationGraphChannel();
 
-	virtual	void	Unk_01(void) = 0;		// pure
-	virtual	void	Unk_02(void) = 0;		// pure
+	virtual void Unk_01(void) = 0; // pure
+	virtual void Unk_02(void) = 0; // pure
 
 	// @members
-	//void	** _vtbl;		// 00 - 0107E5EC
-	UInt32	unk08;			// 08
-	UInt32	unk0C;			// 0C
+	// void	** _vtbl;		// 00 - 0107E5EC
+	UInt32 unk08; // 08
+	UInt32 unk0C; // 0C
 };
 STATIC_ASSERT(sizeof(BSAnimationGraphChannel) == 0x10);

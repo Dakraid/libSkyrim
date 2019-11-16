@@ -3,7 +3,6 @@
 #include "BaseFormComponent.h"
 #include "TESIcon.h"
 
-
 /*==============================================================================
 class BGSMessageIcon +0000 (_vtbl=0107C404)
 0000: class BGSMessageIcon
@@ -12,7 +11,7 @@ class BGSMessageIcon +0000 (_vtbl=0107C404)
 // 0C
 class BGSMessageIcon : public BaseFormComponent
 {
-public:
+	public:
 	// @members
-	TESIcon	icon;	// 04
+	TESIcon icon; // 04
 };

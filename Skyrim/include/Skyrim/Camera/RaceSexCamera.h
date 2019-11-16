@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "TESCamera.h"
 
 /*==============================================================================
@@ -10,7 +9,7 @@ class RaceSexCamera +0000 (_vtbl=010E7394)
 ==============================================================================*/
 class RaceSexCamera : public TESCamera
 {
-public:
+	public:
 	RaceSexCamera();
 	virtual ~RaceSexCamera();
 };

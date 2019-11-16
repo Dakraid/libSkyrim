@@ -6,14 +6,17 @@ class TESObjectREFR;
 
 class ExtraEnableStateParent : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::EnableStateParent };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::EnableStateParent
+	};
 
 	ExtraEnableStateParent();
 	virtual ~ExtraEnableStateParent();
 
-	UInt32		unk08;	// 08
-	RefHandle	handle;	// 0C handle?
+	UInt32	  unk08;  // 08
+	RefHandle handle; // 0C handle?
 
-	TESObjectREFR * GetReference();
+	TESObjectREFR* GetReference();
 };

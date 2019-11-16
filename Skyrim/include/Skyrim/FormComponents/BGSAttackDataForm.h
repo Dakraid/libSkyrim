@@ -1,7 +1,7 @@
 #pragma once
 
-#include "BaseFormComponent.h"
 #include "../AI/BGSAttackDataMap.h"
+#include "BaseFormComponent.h"
 
 /*==============================================================================
 class BGSAttackDataForm +0000 (_vtbl=0107C2E4)
@@ -11,11 +11,11 @@ class BGSAttackDataForm +0000 (_vtbl=0107C2E4)
 // 08
 class BGSAttackDataForm : public BaseFormComponent
 {
-public:
+	public:
 	// @members
-	//void				** _vtbl			// 00 - 0107C2E4
-	BGSAttackDataMapPtr	attackDataMap;		// 04
+	// void				** _vtbl			// 00 - 0107C2E4
+	BGSAttackDataMapPtr attackDataMap; // 04
 
 	DEFINE_MEMBER_FN(CreateAttackDataMap, void, 0x004479C0);
-	DEFINE_MEMBER_FN(AddFromMod, void, 0x00447AD0, TESRace *race, TESFile *mod);
+	DEFINE_MEMBER_FN(AddFromMod, void, 0x00447AD0, TESRace* race, TESFile* mod);
 };

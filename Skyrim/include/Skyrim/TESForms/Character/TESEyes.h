@@ -16,14 +16,17 @@ class TESEyes +0000 (_vtbl=010A4D74)
 ==============================================================================*/
 // 28
 class TESEyes : public TESForm,
-	public TESFullName,		// 14
-	public TESTexture		// 1C
+				public TESFullName, // 14
+				public TESTexture	// 1C
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Eyes };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Eyes
+	};
 
 	// @members
-	UInt8		unk24;		// 24
-	UInt8		pad25[3];	// 25
+	UInt8 unk24;	// 24
+	UInt8 pad25[3]; // 25
 };
 STATIC_ASSERT(sizeof(TESEyes) == 0x28);

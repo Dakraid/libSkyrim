@@ -1,30 +1,29 @@
 #include "Skyrim/Events/BGSStoryEvent.h"
 #include <new>
 
-
 BSTEventSource<TESHarvestEvent::ItemHarvested>* TESHarvestEvent::GetEventSource()
 {
 	typedef BSTEventSource<TESHarvestEvent::ItemHarvested> EventSource;
-	EventSource *instance = (EventSource*)0x012E5A74;
-	UInt8 &bInit = *(UInt8*)(instance + 1);
-	if (bInit & 1) {
+	EventSource*										   instance = (EventSource*)0x012E5A74;
+	UInt8&												   bInit	= *(UInt8*)(instance + 1);
+	if(bInit & 1) {
 		bInit |= 1;
-		new(instance)EventSource;
+		new(instance) EventSource;
 	}
 	return instance;
 }
 
-
-#define DECLARE_EVENT_SOURCE(addr, name)						\
-	BSTEventSource<name::Event>* name::GetEventSource() {		\
-		typedef BSTEventSource<name::Event> SrcT;				\
-		SrcT *instance = (SrcT*)addr;							\
-		UInt8 &bInit = *(UInt8*)(addr + sizeof(SrcT));			\
-		if (bInit & 1) {										\
-			bInit |= 1;											\
-			new(instance) SrcT;									\
-		}														\
-		return instance;										\
+#define DECLARE_EVENT_SOURCE(addr, name)                                               \
+	BSTEventSource<name::Event>* name::GetEventSource()                                \
+	{                                                                                  \
+		typedef BSTEventSource<name::Event> SrcT;                                      \
+		SrcT*								instance = (SrcT*)addr;                    \
+		UInt8&								bInit	 = *(UInt8*)(addr + sizeof(SrcT)); \
+		if(bInit & 1) {                                                                \
+			bInit |= 1;                                                                \
+			new(instance) SrcT;                                                        \
+		}                                                                              \
+		return instance;                                                               \
 	}
 
 DECLARE_EVENT_SOURCE(0x012E5FB0, Inventory)

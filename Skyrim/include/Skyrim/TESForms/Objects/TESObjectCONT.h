@@ -1,12 +1,12 @@
 #pragma once
 
-#include "TESBoundAnimObject.h"
+#include "../../FormComponents/BGSDestructibleObjectForm.h"
+#include "../../FormComponents/BGSOpenCloseForm.h"
 #include "../../FormComponents/TESContainer.h"
 #include "../../FormComponents/TESFullName.h"
 #include "../../FormComponents/TESModelTextureSwap.h"
 #include "../../FormComponents/TESWeightForm.h"
-#include "../../FormComponents/BGSDestructibleObjectForm.h"
-#include "../../FormComponents/BGSOpenCloseForm.h"
+#include "TESBoundAnimObject.h"
 
 /*==============================================================================
 class TESObjectCONT +0000 (_vtbl=01084D44)
@@ -33,37 +33,39 @@ class TESObjectCONT +0000 (_vtbl=01084D44)
 ==============================================================================*/
 // 74
 class TESObjectCONT : public TESBoundAnimObject,
-	public TESContainer,				// 20
-	public TESFullName,					// 2C
-	public TESModelTextureSwap,			// 34
-	public TESWeightForm,				// 50
-	public BGSDestructibleObjectForm,	// 58
-	public BGSOpenCloseForm				// 60
+					  public TESContainer,				// 20
+					  public TESFullName,				// 2C
+					  public TESModelTextureSwap,		// 34
+					  public TESWeightForm,				// 50
+					  public BGSDestructibleObjectForm, // 58
+					  public BGSOpenCloseForm			// 60
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Container };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Container
+	};
 
-	virtual ~TESObjectCONT();															// 004A41E0
+	virtual ~TESObjectCONT(); // 004A41E0
 
 	// @override class TESBoundAnimObject : (vtbl=01084D44)
-	virtual void	Unk_04(void) override;												// 004A3CD0
-	virtual bool	LoadForm(TESFile *mod) override;									// 004A4210
-	virtual void	InitItem(void) override;											// 004A3DB0
-	virtual bool	ActivateReference(TESObjectREFR* targetRef, TESObjectREFR* activatorRef, UInt32 arg2, UInt32 arg3, UInt32 arg4) override;	// 004A4620
-	virtual bool	GetCrosshairText(TESObjectREFR *ref, BSString * dst, bool unk) override;	// 004A4900
-	virtual bool	Unk_4E(void * arg0, UInt8 arg1, UInt32 arg2, float arg3) override;	// 004A3F30
+	virtual void Unk_04(void) override;																									   // 004A3CD0
+	virtual bool LoadForm(TESFile* mod) override;																						   // 004A4210
+	virtual void InitItem(void) override;																								   // 004A3DB0
+	virtual bool ActivateReference(TESObjectREFR* targetRef, TESObjectREFR* activatorRef, UInt32 arg2, UInt32 arg3, UInt32 arg4) override; // 004A4620
+	virtual bool GetCrosshairText(TESObjectREFR* ref, BSString* dst, bool unk) override;												   // 004A4900
+	virtual bool Unk_4E(void* arg0, UInt8 arg1, UInt32 arg2, float arg3) override;														   // 004A3F30
 
 	// @override class BGSOpenCloseForm : (vtbl=01084EB8)
-	virtual	void	ProcessOpen(TESObjectREFR *target, Actor *activator) override;		// 004A4040
-	virtual	void	ProcessClose(TESObjectREFR *target, Actor *activator) override;		// 004A4880
-	virtual	bool	CanProcessOpenClose(void) override;									// 009B86F0 { return true; }
-
+	virtual void ProcessOpen(TESObjectREFR* target, Actor* activator) override;	 // 004A4040
+	virtual void ProcessClose(TESObjectREFR* target, Actor* activator) override; // 004A4880
+	virtual bool CanProcessOpenClose(void) override;							 // 009B86F0 { return true; }
 
 	// @members
-	UInt32	unk64;		// 64
-	UInt32	unk68;		// 68
-	UInt32	unk6C;		// 6C
-	UInt8	unk70;		// 70
-	UInt8	pad71[3];	// 71
+	UInt32 unk64;	 // 64
+	UInt32 unk68;	 // 68
+	UInt32 unk6C;	 // 6C
+	UInt8  unk70;	 // 70
+	UInt8  pad71[3]; // 71
 };
 STATIC_ASSERT(sizeof(TESObjectCONT) == 0x74);

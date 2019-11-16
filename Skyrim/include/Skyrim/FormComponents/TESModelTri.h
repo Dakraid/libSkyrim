@@ -12,5 +12,5 @@ class TESModelTri +0000 (_vtbl=010A2E08)
 // 14
 class TESModelTri : public TESModel
 {
-public:
+	public:
 };

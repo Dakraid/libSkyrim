@@ -12,7 +12,10 @@ class BGSLocationRefType +0000 (_vtbl=010867DC)
 // 1C
 class BGSLocationRefType : public BGSKeyword
 {
-public:
-	enum { kTypeID = (UInt32)FormType::LocationRef };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::LocationRef
+	};
 };
 STATIC_ASSERT(sizeof(BGSLocationRefType) == 0x1C);

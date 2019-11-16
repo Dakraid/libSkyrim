@@ -1,5 +1,5 @@
-#include "Skyrim.h"
 #include "Skyrim/FormComponents/TESSpellList.h"
+#include "Skyrim.h"
 
 UInt32 TESSpellList::GetSpellCount() const
 {
@@ -8,10 +8,10 @@ UInt32 TESSpellList::GetSpellCount() const
 
 SpellItem* TESSpellList::GetNthSpell(UInt32 n) const
 {
-	if (unk04 && n < unk04->numSpells) {
+	if(unk04 && n < unk04->numSpells) {
 		return unk04->spells[n];
-	}
-	else return nullptr;
+	} else
+		return nullptr;
 }
 
 UInt32 TESSpellList::GetShoutCount() const
@@ -21,8 +21,8 @@ UInt32 TESSpellList::GetShoutCount() const
 
 TESShout* TESSpellList::GetNthShout(UInt32 n) const
 {
-	if (unk04 && n < unk04->numShouts) {
+	if(unk04 && n < unk04->numShouts) {
 		return unk04->shouts[n];
-	}
-	else return nullptr;
+	} else
+		return nullptr;
 }

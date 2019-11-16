@@ -1,5 +1,5 @@
-#include "Skyrim.h"
 #include "Skyrim/NetImmerse/NiExtraData.h"
+#include "Skyrim.h"
 
 const BSFixedString& NiExtraData::GetName() const
 {

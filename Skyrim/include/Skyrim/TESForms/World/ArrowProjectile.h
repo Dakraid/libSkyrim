@@ -18,10 +18,13 @@ class ArrowProjectile +0000 (_vtbl=010D702C)
 // 150
 class ArrowProjectile : public MissileProjectile
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Arrow };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Arrow
+	};
 
-	UInt32	unk148;
-	UInt32	unk14C;
+	UInt32 unk148;
+	UInt32 unk14C;
 };
 STATIC_ASSERT(sizeof(ArrowProjectile) == 0x150);

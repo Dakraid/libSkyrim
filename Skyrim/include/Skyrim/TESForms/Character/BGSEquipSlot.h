@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSCore/BSTArray.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class BGSEquipSlot +0000 (_vtbl=010A2D0C)
@@ -12,21 +12,23 @@ class BGSEquipSlot +0000 (_vtbl=010A2D0C)
 // 24
 class BGSEquipSlot : public TESForm
 {
-public:
-	enum { kTypeID = (UInt32)FormType::EquipSlot };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::EquipSlot
+	};
 
 	// @members
-	BSTArray<BGSEquipSlot *>	parentSlots;
-	UInt32						unk20;
+	BSTArray<BGSEquipSlot*> parentSlots;
+	UInt32					unk20;
 };
 STATIC_ASSERT(sizeof(BGSEquipSlot) == 0x24);
 
-
-typedef BGSEquipSlot * (*_GetEitherHandSlot)();
+typedef BGSEquipSlot* (*_GetEitherHandSlot)();
 extern const _GetEitherHandSlot GetEitherHandSlot;
 
-typedef BGSEquipSlot * (*_GetRightHandSlot)();
+typedef BGSEquipSlot* (*_GetRightHandSlot)();
 extern const _GetRightHandSlot GetRightHandSlot;
 
-typedef BGSEquipSlot * (*_GetLeftHandSlot)();
+typedef BGSEquipSlot* (*_GetLeftHandSlot)();
 extern const _GetLeftHandSlot GetLeftHandSlot;

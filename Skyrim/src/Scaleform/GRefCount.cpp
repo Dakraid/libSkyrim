@@ -3,9 +3,7 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
-GRefCountImplCore::~GRefCountImplCore()
-{
-}
+GRefCountImplCore::~GRefCountImplCore() {}
 
 void GRefCountImpl::AddRef()
 {

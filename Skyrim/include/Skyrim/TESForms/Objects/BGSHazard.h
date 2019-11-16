@@ -1,10 +1,10 @@
 #pragma once
 
-#include "TESBoundObject.h"
-#include "../../FormComponents/TESFullName.h"
-#include "../../FormComponents/TESModel.h"
 #include "../../FormComponents/BGSPreloadable.h"
+#include "../../FormComponents/TESFullName.h"
 #include "../../FormComponents/TESImageSpaceModifiableForm.h"
+#include "../../FormComponents/TESModel.h"
+#include "TESBoundObject.h"
 
 /*==============================================================================
 class BGSHazard +0000 (_vtbl=01081604)
@@ -24,31 +24,34 @@ class BGSHazard +0000 (_vtbl=01081604)
 ==============================================================================*/
 // 70
 class BGSHazard : public TESBoundObject,
-	public TESFullName,						// 20
-	public TESModel,						// 28
-	public BGSPreloadable,					// 3C
-	public TESImageSpaceModifiableForm		// 40
+				  public TESFullName,				 // 20
+				  public TESModel,					 // 28
+				  public BGSPreloadable,			 // 3C
+				  public TESImageSpaceModifiableForm // 40
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Hazard };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Hazard
+	};
 
 	// @members
 
 	// 28
 	struct Data
 	{
-		UInt32	unk00;	// 00
-		UInt32	unk04;	// 04
-		UInt32	unk08;	// 08
-		UInt32	unk0C;	// 0C
-		UInt32	unk10;	// 10
-		UInt32	unk14;	// 14
-		UInt32	unk18;	// 18
-		UInt32	unk1C;	// 1C
-		UInt32	unk20;	// 20
-		UInt32	unk24;	// 24
+		UInt32 unk00; // 00
+		UInt32 unk04; // 04
+		UInt32 unk08; // 08
+		UInt32 unk0C; // 0C
+		UInt32 unk10; // 10
+		UInt32 unk14; // 14
+		UInt32 unk18; // 18
+		UInt32 unk1C; // 1C
+		UInt32 unk20; // 20
+		UInt32 unk24; // 24
 	};
 
-	Data	unk48;	// 48
+	Data unk48; // 48
 };
 STATIC_ASSERT(sizeof(BGSHazard) == 0x70);

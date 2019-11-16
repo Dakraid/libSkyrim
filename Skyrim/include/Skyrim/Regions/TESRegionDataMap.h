@@ -5,8 +5,8 @@
 // 0C
 class TESRegionDataMap : public TESRegionData
 {
-public:
+	public:
 	virtual ~TESRegionDataMap();
 
-	UInt32	unk08;	// 08
+	UInt32 unk08; // 08
 };

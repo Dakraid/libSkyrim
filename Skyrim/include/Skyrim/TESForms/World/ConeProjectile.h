@@ -17,6 +17,9 @@ class ConeProjectile +0000 (_vtbl=010D7BC4)
 // 16C
 class ConeProjectile : public Projectile
 {
-public:
-	enum { kTypeID = (UInt32)FormType::ConeProj };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::ConeProj
+	};
 };

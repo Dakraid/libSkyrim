@@ -1,8 +1,8 @@
 #pragma once
 
 #include <Skyrim.h>
-#include <Skyrim/Forms/TESForm.h>
 #include <Skyrim/Forms/ActorValueInfo.h>
+#include <Skyrim/Forms/BGSAction.h>
 #include <Skyrim/Forms/BGSAssociationType.h>
 #include <Skyrim/Forms/BGSBodyPartData.h>
 #include <Skyrim/Forms/BGSCameraPath.h>
@@ -21,11 +21,11 @@
 #include <Skyrim/Forms/BGSImpactData.h>
 #include <Skyrim/Forms/BGSImpactDataSet.h>
 #include <Skyrim/Forms/BGSKeyword.h>
-#include <Skyrim/Forms/BGSAction.h>
-#include <Skyrim/Forms/BGSLocationRefType.h>
 #include <Skyrim/Forms/BGSLightingTemplate.h>
 #include <Skyrim/Forms/BGSListForm.h>
+#include <Skyrim/Forms/BGSLocAlias.h>
 #include <Skyrim/Forms/BGSLocation.h>
+#include <Skyrim/Forms/BGSLocationRefType.h>
 #include <Skyrim/Forms/BGSMaterialObject.h>
 #include <Skyrim/Forms/BGSMaterialType.h>
 #include <Skyrim/Forms/BGSMenuIcon.h>
@@ -36,6 +36,7 @@
 #include <Skyrim/Forms/BGSOutfit.h>
 #include <Skyrim/Forms/BGSPerk.h>
 #include <Skyrim/Forms/BGSRagdoll.h>
+#include <Skyrim/Forms/BGSRefAlias.h>
 #include <Skyrim/Forms/BGSReferenceEffect.h>
 #include <Skyrim/Forms/BGSRelationship.h>
 #include <Skyrim/Forms/BGSReverbParameters.h>
@@ -44,9 +45,6 @@
 #include <Skyrim/Forms/BGSSoundCategory.h>
 #include <Skyrim/Forms/BGSSoundDescriptorForm.h>
 #include <Skyrim/Forms/BGSSoundOutput.h>
-#include <Skyrim/Forms/BGSRefAlias.h>
-#include <Skyrim/Forms/BGSLocAlias.h>
-#include <Skyrim/Forms/TESQuest.h>
 #include <Skyrim/Forms/BGSVoiceType.h>
 #include <Skyrim/Forms/EffectSetting.h>
 #include <Skyrim/Forms/NavMesh.h>
@@ -58,7 +56,9 @@
 #include <Skyrim/Forms/TESEffectShader.h>
 #include <Skyrim/Forms/TESEyes.h>
 #include <Skyrim/Forms/TESFaction.h>
+#include <Skyrim/Forms/TESForm.h>
 #include <Skyrim/Forms/TESGlobal.h>
+#include <Skyrim/Forms/TESQuest.h>
 //#include <Skyrim/Forms/TESHair.h>			// deleted
 #include <Skyrim/Forms/TESIdleForm.h>
 #include <Skyrim/Forms/TESImageSpace.h>
@@ -77,9 +77,9 @@
 #include <Skyrim/Forms/TESWeather.h>
 #include <Skyrim/Forms/TESWordOfPower.h>
 #include <Skyrim/Forms/TESWorldSpace.h>
-#include <Skyrim/Radiant Story/BGSStoryManagerTreeForm.h>
-#include <Skyrim/Radiant Story/BGSStoryManagerNodeBase.h>
 #include <Skyrim/Radiant Story/BGSStoryManagerBranchNode.h>
 #include <Skyrim/Radiant Story/BGSStoryManagerEventNode.h>
+#include <Skyrim/Radiant Story/BGSStoryManagerNodeBase.h>
 #include <Skyrim/Radiant Story/BGSStoryManagerQuestNode.h>
+#include <Skyrim/Radiant Story/BGSStoryManagerTreeForm.h>
 #include <Skyrim/Regions/TESRegion.h>

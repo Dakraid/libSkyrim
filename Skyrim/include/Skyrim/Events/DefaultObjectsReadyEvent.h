@@ -22,22 +22,22 @@ struct DefaultObjectsReadyEvent
 
 	struct Event
 	{
-		bool	b;
+		bool b;
 	};
 
-	static BSTEventSource<DefaultObjectsReadyEvent::Event> * GetEventSource();
+	static BSTEventSource<DefaultObjectsReadyEvent::Event>* GetEventSource();
 
-	static inline void AddEventSink(BSTEventSource<DefaultObjectsReadyEvent::Event> *sink)
+	static inline void AddEventSink(BSTEventSource<DefaultObjectsReadyEvent::Event>* sink)
 	{
-		typedef void(*Fn)(BSTEventSource<DefaultObjectsReadyEvent::Event> *);
+		typedef void (*Fn)(BSTEventSource<DefaultObjectsReadyEvent::Event>*);
 		const Fn fn = (Fn)0x004F91A0;
 
 		fn(sink);
 	}
 
-	static inline void RemoveEventSink(BSTEventSource<DefaultObjectsReadyEvent::Event> *sink)
+	static inline void RemoveEventSink(BSTEventSource<DefaultObjectsReadyEvent::Event>* sink)
 	{
-		typedef void(*Fn)(BSTEventSource<DefaultObjectsReadyEvent::Event> *);
+		typedef void (*Fn)(BSTEventSource<DefaultObjectsReadyEvent::Event>*);
 		const Fn fn = (Fn)0x004F91E0;
 
 		fn(sink);

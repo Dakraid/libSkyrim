@@ -17,11 +17,14 @@ class MissileProjectile +0000 (_vtbl=010D8DBC)
 // 148
 class MissileProjectile : public Projectile
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Missile };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Missile
+	};
 
 	// @members
-	UInt32	unk140;
-	UInt32	unk144;
+	UInt32 unk140;
+	UInt32 unk144;
 };
 STATIC_ASSERT(sizeof(MissileProjectile) == 0x148);

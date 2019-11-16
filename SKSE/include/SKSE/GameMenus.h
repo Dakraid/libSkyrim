@@ -13,8 +13,8 @@
 #include <Skyrim/Menus/MapMenu.h>
 #include <Skyrim/Menus/RaceSexMenu.h>
 
-#include <Skyrim/Menus/UIStringHolder.h>
+#include <Skyrim/Menus/BSScaleformLoader.h>
 #include <Skyrim/Menus/Inventory3DManager.h>
 #include <Skyrim/Menus/MenuManager.h>
 #include <Skyrim/Menus/UIManager.h>
-#include <Skyrim/Menus/BSScaleformLoader.h>
+#include <Skyrim/Menus/UIStringHolder.h>

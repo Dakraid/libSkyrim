@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../FormComponents/TESChildCell.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class TESObjectLAND +0000 (_vtbl=010876AC)
@@ -12,15 +12,18 @@ class TESObjectLAND +0000 (_vtbl=010876AC)
 ==============================================================================*/
 // 28
 class TESObjectLAND : public TESForm,
-	public TESChildCell		// 14
+					  public TESChildCell // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Land };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Land
+	};
 
 	// @members
-	UInt32		unk18;	// 18
-	UInt32		unk1C;	// 1C
-	UInt32		unk20;	// 20
-	UInt32		unk24;	// 24
+	UInt32 unk18; // 18
+	UInt32 unk1C; // 1C
+	UInt32 unk20; // 20
+	UInt32 unk24; // 24
 };
 STATIC_ASSERT(sizeof(TESObjectLAND) == 0x28);

@@ -5,6 +5,6 @@
 // 08
 class TESWeightForm : public BaseFormComponent
 {
-public:
-	float	weight;	// 04
+	public:
+	float weight; // 04
 };

@@ -10,9 +10,12 @@ class ExtraItemDropper +0000 (_vtbl=01079958)
 // 0C
 class ExtraItemDropper : BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::ItemDropper };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::ItemDropper
+	};
 
 	// @members
-	RefHandle	handle;		// 08
+	RefHandle handle; // 08
 };

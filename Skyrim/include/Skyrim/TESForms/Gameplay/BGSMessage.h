@@ -1,11 +1,11 @@
 #pragma once
 
+#include "../../BSCore/BSFixedString.h"
+#include "../../BSCore/BSString.h"
+#include "../../BSCore/BSTList.h"
+#include "../../FormComponents/TESDescription.h"
 #include "../../FormComponents/TESForm.h"
 #include "../../FormComponents/TESFullName.h"
-#include "../../FormComponents/TESDescription.h"
-#include "../../BSCore/BSString.h"
-#include "../../BSCore/BSFixedString.h"
-#include "../../BSCore/BSTList.h"
 #include <string>
 
 class TESQuest;
@@ -22,18 +22,21 @@ class BGSMessage +0000 (_vtbl=0108D694)
 ==============================================================================*/
 // 40
 class BGSMessage : public TESForm,
-	public TESFullName,		// 14
-	public TESDescription	// 1C
+				   public TESFullName,	 // 14
+				   public TESDescription // 1C
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Message };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Message
+	};
 
 	// @members
-	TESForm						* icon;		// 28 - init'd to 0
-	TESQuest					* quest;	// 2C - init'd to 0
-	BSSimpleList<BSFixedString>	buttons;	// 30
-	UInt32						unk38;		// 38 - init'd to 1
-	UInt32						unk3C;		// 3C - init'd to 2
+	TESForm*					icon;	 // 28 - init'd to 0
+	TESQuest*					quest;	 // 2C - init'd to 0
+	BSSimpleList<BSFixedString> buttons; // 30
+	UInt32						unk38;	 // 38 - init'd to 1
+	UInt32						unk3C;	 // 3C - init'd to 2
 
 	std::string GetDescription()
 	{

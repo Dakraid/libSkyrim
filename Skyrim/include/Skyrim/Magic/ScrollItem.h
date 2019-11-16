@@ -1,11 +1,11 @@
 #pragma once
 
-#include "SpellItem.h"
-#include "../FormComponents/TESModelTextureSwap.h"
 #include "../FormComponents/BGSDestructibleObjectForm.h"
 #include "../FormComponents/BGSPickupPutdownSounds.h"
-#include "../FormComponents/TESWeightForm.h"
+#include "../FormComponents/TESModelTextureSwap.h"
 #include "../FormComponents/TESValueForm.h"
+#include "../FormComponents/TESWeightForm.h"
+#include "SpellItem.h"
 
 /*==============================================================================
 class ScrollItem +0000 (_vtbl=01078AFC)
@@ -40,22 +40,25 @@ class ScrollItem +0000 (_vtbl=01078AFC)
 ==============================================================================*/
 // D0
 class ScrollItem : public SpellItem,
-	public TESModelTextureSwap,			// 90
-	public BGSDestructibleObjectForm,	// AC
-	public BGSPickupPutdownSounds,		// B4
-	public TESWeightForm,				// C0
-	public TESValueForm					// C8
+				   public TESModelTextureSwap,		 // 90
+				   public BGSDestructibleObjectForm, // AC
+				   public BGSPickupPutdownSounds,	 // B4
+				   public TESWeightForm,			 // C0
+				   public TESValueForm				 // C8
 {
-public:
-	enum { kTypeID = (UInt32)FormType::ScrollItem };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::ScrollItem
+	};
 
-	virtual ~ScrollItem();								// 00409370
+	virtual ~ScrollItem(); // 00409370
 
 	// @override
-	virtual UInt32	GetMagicType(void) const override;			// 54 0055BEC0 { return kType_Scroll; }
-	virtual UInt32	GetCastingType(void) const override;		// 56 00CAC8A0 { return kCastType_FireAndForget; }
-	virtual bool	Unk_61(UInt32 arg) override;				// 61 004091A0 { return false; }
-	virtual SInt32	GetActorValueType(void) const override;		// 67 00407240 { return -1; }
-	virtual void	Unk_6B(TESFile *file, UInt32 subtype);		// 6B 00409480
+	virtual UInt32 GetMagicType(void) const override;	   // 54 0055BEC0 { return kType_Scroll; }
+	virtual UInt32 GetCastingType(void) const override;	   // 56 00CAC8A0 { return kCastType_FireAndForget; }
+	virtual bool   Unk_61(UInt32 arg) override;			   // 61 004091A0 { return false; }
+	virtual SInt32 GetActorValueType(void) const override; // 67 00407240 { return -1; }
+	virtual void   Unk_6B(TESFile* file, UInt32 subtype);  // 6B 00409480
 };
 STATIC_ASSERT(sizeof(ScrollItem) == 0xD0);

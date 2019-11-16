@@ -12,8 +12,7 @@ class DragonCameraState +0000 (_vtbl=010E2A4C)
 ==============================================================================*/
 class DragonCameraState : public ThirdPersonState
 {
-public:
+	public:
 	DragonCameraState();
 	virtual ~DragonCameraState();
 };
-

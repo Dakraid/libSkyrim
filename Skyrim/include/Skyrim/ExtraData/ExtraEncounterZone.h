@@ -6,8 +6,11 @@ class BGSEncounterZone;
 
 class ExtraEncounterZone : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::EncounterZone };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::EncounterZone
+	};
 
 	ExtraEncounterZone();
 	virtual ~ExtraEncounterZone();

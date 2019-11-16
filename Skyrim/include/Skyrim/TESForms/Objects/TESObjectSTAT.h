@@ -1,7 +1,7 @@
 #pragma once
 
-#include "TESBoundObject.h"
 #include "../../FormComponents/TESModelTextureSwap.h"
+#include "TESBoundObject.h"
 
 /*==============================================================================
 class TESObjectSTAT +0000 (_vtbl=010855BC)
@@ -16,20 +16,23 @@ class TESObjectSTAT +0000 (_vtbl=010855BC)
 ==============================================================================*/
 // 44
 class TESObjectSTAT : public TESBoundObject,
-	public TESModelTextureSwap			// 20
+					  public TESModelTextureSwap // 20
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Static };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Static
+	};
 
 	// @members
 	// 8
 	struct Data3C
 	{
-		float	unk0;
-		UInt32	unk4;
+		float  unk0;
+		UInt32 unk4;
 	};
 
 	// @members
-	Data3C	unk3C;	// 3C
+	Data3C unk3C; // 3C
 };
 STATIC_ASSERT(sizeof(TESObjectSTAT) == 0x44);

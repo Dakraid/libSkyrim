@@ -9,10 +9,10 @@ class Setting +0000 (_vtbl=01077224)
 // C
 class Setting
 {
-public:
-	virtual ~Setting();					// 00402870
+	public:
+	virtual ~Setting(); // 00402870
 
-	virtual bool	Unk_01(void);		// 00AF43F0 { return false; }
+	virtual bool Unk_01(void); // 00AF43F0 { return false; }
 
 	enum
 	{
@@ -21,59 +21,57 @@ public:
 		kType_Float,
 		kType_String,
 		kType_Bool,
-		kType_ID6,	// need to find an example of this
+		kType_ID6, // need to find an example of this
 		kType_ID,
 	};
 
 	union Data
 	{
-		UInt32	u32;
-		SInt32	s32;
-		float	f32;
-		UInt8	u8;		// used for bool
-		char	* s;
+		UInt32 u32;
+		SInt32 s32;
+		float  f32;
+		UInt8  u8; // used for bool
+		char*  s;
 	};
 
 	// @members
-	//void	** _vtbl;	// 00 - 01077224
-	Data	data;		// 04
-	char	* name;		// 08
+	// void	** _vtbl;	// 00 - 01077224
+	Data  data; // 04
+	char* name; // 08
 
-	UInt32	GetType(void) const;
+	UInt32 GetType(void) const;
 
-	bool	GetDouble(double * out) const;
-	bool	SetDouble(double value);
+	bool GetDouble(double* out) const;
+	bool SetDouble(double value);
 
-	bool	SetString(const char * value);
+	bool SetString(const char* value);
 };
-
 
 /*==============================================================================
 class SettingCollection<class Setting> +0000 (_vtbl=01077230)
 0000: class SettingCollection<class Setting>
 ==============================================================================*/
-template <class T>
+template<class T>
 class SettingCollection
 {
-public:
+	public:
 	typedef T value_type;
 
-	virtual ~SettingCollection();			// 00402BB0
+	virtual ~SettingCollection(); // 00402BB0
 
-	virtual void	Unk_01(void) = 0;		// 00F51EE8 (pure)
-	virtual void	Unk_02(void) = 0;		// 00F51EE8 (pure)
-	virtual void	Unk_03(void) = 0;		// 00F51EE8 (pure)
-	virtual void	Unk_04(void) = 0;		// 00F51EE8 (pure)
-	virtual bool	Unk_05(UInt32 arg);		// 004091A0 { return false; }
-	virtual bool	Unk_06(void);			// 009B86F0 { return true; }
-	virtual void	Unk_07(void);			// 004028A0 { return this->unk108 != 0; }
-	virtual void	Unk_08(void);			// 004028A0 { return this->unk108 != 0; }
+	virtual void Unk_01(void) = 0;	 // 00F51EE8 (pure)
+	virtual void Unk_02(void) = 0;	 // 00F51EE8 (pure)
+	virtual void Unk_03(void) = 0;	 // 00F51EE8 (pure)
+	virtual void Unk_04(void) = 0;	 // 00F51EE8 (pure)
+	virtual bool Unk_05(UInt32 arg); // 004091A0 { return false; }
+	virtual bool Unk_06(void);		 // 009B86F0 { return true; }
+	virtual void Unk_07(void);		 // 004028A0 { return this->unk108 != 0; }
+	virtual void Unk_08(void);		 // 004028A0 { return this->unk108 != 0; }
 
 	// @members
-	//void	_vtbl;							// 000 - 01077230
-	UInt32	pad004[(0x10C - 0x004) / 4];	// 004
+	// void	_vtbl;							// 000 - 01077230
+	UInt32 pad004[(0x10C - 0x004) / 4]; // 004
 };
-
 
 /*==============================================================================
 class SettingCollectionList<class Setting> +0000 (_vtbl=0107A5D0)
@@ -81,36 +79,34 @@ class SettingCollectionList<class Setting> +0000 (_vtbl=0107A5D0)
 0000: |   class SettingCollection<class Setting>
 ==============================================================================*/
 // 114
-template <class T>
+template<class T>
 class SettingCollectionList : public SettingCollection<T>
 {
-public:
-	virtual ~SettingCollectionList();			// 00437030
+	public:
+	virtual ~SettingCollectionList(); // 00437030
 
-	virtual void	Unk_01(void) override;		// 0042CEB0
-	virtual void	Unk_02(void) override;		// 0042CE90
-	virtual void	Unk_07(void) override;		// 0042CF80
-	virtual void	Unk_08(void) override;		// 0042CFC0
+	virtual void Unk_01(void) override; // 0042CEB0
+	virtual void Unk_02(void) override; // 0042CE90
+	virtual void Unk_07(void) override; // 0042CF80
+	virtual void Unk_08(void) override; // 0042CFC0
 };
-
 
 /*==============================================================================
 class SettingCollectionMap<class Setting> +0000 (_vtbl=010772D8)
 0000: class SettingCollectionMap<class Setting>
 0000: |   class SettingCollection<class Setting>
 ==============================================================================*/
-template <class T>
+template<class T>
 class SettingCollectionMap : public SettingCollection<T>
 {
-public:
-	virtual ~SettingCollectionMap();			// 00403800
+	public:
+	virtual ~SettingCollectionMap(); // 00403800
 
-	virtual void	Unk_01(void) override;		// 00403780
-	virtual void	Unk_02(void) override;		// 00403550
-	virtual void	Unk_07(void) override;		// 00403580
-	virtual void	Unk_08(void) override;		// 00403610
+	virtual void Unk_01(void) override; // 00403780
+	virtual void Unk_02(void) override; // 00403550
+	virtual void Unk_07(void) override; // 00403580
+	virtual void Unk_08(void) override; // 00403610
 };
-
 
 /*==============================================================================
 class INISettingCollection +0000 (_vtbl=0107A64C)
@@ -120,28 +116,27 @@ class INISettingCollection +0000 (_vtbl=0107A64C)
 ==============================================================================*/
 class INISettingCollection : public SettingCollectionList<class Setting>
 {
-public:
-	virtual void	Unk_03(void) override;				// 00AFEB50
-	virtual void	Unk_04(void) override;				// 00AFED60
-	virtual bool	Unk_05(UInt32 arg) override;		// 00AFF0C0
-	virtual bool	Unk_06(void) override;				// 00AFF0D0
+	public:
+	virtual void Unk_03(void) override;		  // 00AFEB50
+	virtual void Unk_04(void) override;		  // 00AFED60
+	virtual bool Unk_05(UInt32 arg) override; // 00AFF0C0
+	virtual bool Unk_06(void) override;		  // 00AFF0D0
 
 	struct Entry
 	{
-		Setting	* setting;
-		Entry	* next;
+		Setting* setting;
+		Entry*	 next;
 	};
 
-	Setting	*	Get(const char * name);
+	Setting* Get(const char* name);
 
 	// @members
-	//void	** _vtbl;						// 000
-	Entry	items;							// 10C
+	// void	** _vtbl;						// 000
+	Entry items; // 10C
 
-private:
-	DEFINE_MEMBER_FN(Get_Internal, bool, 0x005263E0, const char * name, Setting ** out);
+	private:
+	DEFINE_MEMBER_FN(Get_Internal, bool, 0x005263E0, const char* name, Setting** out);
 };
-
 
 /*==============================================================================
 class INIPrefSettingCollection +0000 (_vtbl=0107AC8C)
@@ -152,9 +147,8 @@ class INIPrefSettingCollection +0000 (_vtbl=0107AC8C)
 ==============================================================================*/
 class INIPrefSettingCollection : public INISettingCollection
 {
-public:
+	public:
 };
-
 
 /*==============================================================================
 class RegSettingCollection +0000 (_vtbl=010CE050)
@@ -164,14 +158,13 @@ class RegSettingCollection +0000 (_vtbl=010CE050)
 ==============================================================================*/
 class RegSettingCollection : public SettingCollectionList<class Setting>
 {
-public:
+	public:
 	// @override class SettingCollectionList<class Setting> : (vtbl=010CE050)
-	//virtual ????   Unk_003(????) override;                           // 00B1FC40
-	//virtual ????   Unk_004(????) override;                           // 00B1FD00
-	//virtual ????   Unk_005(????) override;                           // 00B1FE10
-	//virtual ????   Unk_006(????) override;                           // 00B1FBE0
+	// virtual ????   Unk_003(????) override;                           // 00B1FC40
+	// virtual ????   Unk_004(????) override;                           // 00B1FD00
+	// virtual ????   Unk_005(????) override;                           // 00B1FE10
+	// virtual ????   Unk_006(????) override;                           // 00B1FBE0
 };
-
 
 /*==============================================================================
 class GameSettingCollection +0000 (_vtbl=01077388)
@@ -182,23 +175,22 @@ class GameSettingCollection +0000 (_vtbl=01077388)
 // 120
 class GameSettingCollection : public SettingCollectionMap<Setting>
 {
-public:
+	public:
 	// @override
-	virtual void	Unk_03(void) override;			// 004091A0 (UInt32 arg) { return false; }
-	virtual void	Unk_04(void) override;			// 0048B960
-	virtual bool	Unk_05(UInt32 arg) override;	// 0048B940
-	virtual bool	Unk_06(void) override;			// 0048B950
+	virtual void Unk_03(void) override;		  // 004091A0 (UInt32 arg) { return false; }
+	virtual void Unk_04(void) override;		  // 0048B960
+	virtual bool Unk_05(UInt32 arg) override; // 0048B940
+	virtual bool Unk_06(void) override;		  // 0048B950
 
 	// @add
-	virtual void	Unk_09(void);					// 0048BA10
+	virtual void Unk_09(void); // 0048BA10
 
-	Setting *	Get(const char * name);
+	Setting* Get(const char* name);
 
 	// @members
-	//void								** _vtbl;	// 000 - 01077388
-	NiTMap <char const *, Setting *>	items;		// 10C - actually BSTCaseInsensitiveStringMap but that only changes the virtual functions
+	// void								** _vtbl;	// 000 - 01077388
+	NiTMap<char const*, Setting*> items; // 10C - actually BSTCaseInsensitiveStringMap but that only changes the virtual functions
 };
-
 
 /*==============================================================================
 class SettingT<class INISettingCollection> +0000 (_vtbl=0107A6A8)
@@ -220,16 +212,14 @@ class SettingT<class GameSettingCollection> +0000 (_vtbl=010773B4)
 0000: class SettingT<class GameSettingCollection>
 0000: |   class Setting
 ==============================================================================*/
-template <class T>
+template<class T>
 class SettingT : public T::value_type
 {
-public:
+	public:
 };
 
+Setting* GetINISetting(const char* name);
 
-
-Setting * GetINISetting(const char * name);
-
-extern INISettingCollection		*& g_iniSettingCollection;
-extern INIPrefSettingCollection	*& g_iniPrefSettingCollection;
-extern GameSettingCollection	*& g_gameSettingCollection;
+extern INISettingCollection*&	  g_iniSettingCollection;
+extern INIPrefSettingCollection*& g_iniPrefSettingCollection;
+extern GameSettingCollection*&	  g_gameSettingCollection;

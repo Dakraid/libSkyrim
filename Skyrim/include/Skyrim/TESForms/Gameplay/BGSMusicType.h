@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSAudio/BSIMusicType.h"
 #include "../../BSCore/BSFixedString.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class BGSMusicType +0000 (_vtbl=0108DC1C)
@@ -13,13 +13,16 @@ class BGSMusicType +0000 (_vtbl=0108DC1C)
 ==============================================================================*/
 // 4C
 class BGSMusicType : public TESForm,
-	public BSIMusicType			// 14
+					 public BSIMusicType // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::MusicType };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::MusicType
+	};
 
 	// @members
-	UInt32			pad44;		// 44
-	BSFixedString	editorId;	// 48
+	UInt32		  pad44;	// 44
+	BSFixedString editorId; // 48
 };
 STATIC_ASSERT(sizeof(BGSMusicType) == 0x4C);

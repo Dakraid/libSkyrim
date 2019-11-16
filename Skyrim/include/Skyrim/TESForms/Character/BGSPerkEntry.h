@@ -1,13 +1,12 @@
 #pragma once
 
-#include "BGSEntryPointFunction.h"
 #include "../../FormComponents/Condition.h"
+#include "BGSEntryPointFunction.h"
 
 class TESQuest;
 class SpellItem;
 class TESObjectREFR;
 class BGSPerk;
-
 
 /*==============================================================================
 class BGSPerkEntry +0000 (_vtbl=010A3658)
@@ -15,27 +14,26 @@ class BGSPerkEntry +0000 (_vtbl=010A3658)
 ==============================================================================*/
 class BGSPerkEntry
 {
-public:
-	virtual bool	CanProcess(UInt32 numArgs, void *args);				// 00 009EA550 { return false; }
-	virtual UInt8	GetType(void) const;								// 01 0092D110 { return 0; }
-	virtual BGSEntryPointFunctionData *	GetFunctionData(void) const;	// 02 005EADD0 { return nullptr; }
-	virtual ~BGSPerkEntry();											// 03 0054FCB0
-	virtual void	Unk_04(void) = 0;									// 04
-	virtual void	Unk_05(void);										// 05 006C50E0 { return; }
-	virtual void	Unk_06(UInt32 arg);									// 06 00588F30 { return; }
-	virtual bool	Unk_07(UInt32 arg);									// 07 00C8CCA0 { return true; }
-	virtual void	Unk_08(UInt32 arg);									// 08 00588F30 { return; }
-	virtual void	Unk_09(void);										// 09 0054F4B0
-	virtual void	Unk_0A(void) = 0;									// 0A
-	virtual void	Unk_0B(UInt32 arg) = 0;								// 0B
+	public:
+	virtual bool					   CanProcess(UInt32 numArgs, void* args); // 00 009EA550 { return false; }
+	virtual UInt8					   GetType(void) const;					   // 01 0092D110 { return 0; }
+	virtual BGSEntryPointFunctionData* GetFunctionData(void) const;			   // 02 005EADD0 { return nullptr; }
+	virtual ~BGSPerkEntry();												   // 03 0054FCB0
+	virtual void Unk_04(void) = 0;											   // 04
+	virtual void Unk_05(void);												   // 05 006C50E0 { return; }
+	virtual void Unk_06(UInt32 arg);										   // 06 00588F30 { return; }
+	virtual bool Unk_07(UInt32 arg);										   // 07 00C8CCA0 { return true; }
+	virtual void Unk_08(UInt32 arg);										   // 08 00588F30 { return; }
+	virtual void Unk_09(void);												   // 09 0054F4B0
+	virtual void Unk_0A(void)		= 0;									   // 0A
+	virtual void Unk_0B(UInt32 arg) = 0;									   // 0B
 
 	// @members
-	//void	** _vtbl;	// 00
-	UInt8	rank;		// 04
-	UInt8	priority;	// 05
-	UInt16	type;		// 06
+	// void	** _vtbl;	// 00
+	UInt8  rank;	 // 04
+	UInt8  priority; // 05
+	UInt16 type;	 // 06
 };
-
 
 /*==============================================================================
 class BGSQuestPerkEntry +0000 (_vtbl=010A368C)
@@ -44,18 +42,18 @@ class BGSQuestPerkEntry +0000 (_vtbl=010A368C)
 ==============================================================================*/
 class BGSQuestPerkEntry : public BGSPerkEntry
 {
-public:
+	public:
 	// @override
-	virtual void	Unk_04(void) override;				// 005EADD0 (void) { return 0; }
-	virtual void	Unk_06(UInt32 arg) override;		// 0054F690
-	virtual bool	Unk_07(UInt32 arg) override;		// 0054FCE0
-	virtual void	Unk_0A(void) override;				// 0054F4C0
-	virtual void	Unk_0B(UInt32 arg) override;		// 00588F30 (UInt32 arg) { return; }
+	virtual void Unk_04(void) override;		  // 005EADD0 (void) { return 0; }
+	virtual void Unk_06(UInt32 arg) override; // 0054F690
+	virtual bool Unk_07(UInt32 arg) override; // 0054FCE0
+	virtual void Unk_0A(void) override;		  // 0054F4C0
+	virtual void Unk_0B(UInt32 arg) override; // 00588F30 (UInt32 arg) { return; }
 
 	// @members
-	TESQuest	* quest;		// 08
-	UInt8		stage;			// 0C
-	UInt8		pad[3];			// 0D
+	TESQuest* quest;  // 08
+	UInt8	  stage;  // 0C
+	UInt8	  pad[3]; // 0D
 };
 
 /*==============================================================================
@@ -65,15 +63,15 @@ class BGSAbilityPerkEntry +0000 (_vtbl=010A36C0)
 ==============================================================================*/
 class BGSAbilityPerkEntry : public BGSPerkEntry
 {
-public:
-	virtual void	Unk_04(void) override;				// 00CAC8A0
-	virtual void	Unk_06(UInt32 arg) override;		// 0054F710
-	virtual bool	Unk_07(UInt32 arg) override;		// 0054FDE0
-	virtual void	Unk_0A(void) override;				// 0054F500
-	virtual void	Unk_0B(UInt32 arg) override;		// 0054F530
+	public:
+	virtual void Unk_04(void) override;		  // 00CAC8A0
+	virtual void Unk_06(UInt32 arg) override; // 0054F710
+	virtual bool Unk_07(UInt32 arg) override; // 0054FDE0
+	virtual void Unk_0A(void) override;		  // 0054F500
+	virtual void Unk_0B(UInt32 arg) override; // 0054F530
 
 	// @members
-	SpellItem	* spellItem;	// 08
+	SpellItem* spellItem; // 08
 };
 
 /*==============================================================================
@@ -84,7 +82,7 @@ class BGSEntryPointPerkEntry +0000 (_vtbl=010A36F4)
 // 18
 class BGSEntryPointPerkEntry : public BGSPerkEntry
 {
-public:
+	public:
 	enum EntryPointType
 	{
 		kEntryPoint_Calculate_Weapon_Damage,
@@ -183,29 +181,27 @@ public:
 		kNumPerkEntryPoints
 	};
 
+	virtual bool					   CanProcess(UInt32 numArgs, void* args) override; // 00 0054FE70
+	virtual UInt8					   GetType(void) const override;					// 01 00941C90 { return this->unk09; }
+	virtual BGSEntryPointFunctionData* GetFunctionData(void) const override;			// 02 00E80F90 { return this->unk0C; }
+	virtual ~BGSEntryPointPerkEntry();													// 03 00550280
+	virtual void Unk_04(void) override;													// 04 005C8DE0
+	virtual void Unk_05(void) override;													// 05 0054FFA0
+	virtual void Unk_06(UInt32 arg) override;											// 06 0054F560
+	virtual bool Unk_07(UInt32 arg) override;											// 07 0054F790
+	virtual void Unk_08(UInt32 arg) override;											// 08 0054F5A0
+	virtual void Unk_09(void) override;													// 09 0054F5C0
+	virtual void Unk_0A(void) override;													// 0A 0054F5E0
+	virtual void Unk_0B(UInt32 arg) override;											// 0B 0054F610
 
-	virtual bool	CanProcess(UInt32 numArgs, void *args) override;			// 00 0054FE70
-	virtual UInt8	GetType(void) const override;								// 01 00941C90 { return this->unk09; }
-	virtual BGSEntryPointFunctionData *	GetFunctionData(void) const override;	// 02 00E80F90 { return this->unk0C; }
-	virtual ~BGSEntryPointPerkEntry();											// 03 00550280
-	virtual void	Unk_04(void) override;										// 04 005C8DE0
-	virtual void	Unk_05(void) override;										// 05 0054FFA0
-	virtual void	Unk_06(UInt32 arg) override;								// 06 0054F560
-	virtual bool	Unk_07(UInt32 arg) override;								// 07 0054F790
-	virtual void	Unk_08(UInt32 arg) override;								// 08 0054F5A0
-	virtual void	Unk_09(void) override;										// 09 0054F5C0
-	virtual void	Unk_0A(void) override;										// 0A 0054F5E0
-	virtual void	Unk_0B(UInt32 arg) override;								// 0B 0054F610
-
-	static void Calculate(EntryPointType type, TESObjectREFR *source, ...);
-
+	static void Calculate(EntryPointType type, TESObjectREFR* source, ...);
 
 	// @members
-	//void						** _vtbl;			// 00 - 010A36F4
-	UInt8						type;				// 08 - EntryPointType
-	UInt8						unk09;				// 09
-	UInt8						numArgs;			// 0A
-	BGSEntryPointFunctionData	* functionData;		// 0C
-	Condition					* conditions;		// 10 - numConditions = *(UInt32 *)(conditions - 1);
-	BGSPerk						* perk;				// 14
+	// void						** _vtbl;			// 00 - 010A36F4
+	UInt8					   type;		 // 08 - EntryPointType
+	UInt8					   unk09;		 // 09
+	UInt8					   numArgs;		 // 0A
+	BGSEntryPointFunctionData* functionData; // 0C
+	Condition*				   conditions;	 // 10 - numConditions = *(UInt32 *)(conditions - 1);
+	BGSPerk*				   perk;		 // 14
 };

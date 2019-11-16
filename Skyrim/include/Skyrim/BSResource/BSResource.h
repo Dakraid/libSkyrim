@@ -4,27 +4,27 @@
 
 namespace BSResource
 {
-	class Location;
-	class LooseFileLocation;
+class Location;
+class LooseFileLocation;
 
-	struct ArchiveStreamOpenedEvent
-	{
-	};
+struct ArchiveStreamOpenedEvent
+{
+};
 
-	struct NameFoundEvent
-	{
-		// 00A403C3: SendEventSink
+struct NameFoundEvent
+{
+	// 00A403C3: SendEventSink
 
-		const char			* name;			// arg1
-		void				* unk04;
-		LooseFileLocation	* unk08;		// arg2
-	};
+	const char*		   name; // arg1
+	void*			   unk04;
+	LooseFileLocation* unk08; // arg2
+};
 
-	struct ArchiveRegisteredEvent
-	{
-		// 00A40191: SendEventSink
+struct ArchiveRegisteredEvent
+{
+	// 00A40191: SendEventSink
 
-		const char			* name;		// "aaa", "aab", "aac", "aad"...
-		void				* data;
-	};
-}
+	const char* name; // "aaa", "aab", "aac", "aad"...
+	void*		data;
+};
+} // namespace BSResource

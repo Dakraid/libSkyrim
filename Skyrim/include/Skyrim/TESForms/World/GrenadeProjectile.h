@@ -17,11 +17,14 @@ class GrenadeProjectile +0000 (_vtbl=010D8654)
 // 148
 class GrenadeProjectile : public Projectile
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Grenade };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Grenade
+	};
 
 	// @members
-	UInt32	unk140;
-	UInt32	unk144;
+	UInt32 unk140;
+	UInt32 unk144;
 };
 STATIC_ASSERT(sizeof(GrenadeProjectile) == 0x148);

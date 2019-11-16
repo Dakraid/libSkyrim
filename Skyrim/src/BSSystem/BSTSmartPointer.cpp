@@ -1,5 +1,5 @@
-#include "Skyrim.h"
 #include "Skyrim/BSSystem/BSTSmartPointer.h"
+#include "Skyrim.h"
 
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>

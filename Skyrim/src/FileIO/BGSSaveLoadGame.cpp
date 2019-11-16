@@ -1,8 +1,6 @@
 #include "Skyrim/FileIO/BGSSaveLoadGame.h"
 
-
-
-bool BGSSaveLoadGame::FormFlagMap::GetAt(FormID formID, FormFlagData &flags)
+bool BGSSaveLoadGame::FormFlagMap::GetAt(FormID formID, FormFlagData& flags)
 {
 	lock.Lock();
 	bool result = map.GetAt(formID, flags);

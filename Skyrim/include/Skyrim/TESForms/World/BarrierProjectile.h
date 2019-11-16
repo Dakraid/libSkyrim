@@ -17,8 +17,11 @@ class BarrierProjectile +0000 (_vtbl=010D749C)
 // 150
 class BarrierProjectile : public Projectile
 {
-public:
-	enum { kTypeID = (UInt32)FormType::BarrierProj };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::BarrierProj
+	};
 
 	UInt32 unk140;
 	UInt32 unk144;

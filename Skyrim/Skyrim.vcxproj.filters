@@ -2951,6 +2951,9 @@
     <ClInclude Include="include\Skyrim\Magic\MagicTarget.h">
       <Filter>Header Files\Skyrim\Magic</Filter>
     </ClInclude>
+    <ClInclude Include="include\Skyrim\Menus\StandardItemData.h">
+      <Filter>Header Files\Skyrim\Menus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="include\Skyrim\BSScript\BSScriptNativeFunctionDef.inl">

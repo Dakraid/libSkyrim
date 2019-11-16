@@ -1,14 +1,17 @@
 #pragma once
 
-#include "BSExtraData.h"
 #include "../BSCore/BSTArray.h"
+#include "BSExtraData.h"
 
 class TESForm;
 
 class ExtraPromotedRef : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::PromotedRef };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::PromotedRef
+	};
 
 	ExtraPromotedRef();
 	virtual ~ExtraPromotedRef();

@@ -12,7 +12,7 @@ class LocalMapCamera +0000 (_vtbl=0107F60C)
 ==============================================================================*/
 class LocalMapCamera : public TESCamera
 {
-public:
+	public:
 	LocalMapCamera();
 	virtual ~LocalMapCamera();
 
@@ -24,28 +24,28 @@ public:
 	==============================================================================*/
 	class DefaultState : public TESCameraState
 	{
-	public:
-		virtual ~DefaultState();						// 004863A0
-		virtual void	OnUpdate(void * unk1) override;	// 00486D80
+		public:
+		virtual ~DefaultState();					// 004863A0
+		virtual void OnUpdate(void* unk1) override; // 00486D80
 
 		// @members
-		NiPoint3	someBoundMax;		// 10
-		NiPoint3	someBoundMin;		// 1C
-		float		zoomPercent;		// 28
-		float		minFrustumWidth;	// 2C
-		float		minFrustumHeight;	// 30
+		NiPoint3 someBoundMax;	   // 10
+		NiPoint3 someBoundMin;	   // 1C
+		float	 zoomPercent;	   // 28
+		float	 minFrustumWidth;  // 2C
+		float	 minFrustumHeight; // 30
 	};
 
 	// @members
-	NiPoint3		areaBoundsMax;		// 28
-	NiPoint3		areaBoundsMin;		// 34
-	DefaultState	* defaultState;		// 40
-	NiObject		* niCamera;			// 44
-	float			northRotation;		// 48
+	NiPoint3	  areaBoundsMax; // 28
+	NiPoint3	  areaBoundsMin; // 34
+	DefaultState* defaultState;	 // 40
+	NiObject*	  niCamera;		 // 44
+	float		  northRotation; // 48
 
 	void SetDefaultStateMinFrustumDimensions(float width, float height);
-	void SetAreaBounds(NiPoint3 * maxBound, NiPoint3 * minBound);
-	void SetDefaultStateMaxBound(NiPoint3 * maxBound);
+	void SetAreaBounds(NiPoint3* maxBound, NiPoint3* minBound);
+	void SetDefaultStateMaxBound(NiPoint3* maxBound);
 	void SetDefaultStateBounds(float x, float y, float z);
 
 	DEFINE_MEMBER_FN(SetNorthRotation, void, 0x00486440, float northRotation);
@@ -53,5 +53,5 @@ public:
 };
 STATIC_ASSERT(offsetof(LocalMapCamera, northRotation) == 0x48);
 
-extern const float	* g_mapLocalHeight;
-extern const float	* g_localMapMinFrustumWidth;
+extern const float* g_mapLocalHeight;
+extern const float* g_localMapMinFrustumWidth;

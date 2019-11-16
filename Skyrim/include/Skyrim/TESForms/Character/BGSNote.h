@@ -1,10 +1,10 @@
 #pragma once
 
-#include "../Objects/TESBoundObject.h"
-#include "../../FormComponents/TESModel.h"
+#include "../../FormComponents/BGSPickupPutdownSounds.h"
 #include "../../FormComponents/TESFullName.h"
 #include "../../FormComponents/TESIcon.h"
-#include "../../FormComponents/BGSPickupPutdownSounds.h"
+#include "../../FormComponents/TESModel.h"
+#include "../Objects/TESBoundObject.h"
 
 /*==============================================================================
 class BGSNote +0000 (_vtbl=010A34E4)
@@ -25,26 +25,29 @@ class BGSNote +0000 (_vtbl=010A34E4)
 ==============================================================================*/
 // 64
 class BGSNote : public TESBoundObject,
-	public TESModel,				// 20
-	public TESFullName,				// 34
-	public TESIcon,					// 3C
-	public BGSPickupPutdownSounds	// 44
+				public TESModel,			  // 20
+				public TESFullName,			  // 34
+				public TESIcon,				  // 3C
+				public BGSPickupPutdownSounds // 44
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Note };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Note
+	};
 
 	// @members
 	struct Entry
 	{
-		void	* data;
-		Entry	* next;
+		void*  data;
+		Entry* next;
 	};
 
-	UInt32	unk50;		// 50
-	UInt32	unk54;		// 54
-	Entry	unk58;		// 58
-	UInt8	unk60;		// 60
-	UInt8	unk61;		// 61
-	UInt8	pad62[2];	// 62
+	UInt32 unk50;	 // 50
+	UInt32 unk54;	 // 54
+	Entry  unk58;	 // 58
+	UInt8  unk60;	 // 60
+	UInt8  unk61;	 // 61
+	UInt8  pad62[2]; // 62
 };
 STATIC_ASSERT(sizeof(BGSNote) == 0x64);

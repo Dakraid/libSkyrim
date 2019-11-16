@@ -4,6 +4,9 @@
 
 class ExtraInteraction : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Interaction };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Interaction
+	};
 };

@@ -13,18 +13,18 @@ class DialogueMenu +0000 (_vtbl=010E4C9C)
 ==============================================================================*/
 // 2C
 class DialogueMenu : public IMenu,
-	public BSTEventSink<class MenuOpenCloseEvent>	// 1C
+					 public BSTEventSink<class MenuOpenCloseEvent> // 1C
 {
 	// DialogueMenu
 	// unk0C - 3
 	// Flags - 0x4400
 	// unk14 - 1
-public:
+	public:
 	// @members
-	UInt32	unk20;
-	UInt32	unk24;
-	UInt32	unk28;	// init'd 0 ctor=0x00A49B40
+	UInt32 unk20;
+	UInt32 unk24;
+	UInt32 unk28; // init'd 0 ctor=0x00A49B40
 
-private:
+	private:
 	DEFINE_MEMBER_FN(ctor, DialogueMenu*, 0x0085A1D0)
 };

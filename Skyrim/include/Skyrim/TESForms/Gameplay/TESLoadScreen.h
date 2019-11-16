@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSCore/BSFixedString.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class TESLoadScreen +0000 (_vtbl=01091884)
@@ -12,12 +12,15 @@ class TESLoadScreen +0000 (_vtbl=01091884)
 // 20
 class TESLoadScreen : public TESForm
 {
-public:
-	enum { kTypeID = (UInt32)FormType::LoadScreen };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::LoadScreen
+	};
 
 	// @members
-	void				* unk14;	// 14 - linked list
-	TESObjectSTAT		* object;	// 18
-	BSFixedString		unk1C;		// 1C
+	void*		   unk14;  // 14 - linked list
+	TESObjectSTAT* object; // 18
+	BSFixedString  unk1C;  // 1C
 };
 STATIC_ASSERT(sizeof(TESLoadScreen) == 0x20);

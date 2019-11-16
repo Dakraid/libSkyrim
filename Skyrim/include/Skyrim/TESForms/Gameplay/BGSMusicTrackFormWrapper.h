@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSAudio/BSIMusicTrack.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class BGSMusicTrackFormWrapper +0000 (_vtbl=0108DA54)
@@ -12,12 +12,15 @@ class BGSMusicTrackFormWrapper +0000 (_vtbl=0108DA54)
 ==============================================================================*/
 // 20
 class BGSMusicTrackFormWrapper : public TESForm,
-	public BSIMusicTrack		// 14
+								 public BSIMusicTrack // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::MusicTrack };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::MusicTrack
+	};
 
 	// @members
-	UInt32	unk1C;			// 1C
+	UInt32 unk1C; // 1C
 };
 STATIC_ASSERT(sizeof(BGSMusicTrackFormWrapper) == 0x20);

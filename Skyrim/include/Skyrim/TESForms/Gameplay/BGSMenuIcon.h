@@ -3,7 +3,6 @@
 #include "../../FormComponents/TESForm.h"
 #include "../../FormComponents/TESIcon.h"
 
-
 /*==============================================================================
 class BGSMenuIcon +0000 (_vtbl=0108D504)
 0000: class BGSMenuIcon
@@ -15,9 +14,12 @@ class BGSMenuIcon +0000 (_vtbl=0108D504)
 ==============================================================================*/
 // 1C
 class BGSMenuIcon : public TESForm,
-	public TESIcon		// 14
+					public TESIcon // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::MenuIcon };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::MenuIcon
+	};
 };
 STATIC_ASSERT(sizeof(BGSMenuIcon) == 0x1C);

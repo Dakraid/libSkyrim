@@ -21,10 +21,13 @@ class BeamProjectile +0000 (_vtbl=010D783C)
 ==============================================================================*/
 // 174
 class BeamProjectile : public Projectile,
-	public BSTEventSource<BeamProjectileImpactEvent>,	// 144
-	public BSTEventSink<BSProceduralGeomEvent>			// 140
+					   public BSTEventSource<BeamProjectileImpactEvent>, // 144
+					   public BSTEventSink<BSProceduralGeomEvent>		 // 140
 {
-public:
-	enum { kTypeID = (UInt32)FormType::BeamProj };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::BeamProj
+	};
 };
 STATIC_ASSERT(sizeof(BeamProjectile) == 0x174);

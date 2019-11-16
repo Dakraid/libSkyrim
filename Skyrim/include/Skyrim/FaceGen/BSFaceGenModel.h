@@ -14,34 +14,33 @@ class BSFaceGenModel +0000 (_vtbl=010BE8A8)
 // 10
 class BSFaceGenModel : public NiRefObject
 {
-public:
+	public:
 	struct Data08
 	{
-		UInt32				unk00;		// 00
-		NiAVObject			* unk04;	// 04
-		NiAVObject			* unk08;	// 08
-		UInt32				unk0C;		// 0C
-		BSFaceGenMorphData	* unk10;	// 10
+		UInt32				unk00; // 00
+		NiAVObject*			unk04; // 04
+		NiAVObject*			unk08; // 08
+		UInt32				unk0C; // 0C
+		BSFaceGenMorphData* unk10; // 10
 	};
 
-	virtual ~BSFaceGenModel();			// 005A5E40
+	virtual ~BSFaceGenModel(); // 005A5E40
 
 	// @members
-	Data08	* unk08;	// 08
-	UInt32	unk0C;		// 0C
+	Data08* unk08; // 08
+	UInt32	unk0C; // 0C
 
-private:
+	private:
 	DEFINE_MEMBER_FN(ctor, void, 0x005A5D40);
-	DEFINE_MEMBER_FN(CopyFrom, void, 0x005A5D80, BSFaceGenModel * other);
-	DEFINE_MEMBER_FN(SetModelData, bool, 0x005A60D0, const char * meshPath, void * unk1, UInt8 unk2);
-	DEFINE_MEMBER_FN(ApplyMorph, UInt8, 0x005A5B70, const char ** morphName, TESModelTri * triModel, NiAVObject ** headNode, float relative, UInt8 unk1);
+	DEFINE_MEMBER_FN(CopyFrom, void, 0x005A5D80, BSFaceGenModel* other);
+	DEFINE_MEMBER_FN(SetModelData, bool, 0x005A60D0, const char* meshPath, void* unk1, UInt8 unk2);
+	DEFINE_MEMBER_FN(ApplyMorph, UInt8, 0x005A5B70, const char** morphName, TESModelTri* triModel, NiAVObject** headNode, float relative, UInt8 unk1);
 };
-
 
 // 10
 class BSFaceGenModelMap : public NiRefObject
 {
-public:
+	public:
 	/*==============================================================================
 	class BSFaceGenModelMap::Entry +0000 (_vtbl=010BE8CC)
 	0000: class BSFaceGenModelMap::Entry
@@ -49,14 +48,14 @@ public:
 	==============================================================================*/
 	class Entry
 	{
-	public:
+		public:
 		// @add
-		virtual void	Unk_02(void);	// 00444F46
+		virtual void Unk_02(void); // 00444F46
 
 		// @members
-		BSFaceGenModel	* unk00;	// 00
-		UInt32			unk04;		// 04
+		BSFaceGenModel* unk00; // 00
+		UInt32			unk04; // 04
 	};
 
-	Entry	unk08;	// 08
+	Entry unk08; // 08
 };

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESFullName.h"
 #include "../../FormComponents/BGSDestructibleObjectForm.h"
+#include "../../FormComponents/TESFullName.h"
 #include "TESObjectSTAT.h"
 
 /*==============================================================================
@@ -23,15 +23,17 @@ class BGSMovableStatic +0000 (_vtbl=01081994)
 // 5C
 // they probably wanted this to derive from TESObjectSTAT first
 // doesn't really hurt anything except performance (shims)
-class BGSMovableStatic :
-	public TESFullName,					// 00
-	public BGSDestructibleObjectForm,	// 08
-	public TESObjectSTAT				// 10
+class BGSMovableStatic : public TESFullName,			   // 00
+						 public BGSDestructibleObjectForm, // 08
+						 public TESObjectSTAT			   // 10
 {
-public:
-	enum { kTypeID = (UInt32)FormType::MovableStatic };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::MovableStatic
+	};
 
 	// @members
-	UInt8	unk54;		// 54
-	UInt8	pad55[3];	// 59
+	UInt8 unk54;	// 54
+	UInt8 pad55[3]; // 59
 };

@@ -18,12 +18,8 @@ NiRefObject::~NiRefObject()
 
 void NiRefObject::DeleteThis(void)
 {
-	if (this)
-	{
-		delete this;
-	}
+	if(this) { delete this; }
 }
-
 
 void NiRefObject::IncRefCount(void)
 {
@@ -37,8 +33,7 @@ bool NiRefObject::Release(void)
 
 void NiRefObject::DecRefCount(void)
 {
-	if (Release())
-		DeleteThis();
+	if(Release()) DeleteThis();
 }
 
 UInt32 NiRefObject::GetTotalObjectCount(void)

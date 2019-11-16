@@ -6,8 +6,11 @@ class TESObjectCELL;
 
 class ExtraPersistentCell : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::PersistentCell };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::PersistentCell
+	};
 
 	ExtraPersistentCell();
 	virtual ~ExtraPersistentCell();

@@ -2,15 +2,16 @@
 
 #define NiTDefaultAllocator DFALL
 
-template <class Ty>
+template<class Ty>
 class NiTDefaultAllocator
 {
-public:
-	void* Allocate() {
+	public:
+	void* Allocate()
+	{
 		return NiMalloc(sizeof(Ty));
 	}
-	void Deallocate(void* p) {
+	void Deallocate(void* p)
+	{
 		return NiFree(p);
 	}
-
 };

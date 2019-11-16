@@ -2,7 +2,6 @@
 
 #include "TESCameraState.h"
 
-
 /*==============================================================================
 class IronSightsState +0000 (_vtbl=010E3118)
 0000: class IronSightsState
@@ -11,9 +10,9 @@ class IronSightsState +0000 (_vtbl=010E3118)
 ==============================================================================*/
 class IronSightsState : public TESCameraState
 {
-public:
+	public:
 	IronSightsState();
 	virtual ~IronSightsState();
 
-	UInt32	unk10;	// 10
+	UInt32 unk10; // 10
 };

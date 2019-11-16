@@ -4,7 +4,10 @@
 
 class ExtraFlags : public BSExtraData
 {
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Flags };
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Flags
+	};
 
 	ExtraFlags();
 	virtual ~ExtraFlags();

@@ -13,9 +13,9 @@ class TESBoundAnimObject +0000 (_vtbl=01083FC4)
 // 20
 class TESBoundAnimObject : public TESBoundObject
 {
-public:
+	public:
 	// @override
-	virtual bool	CanAnimate(void) override;		// 54 0092D110 { return true; }
+	virtual bool CanAnimate(void) override; // 54 0092D110 { return true; }
 
 	// @members
 	// void **	_vtbl	// 00   01083FC4

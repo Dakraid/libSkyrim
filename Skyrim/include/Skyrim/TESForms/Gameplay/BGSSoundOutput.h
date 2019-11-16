@@ -1,8 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSAudio/BSISoundOutputModel.h"
-
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class BGSSoundOutput +0000 (_vtbl=0108E2CC)
@@ -13,10 +12,13 @@ class BGSSoundOutput +0000 (_vtbl=0108E2CC)
 ==============================================================================*/
 // 28
 class BGSSoundOutput : public TESForm,
-	public BSISoundOutputModel		// 14
+					   public BSISoundOutputModel // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::SoundOutput };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::SoundOutput
+	};
 
 	/*==============================================================================
 	struct BGSSoundOutput::DynamicAttenuationCharacteristics +0000 (_vtbl=0108E288)
@@ -25,15 +27,15 @@ public:
 	==============================================================================*/
 	struct DynamicAttenuationCharacteristics : public BSISoundOutputModel::BSIAttenuationCharacteristics
 	{
-		virtual void Unk_001(void) override;		// 005B05E0
-		virtual void Unk_002(void) override;		// 00500B80
-		virtual void Unk_003(void) override;		// 00500B90
+		virtual void Unk_001(void) override; // 005B05E0
+		virtual void Unk_002(void) override; // 00500B80
+		virtual void Unk_003(void) override; // 00500B90
 	};
 
 	// @members
-	UInt32	unk18;		// 18
-	UInt32	unk1C;		// 1C
-	UInt32	unk20;		// 20
-	void	* unk24;	// 24
+	UInt32 unk18; // 18
+	UInt32 unk1C; // 1C
+	UInt32 unk20; // 20
+	void*  unk24; // 24
 };
 STATIC_ASSERT(sizeof(BGSSoundOutput) == 0x28);

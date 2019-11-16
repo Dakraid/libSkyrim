@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../Objects/TESBoundObject.h"
-#include "../../FormComponents/TESModel.h"
 #include "../../FormComponents/BGSIdleCollection.h"
+#include "../../FormComponents/TESModel.h"
+#include "../Objects/TESBoundObject.h"
 
 /*==============================================================================
 class BGSIdleMarker +0000 (_vtbl=010A2FD4)
@@ -18,10 +18,13 @@ class BGSIdleMarker +0000 (_vtbl=010A2FD4)
 ==============================================================================*/
 // 44
 class BGSIdleMarker : public TESBoundObject,
-	public TESModel,			// 20
-	public BGSIdleCollection	// 34
+					  public TESModel,		   // 20
+					  public BGSIdleCollection // 34
 {
-public:
-	enum { kTypeID = (UInt32)FormType::IdleMarker };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::IdleMarker
+	};
 };
 STATIC_ASSERT(sizeof(BGSIdleMarker) == 0x44);

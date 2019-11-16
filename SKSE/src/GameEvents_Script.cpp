@@ -1,267 +1,267 @@
 #include "SKSE/GameEvents.h"
 #include <Skyrim/SkyrimVM.h>
 
-template <>
+template<>
 BSTEventSource<BGSEventProcessedEvent>* SKSEEvent2<BGSEventProcessedEvent>::GetEventSource()
 {
 	return &g_eventProcessedEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESActivateEvent>* SKSEEvent2<TESActivateEvent>::GetEventSource()
 {
 	return &g_activateEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESActiveEffectApplyRemoveEvent>* SKSEEvent2<TESActiveEffectApplyRemoveEvent>::GetEventSource()
 {
 	return &g_activeEffectApplyRemoveEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESActorLocationChangeEvent>* SKSEEvent2<TESActorLocationChangeEvent>::GetEventSource()
 {
 	return &g_actorLocationChangeEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESBookReadEvent>* SKSEEvent2<TESBookReadEvent>::GetEventSource()
 {
 	return &g_bookReadEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESCellAttachDetachEvent>* SKSEEvent2<TESCellAttachDetachEvent>::GetEventSource()
 {
 	return &g_cellAttachDetachEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESCellFullyLoadedEvent>* SKSEEvent2<TESCellFullyLoadedEvent>::GetEventSource()
 {
 	return &g_cellFullyLoadedEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESCellReadyToApplyDecalsEvent>* SKSEEvent2<TESCellReadyToApplyDecalsEvent>::GetEventSource()
 {
 	return &g_cellReadyToApplyDecalsEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESCombatEvent>* SKSEEvent2<TESCombatEvent>::GetEventSource()
 {
 	return &g_combatEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESContainerChangedEvent>* SKSEEvent2<TESContainerChangedEvent>::GetEventSource()
 {
 	return &g_containerChangedEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESDeathEvent>* SKSEEvent2<TESDeathEvent>::GetEventSource()
 {
 	return &g_deathEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESDestructionStageChangedEvent>* SKSEEvent2<TESDestructionStageChangedEvent>::GetEventSource()
 {
 	return &g_destructionStageChangedEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESEnterBleedoutEvent>* SKSEEvent2<TESEnterBleedoutEvent>::GetEventSource()
 {
 	return &g_enterBleedoutEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESEquipEvent>* SKSEEvent2<TESEquipEvent>::GetEventSource()
 {
 	return &g_equipEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESFormDeleteEvent>* SKSEEvent2<TESFormDeleteEvent>::GetEventSource()
 {
 	return &g_formDeleteEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESFurnitureEvent>* SKSEEvent2<TESFurnitureEvent>::GetEventSource()
 {
 	return &g_furnitureEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESGrabReleaseEvent>* SKSEEvent2<TESGrabReleaseEvent>::GetEventSource()
 {
 	return &g_grabReleaseEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESHitEvent>* SKSEEvent2<TESHitEvent>::GetEventSource()
 {
 	return &g_hitEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESInitScriptEvent>* SKSEEvent2<TESInitScriptEvent>::GetEventSource()
 {
 	return &g_initScriptEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESLoadGameEvent>* SKSEEvent2<TESLoadGameEvent>::GetEventSource()
 {
 	return &g_loadGameEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESLockChangedEvent>* SKSEEvent2<TESLockChangedEvent>::GetEventSource()
 {
 	return &g_lockChangedEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESMagicEffectApplyEvent>* SKSEEvent2<TESMagicEffectApplyEvent>::GetEventSource()
 {
 	return &g_magicEffectApplyEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESMagicWardHitEvent>* SKSEEvent2<TESMagicWardHitEvent>::GetEventSource()
 {
 	return &g_magicWardHitEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESMoveAttachDetachEvent>* SKSEEvent2<TESMoveAttachDetachEvent>::GetEventSource()
 {
 	return &g_moveAttachDetachEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESObjectLoadedEvent>* SKSEEvent2<TESObjectLoadedEvent>::GetEventSource()
 {
 	return &g_objectLoadedEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESObjectREFRTranslationEvent>* SKSEEvent2<TESObjectREFRTranslationEvent>::GetEventSource()
 {
 	return &g_objectREFRTranslationEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESOpenCloseEvent>* SKSEEvent2<TESOpenCloseEvent>::GetEventSource()
 {
 	return &g_openCloseEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESPackageEvent>* SKSEEvent2<TESPackageEvent>::GetEventSource()
 {
 	return &g_packageEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESPerkEntryRunEvent>* SKSEEvent2<TESPerkEntryRunEvent>::GetEventSource()
 {
 	return &g_perkEntryRunEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESQuestInitEvent>* SKSEEvent2<TESQuestInitEvent>::GetEventSource()
 {
 	return &g_questInitEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESQuestStageEvent>* SKSEEvent2<TESQuestStageEvent>::GetEventSource()
 {
 	return &g_questStageEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESQuestStageItemDoneEvent>* SKSEEvent2<TESQuestStageItemDoneEvent>::GetEventSource()
 {
 	return &g_questStageItemDoneEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESQuestStartStopEvent>* SKSEEvent2<TESQuestStartStopEvent>::GetEventSource()
 {
 	return &g_questStartStopEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESResetEvent>* SKSEEvent2<TESResetEvent>::GetEventSource()
 {
 	return &g_resetEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESResolveNPCTemplatesEvent>* SKSEEvent2<TESResolveNPCTemplatesEvent>::GetEventSource()
 {
 	return &g_resolveNPCTemplatesEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESSceneEvent>* SKSEEvent2<TESSceneEvent>::GetEventSource()
 {
 	return &g_sceneEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESSceneActionEvent>* SKSEEvent2<TESSceneActionEvent>::GetEventSource()
 {
 	return &g_sceneActionEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESScenePhaseEvent>* SKSEEvent2<TESScenePhaseEvent>::GetEventSource()
 {
 	return &g_scenePhaseEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESSellEvent>* SKSEEvent2<TESSellEvent>::GetEventSource()
 {
 	return &g_sellEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESSleepStartEvent>* SKSEEvent2<TESSleepStartEvent>::GetEventSource()
 {
 	return &g_sleepStartEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESSleepStopEvent>* SKSEEvent2<TESSleepStopEvent>::GetEventSource()
 {
 	return &g_sleepStopEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESSpellCastEvent>* SKSEEvent2<TESSpellCastEvent>::GetEventSource()
 {
 	return &g_spellCastEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESPlayerBowShotEvent>* SKSEEvent2<TESPlayerBowShotEvent>::GetEventSource()
 {
 	return &g_playerBowShotEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESTopicInfoEvent>* SKSEEvent2<TESTopicInfoEvent>::GetEventSource()
 {
 	return &g_topicInfoEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESTrackedStatsEvent>* SKSEEvent2<TESTrackedStatsEvent>::GetEventSource()
 {
 	return &g_trackedStatsEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESTrapHitEvent>* SKSEEvent2<TESTrapHitEvent>::GetEventSource()
 {
 	return &g_trapHitEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESTriggerEvent>* SKSEEvent2<TESTriggerEvent>::GetEventSource()
 {
 	return &g_triggerEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESTriggerEnterEvent>* SKSEEvent2<TESTriggerEnterEvent>::GetEventSource()
 {
 	return &g_triggerEnterEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESTriggerLeaveEvent>* SKSEEvent2<TESTriggerLeaveEvent>::GetEventSource()
 {
 	return &g_triggerLeaveEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESUniqueIDChangeEvent>* SKSEEvent2<TESUniqueIDChangeEvent>::GetEventSource()
 {
 	return &g_uniqueIDChangeEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESWaitStartEvent>* SKSEEvent2<TESWaitStartEvent>::GetEventSource()
 {
 	return &g_waitStartEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESWaitStopEvent>* SKSEEvent2<TESWaitStopEvent>::GetEventSource()
 {
 	return &g_waitStopEventSource;
 }
-template <>
+template<>
 BSTEventSource<TESSwitchRaceCompleteEvent>* SKSEEvent2<TESSwitchRaceCompleteEvent>::GetEventSource()
 {
 	return &g_switchRaceCompleteEventSource;
@@ -269,8 +269,8 @@ BSTEventSource<TESSwitchRaceCompleteEvent>* SKSEEvent2<TESSwitchRaceCompleteEven
 
 //=============================================================================================
 
-template <>
+template<>
 BSTEventSource<SkyrimScript::StatsEvent>* SKSEEvent2<SkyrimScript::StatsEvent>::GetEventSource()
 {
-	return g_skyrimVM ? static_cast<BSTEventSource<SkyrimScript::StatsEvent> *>(g_skyrimVM) : nullptr;
+	return g_skyrimVM ? static_cast<BSTEventSource<SkyrimScript::StatsEvent>*>(g_skyrimVM) : nullptr;
 }

@@ -1,17 +1,16 @@
 #pragma once
 
-#include "TESBoundObject.h"
-#include "../../FormComponents/TESFullName.h"
-#include "../../FormComponents/TESModelTextureSwap.h"
-#include "../../FormComponents/TESIcon.h"
-#include "../../FormComponents/BGSMessageIcon.h"
-#include "../../FormComponents/TESValueForm.h"
+#include "../../BSCore/BSFixedString.h"
 #include "../../FormComponents/BGSDestructibleObjectForm.h"
+#include "../../FormComponents/BGSKeywordForm.h"
+#include "../../FormComponents/BGSMessageIcon.h"
 #include "../../FormComponents/BGSPickupPutdownSounds.h"
 #include "../../FormComponents/TESDescription.h"
-#include "../../FormComponents/BGSKeywordForm.h"
-#include "../../BSCore/BSFixedString.h"
-
+#include "../../FormComponents/TESFullName.h"
+#include "../../FormComponents/TESIcon.h"
+#include "../../FormComponents/TESModelTextureSwap.h"
+#include "../../FormComponents/TESValueForm.h"
+#include "TESBoundObject.h"
 
 /*==============================================================================
 class TESAmmo +0000 (_vtbl=010822B4)
@@ -43,49 +42,56 @@ class TESAmmo +0000 (_vtbl=010822B4)
 ==============================================================================*/
 // 9C
 class TESAmmo : public TESBoundObject,
-	public TESFullName,					// 20
-	public TESModelTextureSwap,			// 28
-	public TESIcon,						// 44
-	public BGSMessageIcon,				// 4C
-	public TESValueForm,				// 58
-	public BGSDestructibleObjectForm,	// 50
-	public BGSPickupPutdownSounds,		// 68
-	public TESDescription,				// 74
-	public BGSKeywordForm				// 80
+				public TESFullName,				  // 20
+				public TESModelTextureSwap,		  // 28
+				public TESIcon,					  // 44
+				public BGSMessageIcon,			  // 4C
+				public TESValueForm,			  // 58
+				public BGSDestructibleObjectForm, // 50
+				public BGSPickupPutdownSounds,	  // 68
+				public TESDescription,			  // 74
+				public BGSKeywordForm			  // 80
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Ammo };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Ammo
+	};
 
 	// 0C
 	struct AmmoSettings
 	{
-		BGSProjectile	* projectile;
-		UInt32			flags;
-		float			damage;
+		BGSProjectile* projectile;
+		UInt32		   flags;
+		float		   damage;
 	};
 
-	enum {
+	enum
+	{
 		kIgnoreNormalResist = (1 << 0),
-		kNotPlayable = (1 << 1),
-		kNotBolt = (1 << 2)
+		kNotPlayable		= (1 << 1),
+		kNotBolt			= (1 << 2)
 	};
 
-
-	virtual ~TESAmmo();											// 00495D90
+	virtual ~TESAmmo(); // 00495D90
 
 	// @override TESObject
-	virtual UInt32	Unk_40(UInt32 arg0, UInt32 arg1) override;	// 00496250 "Arrow%d"
+	virtual UInt32 Unk_40(UInt32 arg0, UInt32 arg1) override; // 00496250 "Arrow%d"
 
 	// @override TESBoundObject
-	virtual void	Unk_4F(UInt32 arg);							// 004961B0
+	virtual void Unk_4F(UInt32 arg); // 004961B0
 
-
-	bool isBolt() { return (settings.flags & kNotBolt) != kNotBolt; }
-	bool isPlayable() { return (settings.flags & kNotPlayable) != kNotPlayable; }
-
+	bool isBolt()
+	{
+		return (settings.flags & kNotBolt) != kNotBolt;
+	}
+	bool isPlayable()
+	{
+		return (settings.flags & kNotPlayable) != kNotPlayable;
+	}
 
 	// @members
-	AmmoSettings		settings;	// 8C
-	BSFixedString		unk98;		// 98
+	AmmoSettings  settings; // 8C
+	BSFixedString unk98;	// 98
 };
 STATIC_ASSERT(sizeof(TESAmmo) == 0x9C);

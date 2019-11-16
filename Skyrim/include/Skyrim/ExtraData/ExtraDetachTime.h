@@ -10,12 +10,15 @@ class ExtraDetachTime +0000 (_vtbl=01079608)
 // 0C
 class ExtraDetachTime : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::DetachTime };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::DetachTime
+	};
 
 	// @override
-	virtual UInt32	GetType(void) const override;		// 0055BB40 { return 0x0000000A; }
+	virtual UInt32 GetType(void) const override; // 0055BB40 { return 0x0000000A; }
 
 	// @members
-	UInt32	unk08;			// 08
+	UInt32 unk08; // 08
 };

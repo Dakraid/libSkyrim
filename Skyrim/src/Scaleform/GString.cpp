@@ -11,8 +11,5 @@ void GString::Data::AddRef(void)
 
 void GString::Data::Release(void)
 {
-	if (InterlockedExchangeAdd(&refCount, -1) == 1)
-	{
-		GFREE(this);
-	}
+	if(InterlockedExchangeAdd(&refCount, -1) == 1) { GFREE(this); }
 }

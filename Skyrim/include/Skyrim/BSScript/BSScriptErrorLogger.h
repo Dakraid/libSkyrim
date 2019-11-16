@@ -4,18 +4,17 @@
 
 namespace BSScript
 {
-	struct LogEvent
-	{
-	};
+struct LogEvent
+{
+};
 
-
-	// type_info: 012B65CC
-	// 34
-	class ErrorLogger :								// 00
-		public BSTEventSource<BSScript::LogEvent>	// 04
-	{
+// type_info: 012B65CC
+// 34
+class ErrorLogger :											  // 00
+					public BSTEventSource<BSScript::LogEvent> // 04
+{
 	public:
-		virtual ~ErrorLogger();
-	};
-	STATIC_ASSERT(sizeof(ErrorLogger) == 0x34);
-}
+	virtual ~ErrorLogger();
+};
+STATIC_ASSERT(sizeof(ErrorLogger) == 0x34);
+} // namespace BSScript

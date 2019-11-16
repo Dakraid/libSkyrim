@@ -2,6 +2,6 @@
 
 class IMovementControllerRegisterInterface
 {
-public:
+	public:
 	virtual ~IMovementControllerRegisterInterface();
 };

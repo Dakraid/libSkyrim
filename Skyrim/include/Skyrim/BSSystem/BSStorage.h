@@ -11,8 +11,8 @@ class BSStorage +0000 (_vtbl=0107CB3C)
 ==============================================================================*/
 class BSStorage : public BSIntrusiveRefCounted
 {
-public:
-	virtual ~BSStorage() {}						// 00450AA0
+	public:
+	virtual ~BSStorage() {} // 00450AA0
 
 	virtual void Unk_01(void) = 0;
 	virtual void Unk_02(void) = 0;

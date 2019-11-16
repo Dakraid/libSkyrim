@@ -1,12 +1,11 @@
 #pragma once
 
-#include "TESBoundAnimObject.h"
-#include "../../FormComponents/TESFullName.h"
-#include "../../FormComponents/TESModelTextureSwap.h"
+#include "../../BSCore/BSTArray.h"
 #include "../../FormComponents/BGSDestructibleObjectForm.h"
 #include "../../FormComponents/BGSOpenCloseForm.h"
-#include "../../BSCore/BSTArray.h"
-
+#include "../../FormComponents/TESFullName.h"
+#include "../../FormComponents/TESModelTextureSwap.h"
+#include "TESBoundAnimObject.h"
 
 /*==============================================================================
 class TESObjectDOOR +0000 (_vtbl=010850B4)
@@ -29,21 +28,24 @@ class TESObjectDOOR +0000 (_vtbl=010850B4)
 ==============================================================================*/
 // 70
 class TESObjectDOOR : public TESBoundAnimObject,
-	public TESFullName,					// 20
-	public TESModelTextureSwap,			// 28
-	public BGSDestructibleObjectForm,	// 44
-	public BGSOpenCloseForm				// 4C
+					  public TESFullName,				// 20
+					  public TESModelTextureSwap,		// 28
+					  public BGSDestructibleObjectForm, // 44
+					  public BGSOpenCloseForm			// 4C
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Door };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Door
+	};
 
 	// @members
-	UInt32				unk50;		// 50
-	UInt32				unk54;		// 54
-	UInt32				unk58;		// 58
-	UInt32				unk5C;		// 5C
-	UInt8				unk60;		// 60
-	UInt8				pad61[3];	// 61
-	BSTArray<void *>	unk64;		// 64
+	UInt32			unk50;	  // 50
+	UInt32			unk54;	  // 54
+	UInt32			unk58;	  // 58
+	UInt32			unk5C;	  // 5C
+	UInt8			unk60;	  // 60
+	UInt8			pad61[3]; // 61
+	BSTArray<void*> unk64;	  // 64
 };
 STATIC_ASSERT(sizeof(TESObjectDOOR) == 0x70);

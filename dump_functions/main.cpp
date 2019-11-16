@@ -1,17 +1,16 @@
 #include <SKSE.h>
-#include <SKSE/PluginAPI.h>
 #include <SKSE/DebugLog.h>
-#include <SKSE/SafeWrite.h>
 #include <SKSE/GameRTTI.h>
+#include <SKSE/PluginAPI.h>
+#include <SKSE/SafeWrite.h>
 #include <Skyrim/BSScript/BSScriptNativeFunctions.h>
 
 using BSScript::BSScriptClass;
 using BSScript::IFunction;
 
-
 class VMStateEx
 {
-public:
+	public:
 	typedef void (VMStateEx::*FnRegisterFunction)(BSScript::IFunction* fn);
 
 	static FnRegisterFunction fnRegisterFunction;
@@ -34,21 +33,17 @@ public:
 
 VMStateEx::FnRegisterFunction VMStateEx::fnRegisterFunction;
 
-
 class dump_functions_plugin : public SKSEPlugin
 {
-public:
-	dump_functions_plugin()
-	{
-	}
+	public:
+	dump_functions_plugin() {}
 
 	virtual bool InitInstance()
 	{
 		SetName("dump_functions");
 		SetVersion(1);
 
-		if (!Requires(kSKSEVersion_1_7_0))
-		{
+		if(!Requires(kSKSEVersion_1_7_0)) {
 			gLog << "ERROR: your skse version is too old" << std::endl;
 			return false;
 		}

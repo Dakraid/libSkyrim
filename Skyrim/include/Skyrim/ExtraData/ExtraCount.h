@@ -9,8 +9,11 @@ class ExtraCount +0000 (_vtbl=010791B8)
 ==============================================================================*/
 class ExtraCount : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Count };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Count
+	};
 
 	ExtraCount();
 	virtual ~ExtraCount();

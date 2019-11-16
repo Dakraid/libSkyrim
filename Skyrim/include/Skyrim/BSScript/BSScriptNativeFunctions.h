@@ -1,12 +1,11 @@
 #pragma once
 
+#include "../VMState.h"
 #include "BSScriptIFunction.h"
 #include "BSScriptPackUnpack.h"
-#include "../VMState.h"
 
 namespace BSScript
 {
-
 #define NUM_PARAMS 0
 #include "BSScriptNativeFunctionDef.inl"
 
@@ -40,4 +39,4 @@ namespace BSScript
 #define NUM_PARAMS 10
 #include "BSScriptNativeFunctionDef.inl"
 
-}
+} // namespace BSScript

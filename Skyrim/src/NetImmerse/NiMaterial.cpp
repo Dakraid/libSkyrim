@@ -1,8 +1,7 @@
-#include "Skyrim.h"
 #include "Skyrim/NetImmerse/NiMaterial.h"
+#include "Skyrim.h"
 
 #include "Skyrim/NetImmerse/BSTextureSet.h"
-
 
 const _CreateShaderMaterial CreateShaderMaterial = (_CreateShaderMaterial)0x00C9A3E0;
 
@@ -20,7 +19,7 @@ BSMaskedShaderMaterial * BSMaskedShaderMaterial::CreateFromLightingShader(BSLigh
 }
 */
 
-void BSLightingShaderMaterial::SetTextureSet(BSTextureSet * newSet)
+void BSLightingShaderMaterial::SetTextureSet(BSTextureSet* newSet)
 {
 	textureSet = newSet;
 }

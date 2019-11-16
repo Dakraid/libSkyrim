@@ -1,5 +1,5 @@
-#include "Skyrim.h"
 #include "Skyrim/ExtraData/ExtraLinkedRefChildren.h"
+#include "Skyrim.h"
 
 static const UInt32 s_ExtraLinkedRefChildrenVtbl = 0x01079B08;
 

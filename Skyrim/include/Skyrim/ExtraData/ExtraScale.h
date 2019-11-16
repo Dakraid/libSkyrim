@@ -9,11 +9,14 @@ class ExtraScale +0000 (_vtbl=01079238)
 ==============================================================================*/
 class ExtraScale : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Scale };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Scale
+	};
 
 	ExtraScale();
 	virtual ~ExtraScale();
 
-	float scale;		// 08
+	float scale; // 08
 };

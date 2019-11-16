@@ -16,33 +16,34 @@ class BSFaceGenNiNode +0000 (_vtbl=010BEA8C)
 // EC
 class BSFaceGenNiNode : public NiNode
 {
-public:
-	virtual ~BSFaceGenNiNode();																// 005A8A60
+	public:
+	virtual ~BSFaceGenNiNode(); // 005A8A60
 
 	// @override class NiNode : (vtbl=010BEA8C)
-	virtual NiRTTI *	GetRTTI(void) const override;										// 02 005A7E60 { return 0x01B1DF44; }
-	virtual NiObject *	CreateClone(NiCloningProcess cloner);								// 13 00AAFC30 { return this; }
-	virtual void		UpdateDownwardPass(ControllerUpdateContext * ctx, UInt32 unk1);		// 29 005A8D90
+	virtual NiRTTI*	  GetRTTI(void) const override;									 // 02 005A7E60 { return 0x01B1DF44; }
+	virtual NiObject* CreateClone(NiCloningProcess cloner);							 // 13 00AAFC30 { return this; }
+	virtual void	  UpdateDownwardPass(ControllerUpdateContext* ctx, UInt32 unk1); // 29 005A8D90
 
 	//// @add
-	virtual void		Unk_3C(void);														// 3C 005A88A0
+	virtual void Unk_3C(void); // 3C 005A88A0
 
 	// @members
-	UInt32	unkB8;
-	UInt32	unkBC;
-	UInt32	unkC0;
-	UInt32	unkC4;
-	float	unkC8;
-	UInt32	unkCC;
-	UInt32	unkD0;
-	UInt32	unkD4;
-	float	unkD8;
-	BSFaceGenAnimationData	* animData;
-	float	unkE0;
-	UInt32	handle;	// handle
-	UInt32	unkE8;
+	UInt32					unkB8;
+	UInt32					unkBC;
+	UInt32					unkC0;
+	UInt32					unkC4;
+	float					unkC8;
+	UInt32					unkCC;
+	UInt32					unkD0;
+	UInt32					unkD4;
+	float					unkD8;
+	BSFaceGenAnimationData* animData;
+	float					unkE0;
+	UInt32					handle; // handle
+	UInt32					unkE8;
 
-	enum {
+	enum
+	{
 		kAdjustType_Unk0 = 0,
 		kAdjustType_Unk1 = 1,
 		kAdjustType_Unk2 = 2,

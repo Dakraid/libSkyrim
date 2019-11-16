@@ -6,14 +6,17 @@ class TESObjectREFR;
 
 class ExtraReferenceHandle : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::ReferenceHandle };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::ReferenceHandle
+	};
 
 	ExtraReferenceHandle();
 	virtual ~ExtraReferenceHandle();
 
-	RefHandle	handle;		// 08
+	RefHandle handle; // 08
 
-	TESObjectREFR * GetReference();
+	TESObjectREFR*				 GetReference();
 	static ExtraReferenceHandle* Create();
 };

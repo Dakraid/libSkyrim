@@ -9,8 +9,11 @@ class ExtraWornLeft +0000 (_vtbl=010791D8)
 ==============================================================================*/
 class ExtraWornLeft : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::WornLeft };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::WornLeft
+	};
 
 	ExtraWornLeft();
 	virtual ~ExtraWornLeft();

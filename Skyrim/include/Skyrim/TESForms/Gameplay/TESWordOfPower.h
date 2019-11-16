@@ -11,14 +11,17 @@ class TESWordOfPower +0000 (_vtbl=010A19E4)
 0014: |   class TESFullName
 0014: |   |   class BaseFormComponent
 ==============================================================================*/
-//20 
+// 20
 class TESWordOfPower : public TESForm,
-	public TESFullName				// 14
+					   public TESFullName // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::WordOfPower };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::WordOfPower
+	};
 
 	// @members
-	BSFixedString	word;		// 1C
+	BSFixedString word; // 1C
 };
 STATIC_ASSERT(sizeof(TESWordOfPower) == 0x20);

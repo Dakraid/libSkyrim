@@ -1,7 +1,7 @@
 #pragma once
 
-#include "TESObjectACTI.h"
 #include "../../BSCore/BSTArray.h"
+#include "TESObjectACTI.h"
 
 /*==============================================================================
 class TESFurniture +0000 (_vtbl=01082C94)
@@ -27,20 +27,23 @@ class TESFurniture +0000 (_vtbl=01082C94)
 // 84
 class TESFurniture : public TESObjectACTI
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Furniture };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Furniture
+	};
 
 	// 4
 	struct Data78
 	{
-		UInt8	unk0;		// 0
-		UInt8	unk1;		// 1
-		UInt8	pad2[2];	// 2
+		UInt8 unk0;	   // 0
+		UInt8 unk1;	   // 1
+		UInt8 pad2[2]; // 2
 	};
 
-	BSTArray<void *>	unk6C;		// 6C
-	Data78				unk78;		// 78
-	UInt32				unk7C;		// 7C
-	UInt32				unk80;		// 80
+	BSTArray<void*> unk6C; // 6C
+	Data78			unk78; // 78
+	UInt32			unk7C; // 7C
+	UInt32			unk80; // 80
 };
 STATIC_ASSERT(sizeof(TESFurniture) == 0x84);

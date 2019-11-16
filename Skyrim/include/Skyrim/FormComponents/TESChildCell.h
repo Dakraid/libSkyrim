@@ -7,11 +7,11 @@ class TESChildCell +0000 (_vtbl=01087624)
 // 04
 class TESChildCell
 {
-public:
-	virtual ~TESChildCell();		// 004B90B0
+	public:
+	virtual ~TESChildCell(); // 004B90B0
 
-	virtual	UInt32	TESChildCell_Unk_01(void) = 0;
+	virtual UInt32 TESChildCell_Unk_01(void) = 0;
 
 	// @members
-	//void		** _vtbl;		// 00 - 01087624
+	// void		** _vtbl;		// 00 - 01087624
 };

@@ -10,8 +10,11 @@ class ExtraCannotWear +0000 (_vtbl=010791E8)
 // 08
 class ExtraCannotWear : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::CannotWear };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::CannotWear
+	};
 
 	ExtraCannotWear();
 	virtual ~ExtraCannotWear();

@@ -3,6 +3,6 @@
 // 01
 class TESMagicCasterForm
 {
-public:
-	UInt8	unk00;
+	public:
+	UInt8 unk00;
 };

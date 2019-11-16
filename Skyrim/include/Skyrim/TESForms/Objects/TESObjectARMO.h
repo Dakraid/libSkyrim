@@ -1,23 +1,22 @@
 #pragma once
 
-#include "TESBoundObject.h"
-#include "../../FormComponents/TESFullName.h"
-#include "../../FormComponents/TESRaceForm.h"
-#include "../../FormComponents/TESEnchantableForm.h"
-#include "../../FormComponents/TESValueForm.h"
-#include "../../FormComponents/TESWeightForm.h"
-#include "../../FormComponents/BGSDestructibleObjectForm.h"
-#include "../../FormComponents/BGSPickupPutdownSounds.h"
-#include "../../FormComponents/TESBipedModelForm.h"
-#include "../../FormComponents/BGSEquipType.h"
+#include "../../BSCore/BSTArray.h"
 #include "../../FormComponents/BGSBipedObjectForm.h"
 #include "../../FormComponents/BGSBlockBashData.h"
+#include "../../FormComponents/BGSDestructibleObjectForm.h"
+#include "../../FormComponents/BGSEquipType.h"
 #include "../../FormComponents/BGSKeywordForm.h"
+#include "../../FormComponents/BGSPickupPutdownSounds.h"
+#include "../../FormComponents/TESBipedModelForm.h"
 #include "../../FormComponents/TESDescription.h"
-#include "../../BSCore/BSTArray.h"
+#include "../../FormComponents/TESEnchantableForm.h"
+#include "../../FormComponents/TESFullName.h"
+#include "../../FormComponents/TESRaceForm.h"
+#include "../../FormComponents/TESValueForm.h"
+#include "../../FormComponents/TESWeightForm.h"
+#include "TESBoundObject.h"
 
 class TESObjectARMA;
-
 
 /*==============================================================================
 class TESObjectARMO +0000 (_vtbl=010847EC)
@@ -55,38 +54,41 @@ class TESObjectARMO +0000 (_vtbl=010847EC)
 ==============================================================================*/
 // 124
 class TESObjectARMO : public TESBoundObject,
-	public TESFullName,					// 020
-	public TESRaceForm,					// 028
-	public TESEnchantableForm,			// 030
-	public TESValueForm,				// 03C
-	public TESWeightForm,				// 044
-	public BGSDestructibleObjectForm,	// 04C
-	public BGSPickupPutdownSounds,		// 054
-	public TESBipedModelForm,			// 060
-	public BGSEquipType,				// 0D8
-	public BGSBipedObjectForm,			// 0E0
-	public BGSBlockBashData,			// 0EC
-	public BGSKeywordForm,				// 0F8
-	public TESDescription				// 104
+					  public TESFullName,				// 020
+					  public TESRaceForm,				// 028
+					  public TESEnchantableForm,		// 030
+					  public TESValueForm,				// 03C
+					  public TESWeightForm,				// 044
+					  public BGSDestructibleObjectForm, // 04C
+					  public BGSPickupPutdownSounds,	// 054
+					  public TESBipedModelForm,			// 060
+					  public BGSEquipType,				// 0D8
+					  public BGSBipedObjectForm,		// 0E0
+					  public BGSBlockBashData,			// 0EC
+					  public BGSKeywordForm,			// 0F8
+					  public TESDescription				// 104
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Armor };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Armor
+	};
 
 	// @override
-	virtual void	Unk_04(void) override;							// 004A1DC0
-	virtual bool	LoadForm(TESFile *arg) override;				// 004A22B0
-	virtual void	SaveBuffer(BGSSaveFormBuffer *sav) override;	// 004A1D70
-	virtual void	LoadBuffer(BGSLoadFormBuffer *sav) override;	// 004A1D90
-	virtual void	InitItem(void) override;						// 004A2C80
-	virtual void	Unk_14(void) override;							// 004A1FB0
-	virtual void	CopyFrom(TESForm * srcForm) override;			// 004A2E00
+	virtual void Unk_04(void) override;						  // 004A1DC0
+	virtual bool LoadForm(TESFile* arg) override;			  // 004A22B0
+	virtual void SaveBuffer(BGSSaveFormBuffer* sav) override; // 004A1D70
+	virtual void LoadBuffer(BGSLoadFormBuffer* sav) override; // 004A1D90
+	virtual void InitItem(void) override;					  // 004A2C80
+	virtual void Unk_14(void) override;						  // 004A1FB0
+	virtual void CopyFrom(TESForm* srcForm) override;		  // 004A2E00
 
-public:
+	public:
 	// @members
 	// vtbl						0x010847EC			// 000
-	UInt32						armorValTimes100;	// 110
-	BSTArray<TESObjectARMA *>	armorAddons;		// 114
-	UInt32						unk120;				// 120 - enchantment related?
+	UInt32					 armorValTimes100; // 110
+	BSTArray<TESObjectARMA*> armorAddons;	   // 114
+	UInt32					 unk120;		   // 120 - enchantment related?
 };
 
 STATIC_ASSERT(offsetof(TESObjectARMO, armorValTimes100) == 0x110);

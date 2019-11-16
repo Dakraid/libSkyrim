@@ -7,7 +7,7 @@ class TESRace;
 // 08
 class TESRaceForm : public BaseFormComponent
 {
-public:
+	public:
 	// @members
-	TESRace	* race;	// 04
+	TESRace* race; // 04
 };

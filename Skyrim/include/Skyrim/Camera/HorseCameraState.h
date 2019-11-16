@@ -12,7 +12,7 @@ class HorseCameraState +0000 (_vtbl=010E2F6C)
 ==============================================================================*/
 class HorseCameraState : public ThirdPersonState
 {
-public:
+	public:
 	HorseCameraState();
 	virtual ~HorseCameraState();
 };

@@ -12,7 +12,7 @@ class BleedoutCameraState +0000 (_vtbl=010E3184)
 ==============================================================================*/
 class BleedoutCameraState : public ThirdPersonState
 {
-public:
+	public:
 	BleedoutCameraState();
 	virtual ~BleedoutCameraState();
 };

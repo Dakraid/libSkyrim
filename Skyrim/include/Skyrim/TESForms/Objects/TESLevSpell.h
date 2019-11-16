@@ -1,8 +1,7 @@
 #pragma once
 
-#include "TESBoundObject.h"
 #include "../../FormComponents/TESLeveledList.h"
-
+#include "TESBoundObject.h"
 
 /*==============================================================================
 class TESLevSpell +0000 (_vtbl=010836E4)
@@ -16,9 +15,12 @@ class TESLevSpell +0000 (_vtbl=010836E4)
 ==============================================================================*/
 // 34
 class TESLevSpell : public TESBoundObject,
-	public TESLeveledList			// 20
+					public TESLeveledList // 20
 {
-public:
-	enum { kTypeID = (UInt32)FormType::LeveledSpell };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::LeveledSpell
+	};
 };
 STATIC_ASSERT(sizeof(TESLevSpell) == 0x34);

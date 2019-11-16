@@ -1,6 +1,5 @@
-#include "Skyrim.h"
 #include "Skyrim/FormComponents/BGSBipedObjectForm.h"
-
+#include "Skyrim.h"
 
 UInt32 BGSBipedObjectForm::AddSlotToMask(UInt32 slot)
 {

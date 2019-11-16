@@ -1,8 +1,8 @@
 #pragma once
 
+#include "../../FormComponents/BSMaterialObject.h"
 #include "../../FormComponents/TESForm.h"
 #include "../../FormComponents/TESModel.h"
-#include "../../FormComponents/BSMaterialObject.h"
 /*==============================================================================
 class BGSMaterialObject +0000 (_vtbl=0108D284)
 0000: class BGSMaterialObject
@@ -14,13 +14,16 @@ class BGSMaterialObject +0000 (_vtbl=0108D284)
 ==============================================================================*/
 // 74
 class BGSMaterialObject : public TESForm,
-	public TESModel,			// 14
-	public BSMaterialObject		// 28
+						  public TESModel,		  // 14
+						  public BSMaterialObject // 28
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Material };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Material
+	};
 
 	// @members
-	BSTArray<void *>		unk68;	// 68
+	BSTArray<void*> unk68; // 68
 };
 STATIC_ASSERT(sizeof(BGSMaterialObject) == 0x74);

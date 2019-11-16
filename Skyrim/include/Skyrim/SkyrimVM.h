@@ -1,37 +1,37 @@
 #pragma once
 
-#include "BSSystem/BSTSmartPointer.h"
-#include "BSCore/BSTSingleton.h"
 #include "BSCore/BSSpinLock.h"
-#include "SkyrimScript.h"
+#include "BSCore/BSTSingleton.h"
 #include "BSScript/BSScriptMemoryPagePolicy.h"
-#include "Events/ScriptEvent.h"
+#include "BSSystem/BSTSmartPointer.h"
 #include "Events/PositionPlayerEvent.h"
+#include "Events/ScriptEvent.h"
+#include "SkyrimScript.h"
 
 class VMState;
-
 
 // 20
 class ProbablyLoader : public BSScript::ILoader
 {
-public:
+	public:
 	ProbablyLoader();
-	ProbablyLoader(SkyrimScript::Logger *a_logger, UInt8 arg1, UInt32 arg2) {
+	ProbablyLoader(SkyrimScript::Logger* a_logger, UInt8 arg1, UInt32 arg2)
+	{
 		ctor(a_logger, arg1, arg2);
 	}
 
-	virtual ~ProbablyLoader();									// 00C45DF0
+	virtual ~ProbablyLoader(); // 00C45DF0
 
-	virtual ILoader *	Duplicate(void) override;							// 00C42D70 - dupulicate this ?
-	virtual void		SetStore(BSScript::IStorePtr &arg) override;		// 00C42E80
-	virtual bool		Load(const char *className, void *unkObj);			// 00C45410 - called from 00C68E76 - "Cannot load class %s without a store" "Cannot open store for class %s, missing file?"
+	virtual ILoader* Duplicate(void) override;					  // 00C42D70 - dupulicate this ?
+	virtual void	 SetStore(BSScript::IStorePtr& arg) override; // 00C42E80
+	virtual bool	 Load(const char* className, void* unkObj);	  // 00C45410 - called from 00C68E76 - "Cannot load class %s without a store" "Cannot open store for class %s, missing file?"
 
 	struct Data
 	{
-		BSScript::IStorePtr		storePtr;	// 00 - init'd 0
-		void					* unk04;	// 04 - init'd 0 - BSSinpleList<UnkData_size_1008> *
-		BSFixedString			* entries;	// 08 - init'd 0
-		UInt16					numEntries;	// 0C - init'd 0
+		BSScript::IStorePtr storePtr;	// 00 - init'd 0
+		void*				unk04;		// 04 - init'd 0 - BSSinpleList<UnkData_size_1008> *
+		BSFixedString*		entries;	// 08 - init'd 0
+		UInt16				numEntries; // 0C - init'd 0
 
 		// ctor 0x00C3F950
 		// dtor 0x00C3FBD0
@@ -39,19 +39,18 @@ public:
 
 	// @members
 	// void **	_vtbl					// 00 - 01149B98
-	SkyrimScript::Logger	* logger;	// 04
-	Data					unk08;		// 08
-	UInt32					unk18;		// 18
-	UInt8					unk1C;		// 1C
-	UInt8					unk1D;		// 1D
-	UInt8					unk1E;		// 1E
-	UInt8					pad1F;		// 1F
+	SkyrimScript::Logger* logger; // 04
+	Data				  unk08;  // 08
+	UInt32				  unk18;  // 18
+	UInt8				  unk1C;  // 1C
+	UInt8				  unk1D;  // 1D
+	UInt8				  unk1E;  // 1E
+	UInt8				  pad1F;  // 1F
 
-private:
-	DEFINE_MEMBER_FN(ctor, ProbablyLoader *, 0x00C42D20, SkyrimScript::Logger *, UInt8, UInt32);
+	private:
+	DEFINE_MEMBER_FN(ctor, ProbablyLoader*, 0x00C42D20, SkyrimScript::Logger*, UInt8, UInt32);
 };
 STATIC_ASSERT(sizeof(ProbablyLoader) == 0x20);
-
 
 // 0C
 // Some generic type but I haven't figured it out yet
@@ -60,23 +59,23 @@ class UpdateRegistrationHolder
 	// 018
 	class Registration : public BSIntrusiveRefCounted
 	{
-	public:
+		public:
 		typedef BSTSmartPointer<Registration> SmartPtr;
 
-		bool			runOnce;	// 04
-		UInt8			pad05;		// 05
-		UInt16			pad06;		// 06
-		UInt32			schedTime;	// 08
-		UInt32			interval;	// 0C
-		VMHandle		handle;		// 10
+		bool	 runOnce;	// 04
+		UInt8	 pad05;		// 05
+		UInt16	 pad06;		// 06
+		UInt32	 schedTime; // 08
+		UInt32	 interval;	// 0C
+		VMHandle handle;	// 10
 	};
 
-	BSTArray<BSTSmartPointer<Registration>>	m_regs;	// 00
+	BSTArray<BSTSmartPointer<Registration>> m_regs; // 00
 
-	void	Order(UInt32 index);
+	void Order(UInt32 index);
 
-public:
-	bool	Remove(VMHandle & handle);	// TESV.008CF2D0
+	public:
+	bool Remove(VMHandle& handle); // TESV.008CF2D0
 };
 
 // 0C
@@ -85,20 +84,19 @@ class LOSRegistrationHolder
 	// 020
 	class Registration : public BSIntrusiveRefCounted
 	{
-	public:
+		public:
 		typedef BSTSmartPointer<Registration> SmartPtr;
 
-		UInt32			pad04;			// 04
-		VMHandle		handle;			// 08
-		UInt32			viewerFormID;	// 10
-		UInt32			targetFormID;	// 14
-		UInt32			unk4;			// 18
-		UInt32			hasLOS;			// 1C
+		UInt32	 pad04;		   // 04
+		VMHandle handle;	   // 08
+		UInt32	 viewerFormID; // 10
+		UInt32	 targetFormID; // 14
+		UInt32	 unk4;		   // 18
+		UInt32	 hasLOS;	   // 1C
 	};
 
-	BSTArray<BSTSmartPointer<Registration>>	m_regs;	// 00
+	BSTArray<BSTSmartPointer<Registration>> m_regs; // 00
 };
-
 
 /*==============================================================================
 class SkyrimVM +0000 (_vtbl=010EBEBC)
@@ -161,78 +159,77 @@ class SkyrimVM +0000 (_vtbl=010EBEBC)
 00D0: |   class BSTEventSource<struct SkyrimScript::StatsEvent>
 ==============================================================================*/
 // 45D0
-class SkyrimVM :
-	public BSTSingletonSDM<SkyrimVM>,						// 00CC
-	public BSScript::IFreezeQuery,							// 0000
-	public BSScript::IStackCallbackSaveInterface,			// 0004
-	public BSTEventSink<TESActivateEvent>,					// 0008
-	public BSTEventSink<TESActiveEffectApplyRemoveEvent>,	// 000C
-	public BSTEventSink<TESActorLocationChangeEvent>,		// 0010
-	public BSTEventSink<TESBookReadEvent>,					// 0014
-	public BSTEventSink<TESCellAttachDetachEvent>,			// 0018
-	public BSTEventSink<TESCellFullyLoadedEvent>,			// 001C
-	public BSTEventSink<TESCombatEvent>,					// 0020
-	public BSTEventSink<TESContainerChangedEvent>,			// 0024
-	public BSTEventSink<TESDeathEvent>,						// 0028
-	public BSTEventSink<TESDestructionStageChangedEvent>,	// 002C
-	public BSTEventSink<TESEnterBleedoutEvent>,				// 0030
-	public BSTEventSink<TESEquipEvent>,						// 0034
-	public BSTEventSink<TESFormDeleteEvent>,				// 0038
-	public BSTEventSink<TESFurnitureEvent>,					// 003C
-	public BSTEventSink<TESGrabReleaseEvent>,				// 0040
-	public BSTEventSink<TESHitEvent>,						// 0044
-	public BSTEventSink<TESInitScriptEvent>,				// 0048
-	public BSTEventSink<TESLoadGameEvent>,					// 004C
-	public BSTEventSink<TESLockChangedEvent>,				// 0050
-	public BSTEventSink<TESMagicEffectApplyEvent>,			// 0054
-	public BSTEventSink<TESMagicWardHitEvent>,				// 0058
-	public BSTEventSink<TESMoveAttachDetachEvent>,			// 005C
-	public BSTEventSink<TESObjectLoadedEvent>,				// 0060
-	public BSTEventSink<TESObjectREFRTranslationEvent>,		// 0064
-	public BSTEventSink<TESOpenCloseEvent>,					// 0068
-	public BSTEventSink<TESPackageEvent>,					// 006C
-	public BSTEventSink<TESPerkEntryRunEvent>,				// 0070
-	public BSTEventSink<TESQuestInitEvent>,					// 0074
-	public BSTEventSink<TESQuestStageEvent>,				// 0078
-	public BSTEventSink<TESResetEvent>,						// 007C
-	public BSTEventSink<TESResolveNPCTemplatesEvent>,		// 0080
-	public BSTEventSink<TESSceneEvent>,						// 0084
-	public BSTEventSink<TESSceneActionEvent>,				// 0088
-	public BSTEventSink<TESScenePhaseEvent>,				// 008C
-	public BSTEventSink<TESSellEvent>,						// 0090
-	public BSTEventSink<TESSleepStartEvent>,				// 0094
-	public BSTEventSink<TESSleepStopEvent>,					// 0098
-	public BSTEventSink<TESSpellCastEvent>,					// 009C
-	public BSTEventSink<TESTopicInfoEvent>,					// 00A0
-	public BSTEventSink<TESTrackedStatsEvent>,				// 00A4
-	public BSTEventSink<TESTrapHitEvent>,					// 00A8
-	public BSTEventSink<TESTriggerEvent>,					// 00AC
-	public BSTEventSink<TESTriggerEnterEvent>,				// 00B0
-	public BSTEventSink<TESTriggerLeaveEvent>,				// 00B4
-	public BSTEventSink<TESUniqueIDChangeEvent>,			// 00B8
-	public BSTEventSink<TESSwitchRaceCompleteEvent>,		// 00BC
-	public BSTEventSink<TESPlayerBowShotEvent>,				// 00C0
-	public BSTEventSink<PositionPlayerEvent>,				// 00C4
-	public BSTEventSink<BSScript::StatsEvent>,				// 00C8
-	public BSTEventSource<SkyrimScript::StatsEvent>			// 00D0
+class SkyrimVM : public BSTSingletonSDM<SkyrimVM>,					   // 00CC
+				 public BSScript::IFreezeQuery,						   // 0000
+				 public BSScript::IStackCallbackSaveInterface,		   // 0004
+				 public BSTEventSink<TESActivateEvent>,				   // 0008
+				 public BSTEventSink<TESActiveEffectApplyRemoveEvent>, // 000C
+				 public BSTEventSink<TESActorLocationChangeEvent>,	   // 0010
+				 public BSTEventSink<TESBookReadEvent>,				   // 0014
+				 public BSTEventSink<TESCellAttachDetachEvent>,		   // 0018
+				 public BSTEventSink<TESCellFullyLoadedEvent>,		   // 001C
+				 public BSTEventSink<TESCombatEvent>,				   // 0020
+				 public BSTEventSink<TESContainerChangedEvent>,		   // 0024
+				 public BSTEventSink<TESDeathEvent>,				   // 0028
+				 public BSTEventSink<TESDestructionStageChangedEvent>, // 002C
+				 public BSTEventSink<TESEnterBleedoutEvent>,		   // 0030
+				 public BSTEventSink<TESEquipEvent>,				   // 0034
+				 public BSTEventSink<TESFormDeleteEvent>,			   // 0038
+				 public BSTEventSink<TESFurnitureEvent>,			   // 003C
+				 public BSTEventSink<TESGrabReleaseEvent>,			   // 0040
+				 public BSTEventSink<TESHitEvent>,					   // 0044
+				 public BSTEventSink<TESInitScriptEvent>,			   // 0048
+				 public BSTEventSink<TESLoadGameEvent>,				   // 004C
+				 public BSTEventSink<TESLockChangedEvent>,			   // 0050
+				 public BSTEventSink<TESMagicEffectApplyEvent>,		   // 0054
+				 public BSTEventSink<TESMagicWardHitEvent>,			   // 0058
+				 public BSTEventSink<TESMoveAttachDetachEvent>,		   // 005C
+				 public BSTEventSink<TESObjectLoadedEvent>,			   // 0060
+				 public BSTEventSink<TESObjectREFRTranslationEvent>,   // 0064
+				 public BSTEventSink<TESOpenCloseEvent>,			   // 0068
+				 public BSTEventSink<TESPackageEvent>,				   // 006C
+				 public BSTEventSink<TESPerkEntryRunEvent>,			   // 0070
+				 public BSTEventSink<TESQuestInitEvent>,			   // 0074
+				 public BSTEventSink<TESQuestStageEvent>,			   // 0078
+				 public BSTEventSink<TESResetEvent>,				   // 007C
+				 public BSTEventSink<TESResolveNPCTemplatesEvent>,	   // 0080
+				 public BSTEventSink<TESSceneEvent>,				   // 0084
+				 public BSTEventSink<TESSceneActionEvent>,			   // 0088
+				 public BSTEventSink<TESScenePhaseEvent>,			   // 008C
+				 public BSTEventSink<TESSellEvent>,					   // 0090
+				 public BSTEventSink<TESSleepStartEvent>,			   // 0094
+				 public BSTEventSink<TESSleepStopEvent>,			   // 0098
+				 public BSTEventSink<TESSpellCastEvent>,			   // 009C
+				 public BSTEventSink<TESTopicInfoEvent>,			   // 00A0
+				 public BSTEventSink<TESTrackedStatsEvent>,			   // 00A4
+				 public BSTEventSink<TESTrapHitEvent>,				   // 00A8
+				 public BSTEventSink<TESTriggerEvent>,				   // 00AC
+				 public BSTEventSink<TESTriggerEnterEvent>,			   // 00B0
+				 public BSTEventSink<TESTriggerLeaveEvent>,			   // 00B4
+				 public BSTEventSink<TESUniqueIDChangeEvent>,		   // 00B8
+				 public BSTEventSink<TESSwitchRaceCompleteEvent>,	   // 00BC
+				 public BSTEventSink<TESPlayerBowShotEvent>,		   // 00C0
+				 public BSTEventSink<PositionPlayerEvent>,			   // 00C4
+				 public BSTEventSink<BSScript::StatsEvent>,			   // 00C8
+				 public BSTEventSource<SkyrimScript::StatsEvent>	   // 00D0
 {
-public:
-	virtual ~SkyrimVM();																					// 008D84D0
+	public:
+	virtual ~SkyrimVM(); // 008D84D0
 
 	// @override class BSScript::IFreezeQuery : (vtbl=010EBEBC)
-	virtual bool	IFreezeQuery_Unk_01(void) override;														// 008C78E0
+	virtual bool IFreezeQuery_Unk_01(void) override; // 008C78E0
 
 	// @override class BSScript::IStackCallbackSaveInterface : (vtbl=010EBEAC)
-	virtual bool	IStackCallbackSaveInterface_Unk_01(UInt32 arg1, UInt32 arg2) override;					// 008C87D0
-	virtual bool	IStackCallbackSaveInterface_Unk_02(UInt32 arg1, UInt32 arg2, UInt32 arg3) override;		// 008CC500
+	virtual bool IStackCallbackSaveInterface_Unk_01(UInt32 arg1, UInt32 arg2) override;				 // 008C87D0
+	virtual bool IStackCallbackSaveInterface_Unk_02(UInt32 arg1, UInt32 arg2, UInt32 arg3) override; // 008CC500
 
-	inline VMState * GetState(void) const
+	inline VMState* GetState(void) const
 	{
 		return m_state;
 	}
 
 	DEPRECATED__("use GetState() instead")
-	inline VMState * GetClassRegistry(void) const
+	inline VMState* GetClassRegistry(void) const
 	{
 		return m_state;
 	}
@@ -241,39 +238,38 @@ public:
 
 	DEFINE_MEMBER_FN(QueueAliasEvent, void, 0x008C6B30, VMHandle handle, const BSFixedString& eventName, BSScript::IFunctionArguments* args, UInt32 arg4);
 	DEFINE_MEMBER_FN(UnregisterForUpdate, void, 0x008D1E00, VMHandle handle);
-	DEFINE_MEMBER_FN(AddDelayFunctor, bool, 0x008C7810, BSTSmartPointer<SkyrimScript::DelayFunctor> &delayFunctorPtr);
-
+	DEFINE_MEMBER_FN(AddDelayFunctor, bool, 0x008C7810, BSTSmartPointer<SkyrimScript::DelayFunctor>& delayFunctorPtr);
 
 	// @members
-	//void						** _vtbl;					// 0000
-	VMState						* m_state;					// 0100
-	UInt32						pad104;						// 
-	UInt32						pad108;						//      (vtbl)    (demangled class name)
-	BSScript::MemoryPagePolicy	memoryPagePolicy;			// 010C 01149B68
-	ProbablyLoader				papyrusLoader;				// 0130
-	SkyrimScript::Logger		logger;						// 0150 01148BF4  SkyrimScript::Logger
-	SkyrimScript::HandlePolicy	handlePolicy;				// 01B8 010EBA1C  SkyrimScript::HandlePolicy
-	UInt8						pad1B8[0x454 - 0x204];		// 0204
-	//SkyrimScript::ObjectBindPolicy						// 0204 010EBAD4  SkyrimScript::ObjectBindPolicy
-															// 0294           BSTHashMap<????>  sentinel=012B64D4
-															// 0294+48            BSSpinLock
-															// 0360 010EA744  SkyrimScript::Profiler
-															// 0400 010EA79C  SkyrimScript::SavePatcher
-															// 0430           ?
-															// 0438           ?
-															// 043C           ?
-															// 0444           ?
-															// 0448           ?
-	BSSpinLock					m_losLock;					// 0454
-	LOSRegistrationHolder		m_losRegHolder;				// 045C
-	UInt32						unk468;						// 0468
-	BSSpinLock					m_updateLock;				// 046C
-	UpdateRegistrationHolder	m_updateRegHolder;			// 0474
-	UpdateRegistrationHolder	m_updateGameTimeRegHolder;	// 0480
-	//BSSpinLock				m_delayFunctorLock;			// 4570
-	//BSTCommonLLMessageQueue<BSTSmartPointer<SkyrimScript::DelayFunctor>> *delayFunctorQueue;	// 457C
+	// void						** _vtbl;					// 0000
+	VMState*				   m_state;				  // 0100
+	UInt32					   pad104;				  //
+	UInt32					   pad108;				  //      (vtbl)    (demangled class name)
+	BSScript::MemoryPagePolicy memoryPagePolicy;	  // 010C 01149B68
+	ProbablyLoader			   papyrusLoader;		  // 0130
+	SkyrimScript::Logger	   logger;				  // 0150 01148BF4  SkyrimScript::Logger
+	SkyrimScript::HandlePolicy handlePolicy;		  // 01B8 010EBA1C  SkyrimScript::HandlePolicy
+	UInt8					   pad1B8[0x454 - 0x204]; // 0204
+	// SkyrimScript::ObjectBindPolicy						// 0204 010EBAD4  SkyrimScript::ObjectBindPolicy
+	// 0294           BSTHashMap<????>  sentinel=012B64D4
+	// 0294+48            BSSpinLock
+	// 0360 010EA744  SkyrimScript::Profiler
+	// 0400 010EA79C  SkyrimScript::SavePatcher
+	// 0430           ?
+	// 0438           ?
+	// 043C           ?
+	// 0444           ?
+	// 0448           ?
+	BSSpinLock				 m_losLock;					// 0454
+	LOSRegistrationHolder	 m_losRegHolder;			// 045C
+	UInt32					 unk468;					// 0468
+	BSSpinLock				 m_updateLock;				// 046C
+	UpdateRegistrationHolder m_updateRegHolder;			// 0474
+	UpdateRegistrationHolder m_updateGameTimeRegHolder; // 0480
+														// BSSpinLock				m_delayFunctorLock;			// 4570
+	// BSTCommonLLMessageQueue<BSTSmartPointer<SkyrimScript::DelayFunctor>> *delayFunctorQueue;	// 457C
 
-private:
+	private:
 	friend struct BSTSingletonSDMBase<BSTSDMTraits<SkyrimVM>>;
 	DEFINE_MEMBER_FN(ctor, SkyrimVM*, 0x008D7A40);
 	DEFINE_MEMBER_FN(dtor, void, 0x008D7000);
@@ -281,4 +277,4 @@ private:
 STATIC_ASSERT(offsetof(SkyrimVM, m_state) == 0x100);
 STATIC_ASSERT(offsetof(SkyrimVM, m_updateRegHolder) == 0x474);
 
-extern SkyrimVM	*& g_skyrimVM;
+extern SkyrimVM*& g_skyrimVM;

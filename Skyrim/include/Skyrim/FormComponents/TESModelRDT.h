@@ -11,5 +11,5 @@ class TESModelRDT +0000 (_vtbl=0107C64C)
 // 14
 class TESModelRDT : public TESModel
 {
-public:
+	public:
 };

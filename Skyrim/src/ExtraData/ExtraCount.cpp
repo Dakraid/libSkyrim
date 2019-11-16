@@ -1,7 +1,7 @@
-#include "Skyrim.h"
 #include "Skyrim/ExtraData/ExtraCount.h"
+#include "Skyrim.h"
 
-static const UInt32	s_ExtraCountVtbl = 0x010791B8;
+static const UInt32 s_ExtraCountVtbl = 0x010791B8;
 
 ExtraCount* ExtraCount::Create()
 {

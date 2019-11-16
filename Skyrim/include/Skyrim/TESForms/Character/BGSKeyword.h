@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
 #include "../../BSCore/BSString.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class BGSKeyword +0000 (_vtbl=010A3184)
@@ -12,14 +12,17 @@ class BGSKeyword +0000 (_vtbl=010A3184)
 // 1C
 class BGSKeyword : public TESForm
 {
-public:
-	enum { kTypeID = (UInt32)FormType::Keyword };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::Keyword
+	};
 
 	// @override
-	virtual bool		LoadForm(TESFile *arg) override;		// 0054DE60
-	virtual const char	* GetName(void) override;				// 00966620 { return (const char*)keyword; }
-	virtual bool		SetName(const char * str) override;		// 004B24E0 { keyword = str; }
+	virtual bool		LoadForm(TESFile* arg) override;   // 0054DE60
+	virtual const char* GetName(void) override;			   // 00966620 { return (const char*)keyword; }
+	virtual bool		SetName(const char* str) override; // 004B24E0 { keyword = str; }
 
-	BSString	keyword;	// 14
+	BSString keyword; // 14
 };
 STATIC_ASSERT(sizeof(BGSKeyword) == 0x1C);

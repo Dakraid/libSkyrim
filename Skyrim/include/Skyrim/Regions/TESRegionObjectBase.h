@@ -2,7 +2,7 @@
 
 class TESRegionObjectBase
 {
-public:
+	public:
 	virtual ~TESRegionObjectBase();
 
 	virtual void TESRegionObjectBase_Unk_01(void); // pure

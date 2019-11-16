@@ -4,7 +4,6 @@
 
 class BGSSoundDescriptorForm;
 
-
 /*==============================================================================
 class BGSPickupPutdownSounds +0000 (_vtbl=0107C478)
 0000: class BGSPickupPutdownSounds
@@ -13,8 +12,8 @@ class BGSPickupPutdownSounds +0000 (_vtbl=0107C478)
 // 0C
 class BGSPickupPutdownSounds : public BaseFormComponent
 {
-public:
+	public:
 	// @members
-	BGSSoundDescriptorForm	* pickUp;	// 04
-	BGSSoundDescriptorForm	* putDown;	// 08
+	BGSSoundDescriptorForm* pickUp;	 // 04
+	BGSSoundDescriptorForm* putDown; // 08
 };

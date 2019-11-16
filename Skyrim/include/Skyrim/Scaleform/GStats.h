@@ -4,16 +4,16 @@ enum GStatGroup
 {
 	GStatGroup_Default = 0,
 
-	GStatGroup_Core = 16,
-	GStatGroup_Renderer = 1 << 6,
+	GStatGroup_Core		 = 16,
+	GStatGroup_Renderer	 = 1 << 6,
 	GStatGroup_RenderGen = 2 << 6,
 
-	GStatGroup_GFxFontCache = 3 << 6,
-	GStatGroup_GFxMovieData = 4 << 6,
-	GStatGroup_GFxMovieView = 5 << 6,
+	GStatGroup_GFxFontCache	  = 3 << 6,
+	GStatGroup_GFxMovieData	  = 4 << 6,
+	GStatGroup_GFxMovieView	  = 5 << 6,
 	GStatGroup_GFxRenderCache = 6 << 6,
-	GStatGroup_GFxPlayer = 7 << 6,
-	GStatGroup_GFxIME = 8 << 6,
+	GStatGroup_GFxPlayer	  = 7 << 6,
+	GStatGroup_GFxIME		  = 8 << 6,
 
 	// General Memory
 
@@ -32,12 +32,11 @@ enum GStatGroup
 	// Core entries.
 	GStatHeap_Start = GStatGroup_Core,
 	// 16 slots for HeapSummary
-	
+
 	// How many entries we support by default
-	GStat_MaxId = 64 << 6, // 64 * 64 = 4096
+	GStat_MaxId		 = 64 << 6, // 64 * 64 = 4096
 	GStat_EntryCount = 512
 };
-
 
 enum GFxStatMovieView
 {

@@ -1,10 +1,9 @@
 #pragma once
 
-#include "../../FormComponents/TESForm.h"
-#include "../../FormComponents/TESDescription.h"
 #include "../../BSCore/BSFixedString.h"
 #include "../../BSCore/BSTArray.h"
-
+#include "../../FormComponents/TESDescription.h"
+#include "../../FormComponents/TESForm.h"
 
 /*==============================================================================
 class BGSCollisionLayer +0000 (_vtbl=0108A61C)
@@ -16,12 +15,16 @@ class BGSCollisionLayer +0000 (_vtbl=0108A61C)
 ==============================================================================*/
 // 3C
 class BGSCollisionLayer : public TESForm,
-	public TESDescription					// 14
+						  public TESDescription // 14
 {
-public:
-	enum { kTypeID = (UInt32)FormType::CollisionLayer };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::CollisionLayer
+	};
 
-	enum {
+	enum
+	{
 		kCollisionLayer_Unidentified = 0x00,
 		kCollisionLayer_Static,
 		kCollisionLayer_AnimStatic,
@@ -80,10 +83,10 @@ public:
 	};
 
 	// @members
-	UInt32							layerId;		// 20
-	UInt32							flags;			// 24
-	UInt32							unk28;			// 28
-	BSFixedString					name;			// 2C
-	BSTArray<BGSCollisionLayer *>	interactables;	// 30 - really?
+	UInt32						 layerId;		// 20
+	UInt32						 flags;			// 24
+	UInt32						 unk28;			// 28
+	BSFixedString				 name;			// 2C
+	BSTArray<BGSCollisionLayer*> interactables; // 30 - really?
 };
 STATIC_ASSERT(sizeof(BGSCollisionLayer) == 0x3C);

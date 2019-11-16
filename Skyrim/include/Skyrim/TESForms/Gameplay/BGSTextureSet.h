@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../Objects/TESBoundObject.h"
 #include "../../FormComponents/TESTexture.h"
 #include "../../NetImmerse/BSTextureSet.h"
-
+#include "../Objects/TESBoundObject.h"
 
 /*==============================================================================
 class BGSTextureSet +0000 (_vtbl=0108E5FC)
@@ -18,19 +17,22 @@ class BGSTextureSet +0000 (_vtbl=0108E5FC)
 ==============================================================================*/
 // D0
 class BGSTextureSet : public TESBoundObject,
-	public BSTextureSet			// 20
+					  public BSTextureSet // 20
 {
-public:
-	enum { kTypeID = (UInt32)FormType::TextureSet };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::TextureSet
+	};
 
 	// @members
 
 	// 0C
 	struct Data
 	{
-		UInt32	unk00;	// 00
-		UInt32	unk04;	// 04
-		UInt32	unk08;	// 08
+		UInt32 unk00; // 00
+		UInt32 unk04; // 04
+		UInt32 unk08; // 08
 	};
 
 	enum
@@ -49,11 +51,10 @@ public:
 		kNumTextures
 	};
 
-
 	// @members
-	TESTexture		texturePaths[kNumTextures];	// 28
-	UInt32			unk68;						// 68
-	UInt32			unk6C;						// 6C
-	Data			unk70[kNumTextures];		// 70
+	TESTexture texturePaths[kNumTextures]; // 28
+	UInt32	   unk68;					   // 68
+	UInt32	   unk6C;					   // 6C
+	Data	   unk70[kNumTextures];		   // 70
 };
 STATIC_ASSERT(sizeof(BGSTextureSet) == 0xD0);

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "TESBoundAnimObject.h"
 #include "../../FormComponents/TESLeveledList.h"
 #include "../../FormComponents/TESModelTextureSwap.h"
+#include "TESBoundAnimObject.h"
 
 /*==============================================================================
 class TESLevCharacter +0000 (_vtbl=0108331C)
@@ -20,9 +20,12 @@ class TESLevCharacter +0000 (_vtbl=0108331C)
 ==============================================================================*/
 // 50
 class TESLevCharacter : public TESBoundAnimObject,
-	public TESLeveledList,		// 20
-	public TESModelTextureSwap	// 34
+						public TESLeveledList,	   // 20
+						public TESModelTextureSwap // 34
 {
-public:
-	enum { kTypeID = (UInt32)FormType::LeveledCharacter };
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::LeveledCharacter
+	};
 };

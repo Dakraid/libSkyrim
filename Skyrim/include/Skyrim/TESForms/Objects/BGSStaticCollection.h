@@ -1,8 +1,7 @@
 #pragma once
 
-#include "TESBoundObject.h"
 #include "../../FormComponents/TESModelTextureSwap.h"
-
+#include "TESBoundObject.h"
 
 /*==============================================================================
 class BGSStaticCollection +0000 (_vtbl=01081DD4)
@@ -17,10 +16,12 @@ class BGSStaticCollection +0000 (_vtbl=01081DD4)
 ==============================================================================*/
 // 3C
 class BGSStaticCollection : public TESBoundObject,
-	public TESModelTextureSwap		// 20
+							public TESModelTextureSwap // 20
 {
-public:
-	enum { kTypeID = (UInt32)FormType::StaticCollection };
-
+	public:
+	enum
+	{
+		kTypeID = (UInt32)FormType::StaticCollection
+	};
 };
 STATIC_ASSERT(sizeof(BGSStaticCollection) == 0x3C);

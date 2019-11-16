@@ -4,8 +4,11 @@
 
 class ExtraCharge : public BSExtraData
 {
-public:
-	enum { kExtraTypeID = (UInt32)ExtraDataType::Charge };
+	public:
+	enum
+	{
+		kExtraTypeID = (UInt32)ExtraDataType::Charge
+	};
 
 	ExtraCharge();
 	virtual ~ExtraCharge();
