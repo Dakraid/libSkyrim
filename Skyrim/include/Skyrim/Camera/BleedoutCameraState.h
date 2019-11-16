@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TESCameraState.h"
+#include "ThirdPersonState.h"
 
 /*==============================================================================
 class BleedoutCameraState +0000 (_vtbl=010E3184)

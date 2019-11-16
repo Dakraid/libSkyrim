@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../BSCore/BSFixedString.h"
+
 namespace BSScript
 {
 /*==============================================================================
