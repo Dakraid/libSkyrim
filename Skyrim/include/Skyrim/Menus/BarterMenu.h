@@ -40,11 +40,23 @@ class BarterMenu : public IMenu
 		DEFINE_MEMBER_FN(Update, void, 0x00841E70, TESObjectREFR* owner);
 	};
 
-	GFxValue*	   root;		  // 1C ? - view->GetVariable(&root, "Menu_mc") (00869AF0)
+	struct BarterData
+	{
+		TESObjectREFR* barterTarget;			 // 00 // actually a smart pointer
+		bool		   unk04;					 // 04
+		bool		   bypassVendorStolenCheck;	 // 05 // player actor value BypassVendorStolenCheck != 0?
+		bool		   bypassVendorKeywordCheck; // 06 // player actor value BypassVendorKeywordCheck != 0?
+
+		DEFINE_MEMBER_FN(ctor, void, 0x00842D80, TESObjectREFR* target);
+	};
+
+	InventoryData* inventoryData; // 1C - init'd 0
+
+	/*
+	GFxValue*	   root;		  //  ? - view->GetVariable(&root, "Menu_mc") (00869AF0)
 	UInt32		   pad20;		  // init'd 0
 	UInt32		   pad24;		  // init'd 0
 	UInt32		   pad28;		  // init'd 0
-	InventoryData* inventoryData; // 2C ? - init'd 0
 	UInt32		   pad38;
 	UInt32		   pad3C;
 	UInt32		   pad40;
@@ -54,11 +66,7 @@ class BarterMenu : public IMenu
 	UInt32		   pad5C;
 	UInt32		   pad60;
 	bool		   pad64; // bPCControlsReady ?
-	UInt32		   pad10;
-	UInt32		   pad14;
-	UInt32		   pad0C;
-	UInt32		   padXX; // Put here to stop static assert error
-	UInt32		   padXY; // Put here to stop static assert error
+	*/
 
 	/*
 	mov     dword ptr ds:[esi], tesv.10E3860
@@ -85,6 +93,7 @@ class BarterMenu : public IMenu
 	private:
 	DEFINE_MEMBER_FN(ctor, BarterMenu*, 0x00842690);
 };
-STATIC_ASSERT(sizeof(BarterMenu) == 0x68);
-STATIC_ASSERT(offsetof(BarterMenu, root) == 0x1C);
-STATIC_ASSERT(offsetof(BarterMenu, inventoryData) == 0x2C);
+// static_assert(sizeof(BarterMenu) >= 0x68, "BarterMenu is too small!");
+static_assert(sizeof(BarterMenu) <= 0x68, "BarterMenu is too large!");
+static_assert(offsetof(BarterMenu, inventoryData) >= 0x1C, "BarterMenu::inventoryData is too early!");
+static_assert(offsetof(BarterMenu, inventoryData) <= 0x1C, "BarterMenu::inventoryData is too late!");
